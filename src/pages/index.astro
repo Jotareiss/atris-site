@@ -1,11 +1,461 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const WA = "https://wa.me/5516XXXXXXXXX?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20%C3%81tris.";
+
+const products = [
+  {
+    tag: "Consultas",
+    title: "Átris",
+    body: "Consultas psiquiátricas com tempo, vínculo e rigor clínico. Para quem busca um cuidado que vai além do sintoma.",
+    linkLabel: "Conheça o atendimento",
+    href: "/consultas",
+  },
+  {
+    tag: "Acesso popular",
+    title: "Átris.social",
+    body: "A mesma qualidade de cuidado, num modelo acessível. Porque saúde mental não deveria ser privilégio.",
+    linkLabel: "Saiba como funciona",
+    href: "/social",
+  },
+  {
+    tag: "Formação",
+    title: "Átris.edu",
+    body: "Formação continuada para profissionais de saúde mental. Minicursos, masterclasses e grupos de estudo com quem está na prática.",
+    linkLabel: "Ver próximas turmas",
+    href: "/edu",
+  },
+];
+
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Átris — Psiquiatria de excelência"
+  description="Consultas psiquiátricas com tempo, vínculo e rigor clínico. Atendimento presencial em Ribeirão Preto e por telemedicina em todo o Brasil."
+>
+
+  <!-- ══════════════════════════════════════
+       HERO
+  ══════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__content">
+      <div class="hero__line"></div>
+      <h1 class="hero__headline">
+        Psiquiatria de excelência para quem entende a diferença.
+      </h1>
+      <p class="hero__sub">
+        Um espaço construído com cuidado, para que você possa,
+        <em>finalmente, pousar.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       INTRO
+  ══════════════════════════════════════ -->
+  <section class="intro">
+    <div class="intro__grid">
+
+      <div class="intro__left">
+        <p class="kicker">O que nos define</p>
+        <h2 class="intro__heading">
+          Cuidado que leva tempo. E faz sentido
+          <em>quando é feito para durar.</em>
+        </h2>
+      </div>
+
+      <div class="intro__right">
+        <p class="intro__body">
+          Dois médicos formados e residentes pela FMRP-USP. Um espaço pequeno por
+          escolha, com atenção que só cabe quando a agenda permite. Atendimento
+          presencial em Ribeirão Preto e por telemedicina em todo o Brasil.
+        </p>
+        <a href="/medicos" class="intro__link">Conheça os médicos →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       DIVISOR
+  ══════════════════════════════════════ -->
+  <hr class="divider" />
+
+  <!-- ══════════════════════════════════════
+       PRODUTOS
+  ══════════════════════════════════════ -->
+  <section class="products">
+    <p class="kicker">Nossos serviços</p>
+    <div class="products__grid">
+      {products.map(({ tag, title, body, linkLabel, href }) => (
+        <article class="card">
+          <p class="card__tag">{tag}</p>
+          <h3 class="card__title">{title}</h3>
+          <p class="card__body">{body}</p>
+          <a href={href} class="card__link">
+            <em>{linkLabel}</em>
+            <span class="card__dash"></span>
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       MANIFESTO
+  ══════════════════════════════════════ -->
+  <section class="manifesto">
+    <div class="manifesto__grid">
+
+      <div class="manifesto__aside">
+        <p class="manifesto__label">Manifesto</p>
+      </div>
+
+      <div class="manifesto__body">
+        <blockquote class="manifesto__quote">
+          A psiquiatria convencional funciona sob pressão. Agendas lotadas,
+          consultas curtas, condutas padronizadas. Não por má intenção — mas
+          porque o modelo <em>não foi desenhado para ter tempo.</em> E sem
+          tempo, não há escuta. Sem escuta, não há cuidado de verdade.
+        </blockquote>
+        <span class="manifesto__dash"></span>
+        <div class="manifesto__actions">
+          <a href="/manifesto" class="manifesto__link">
+            <em>Leia o manifesto completo →</em>
+          </a>
+          <a href={WA} class="manifesto__cta" target="_blank" rel="noopener noreferrer">
+            Agendar consulta
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
 </Layout>
+
+<style>
+
+  /* ── Kicker reutilizável ── */
+  .kicker {
+    font-size: 14px;
+    font-style: italic !important;
+    text-transform: none;
+    color: #f28f38 !important;
+    margin: 0;
+  }
+
+  /* ════════════════════════════════
+     HERO
+  ════════════════════════════════ */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-image: url('/assets/hero.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(18, 42, 75, 0.75) 0%,
+      rgba(18, 42, 75, 0.2) 55%,
+      transparent 100%
+    );
+  }
+
+  .hero__content {
+    position: relative;
+    padding: 0 64px 104px;
+    max-width: 700px;
+  }
+
+  .hero__line {
+    width: 36px;
+    height: 1px;
+    background: #f28f38;
+    margin-bottom: 36px;
+  }
+
+  .hero__headline {
+    font-size: clamp(40px, 4.5vw, 54px);
+    font-style: italic;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.14;
+    letter-spacing: -0.015em;
+    margin: 0 0 28px;
+  }
+
+  .hero__sub {
+    font-size: 18px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.75;
+    margin: 0;
+  }
+
+  /* ════════════════════════════════
+     INTRO
+  ════════════════════════════════ */
+  .intro {
+    padding: 96px 56px;
+  }
+
+  .intro__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .intro__left .kicker {
+    margin-bottom: 24px;
+  }
+
+  .intro__heading {
+    font-size: 36px;
+    font-weight: 400;
+    color: #173f73;
+    line-height: 1.28;
+    margin: 0;
+  }
+
+  .intro__right {
+    padding-top: 52px;
+  }
+
+  .intro__body {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.88;
+    margin: 0 0 28px;
+  }
+
+  .intro__link {
+    font-size: 15px;
+    font-style: italic;
+    color: #173f73;
+    text-decoration: underline;
+    text-decoration-color: #f28f38;
+    text-underline-offset: 4px;
+    transition: opacity var(--transition);
+  }
+
+  .intro__link:hover {
+    opacity: 0.65;
+  }
+
+  /* ════════════════════════════════
+     DIVISOR
+  ════════════════════════════════ */
+  .divider {
+    border: none;
+    height: 1px;
+    background: rgba(23, 63, 115, 0.07);
+    margin: 0 56px;
+  }
+
+  /* ════════════════════════════════
+     PRODUTOS
+  ════════════════════════════════ */
+  .products {
+    padding: 96px 56px;
+  }
+
+  .products > .kicker {
+    margin-bottom: 40px;
+  }
+
+  .products__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .card {
+    background: #faf6f1;
+    padding: 48px 40px 44px;
+    border-radius: 48px 48px 6px 6px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card__tag {
+    font-size: 13px;
+    font-style: italic !important;
+    text-transform: none;
+    color: #eda27f;
+    margin: 0 0 16px;
+  }
+
+  .card__title {
+    font-size: 28px;
+    font-style: italic !important;
+    font-weight: 400;
+    color: #173f73;
+    line-height: 1.15;
+    margin: 0 0 20px;
+  }
+
+  .card__body {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.85;
+    margin: 0 0 32px;
+    flex: 1;
+  }
+
+  .card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-style: italic;
+    text-transform: none;
+    color: #173f73;
+    transition: opacity var(--transition);
+  }
+
+  .card__link:hover {
+    opacity: 0.65;
+  }
+
+  .card__dash {
+    display: block;
+    width: 18px;
+    height: 1px;
+    background: #f28f38;
+    flex-shrink: 0;
+    transition: width var(--transition);
+  }
+
+  .card__link:hover .card__dash {
+    width: 26px;
+  }
+
+  /* ════════════════════════════════
+     MANIFESTO
+  ════════════════════════════════ */
+  .manifesto {
+    background: #173f73;
+    color: rgba(255, 255, 255, 0.82);
+    padding: 96px 56px;
+  }
+
+  .manifesto__grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .manifesto__label {
+    font-size: 14px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.28);
+    margin: 0;
+    padding-top: 6px;
+  }
+
+  .manifesto__quote {
+    font-size: 23px;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.75;
+    margin: 0 0 0;
+  }
+
+  .manifesto__quote em {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .manifesto__dash {
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: #f28f38;
+    margin: 32px 0 28px;
+  }
+
+  .manifesto__actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .manifesto__link {
+    font-size: 15px;
+    color: #eda27f;
+    transition: opacity var(--transition);
+  }
+
+  .manifesto__link:hover {
+    opacity: 0.75;
+  }
+
+  .manifesto__cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 13px;
+    border-radius: 4px;
+    transition: border-color var(--transition), background var(--transition);
+  }
+
+  .manifesto__cta:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  /* ════════════════════════════════
+     RESPONSIVO
+  ════════════════════════════════ */
+  @media (max-width: 768px) {
+    .hero__content {
+      padding: 0 24px 72px;
+    }
+
+    .intro,
+    .products,
+    .manifesto {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .divider {
+      margin: 0 24px;
+    }
+
+    .intro__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .intro__right {
+      padding-top: 0;
+    }
+
+    .products__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .manifesto__grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+  }
+
+</style>

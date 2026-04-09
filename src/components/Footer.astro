@@ -1,0 +1,229 @@
+---
+const navLinks = [
+  { label: "Manifesto",  href: "/manifesto" },
+  { label: "Consultas",  href: "/consultas" },
+  { label: "Social",     href: "/social" },
+  { label: "Edu",        href: "/edu" },
+  { label: "Médicos",    href: "/medicos" },
+  { label: "Contato",    href: "/contato" },
+];
+
+const doctors = [
+  { name: "Dr. José Augusto Silva Reis", crm: "CRM/SP 199536 | RQE 128556" },
+  { name: "Dr. Lean Pampana Basoli",     crm: "CRM/SP 199566 | RQE 127180" },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer__inner">
+
+    <!-- Coluna 1: Logo + tagline -->
+    <div class="footer__brand">
+      <a href="/" aria-label="Átris — página inicial">
+        <img src="/logo-negativa.svg" alt="Átris" height="32" style="display: block; margin-bottom: 16px;" />
+      </a>
+      <p class="footer__tagline">
+        Cuidado psiquiátrico de excelência,<br />com presença e escuta.
+      </p>
+    </div>
+
+    <!-- Coluna 2: Navegação -->
+    <nav class="footer__nav" aria-label="Links do rodapé">
+      <p class="footer__heading">Páginas</p>
+      <ul>
+        {navLinks.map(({ label, href }) => (
+          <li><a href={href} class="footer__link">{label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Coluna 3: Equipe médica -->
+    <div class="footer__team">
+      <p class="footer__heading">Equipe médica</p>
+      <ul>
+        {doctors.map(({ name, crm }) => (
+          <li class="footer__doctor">
+            <span class="footer__doctor-name">{name}</span>
+            <span class="footer__crm">{crm}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Coluna 4: Endereço + telemedicina -->
+    <div class="footer__contact">
+      <p class="footer__heading">Localização</p>
+      <address class="footer__address">
+        Av. Independência, 3115 — sala 20<br />
+        Ribeirão Preto, SP
+      </address>
+      <p class="footer__telemedicine">
+        Atendimento presencial e por <strong>telemedicina</strong> em todo o Brasil,
+        conforme regulamentação CFM nº 2.314/2022.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Rodapé inferior -->
+  <div class="footer__bottom">
+    <p class="footer__copy">
+      &copy; {year} Átris Clínica Psiquiátrica. Todos os direitos reservados.
+    </p>
+    <p class="footer__disclaimer">
+      As informações deste site têm caráter educativo e não substituem avaliação médica.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--color-primary);
+    color: rgba(255, 255, 255, 0.85);
+    padding-top: var(--space-16);
+  }
+
+  .footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-6) var(--space-12);
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
+    gap: var(--space-12);
+  }
+
+  /* Brand */
+  .footer__wordmark {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: var(--space-4);
+  }
+
+  .footer__tagline {
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  /* Headings */
+  .footer__heading {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: var(--space-4);
+  }
+
+  /* Nav */
+  .footer__nav ul,
+  .footer__team ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .footer__link {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.75);
+    transition: color var(--transition);
+  }
+
+  .footer__link:hover {
+    color: #ffffff;
+  }
+
+  /* Equipe */
+  .footer__doctor {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .footer__doctor-name {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+  }
+
+  .footer__crm {
+    font-size: var(--text-xs);
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 0.02em;
+  }
+
+  /* Endereço */
+  .footer__address {
+    font-size: var(--text-sm);
+    font-style: normal;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: var(--space-4);
+  }
+
+  .footer__telemedicine {
+    font-size: var(--text-xs);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  .footer__telemedicine strong {
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 600;
+  }
+
+  /* Rodapé inferior */
+  .footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .footer__copy {
+    font-size: var(--text-xs);
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .footer__disclaimer {
+    font-size: var(--text-xs);
+    color: rgba(255, 255, 255, 0.35);
+    text-align: right;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .footer__inner {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .footer__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .footer__bottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer__disclaimer {
+      text-align: left;
+    }
+  }
+</style>

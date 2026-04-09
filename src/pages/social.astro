@@ -1,0 +1,161 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Átris.social — Em Breve"
+  description="A Átris.social oferece atendimento psiquiátrico de qualidade a um preço justo, com supervisão clínica dos fundadores da Átris."
+>
+  <div class="social-page">
+
+    <!-- ── Hero ── -->
+    <div class="hero">
+      <span class="hero__tag">Átris.social</span>
+      <h1 class="hero__headline">
+        Cuidado psiquiátrico de qualidade não deveria depender de quanto você pode pagar.
+      </h1>
+    </div>
+
+    <!-- ── Conteúdo ── -->
+    <div class="social-col">
+
+      <span class="eyebrow">Em breve</span>
+
+      <span class="divider" aria-hidden="true"></span>
+
+      <p class="body">
+        A Átris.social nasceu de uma convicção simples: atendimento psiquiátrico
+        de qualidade não deveria ser privilégio de quem pode pagar mais.
+      </p>
+
+      <p class="body">
+        Atendimentos conduzidos por profissionais parceiros criteriosamente
+        selecionados, com supervisão clínica direta dos fundadores da Átris.
+        O mesmo rigor. O mesmo cuidado. Um modelo que cabe em mais vidas.
+      </p>
+
+      <p class="body body--muted">
+        Estamos construindo com cuidado — como fazemos tudo aqui.
+      </p>
+
+      <a
+        href="https://wa.me/5516XXXXXXXXX"
+        class="btn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Fale pelo WhatsApp para ser avisado
+      </a>
+
+      <p class="note">Avisaremos quando abrir.</p>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .social-page {
+    background: #FDFAF6;
+    font-family: var(--font-body);
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: #eda27f;
+    padding: 64px 24px 56px;
+    text-align: center;
+  }
+
+  .hero__tag {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: white;
+    opacity: 0.7;
+  }
+
+  .hero__headline {
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 600;
+    color: white;
+    max-width: 600px;
+    margin: 16px auto 0;
+    line-height: 1.3;
+  }
+
+  /* ── Conteúdo ── */
+  .social-col {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+    text-align: center;
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+    margin-bottom: 24px;
+  }
+
+  .headline {
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-primary);
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .divider {
+    display: block;
+    width: 48px;
+    height: 2px;
+    background: var(--color-orange);
+    margin: 24px auto 40px;
+  }
+
+  .body {
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.85;
+    color: #1a1a1a;
+    margin: 0 0 28px;
+  }
+
+  .body--muted {
+    color: #666;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    padding: 14px 32px;
+    background: var(--color-orange);
+    color: #ffffff;
+    font-size: 13px;
+    font-family: var(--font-body);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    border: 1px solid var(--color-orange);
+    transition: opacity var(--transition);
+  }
+
+  .btn:hover {
+    opacity: 0.88;
+  }
+
+  .note {
+    font-size: 12px;
+    font-style: italic;
+    color: #aaa;
+    margin: 16px 0 0;
+  }
+</style>

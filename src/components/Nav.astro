@@ -1,0 +1,395 @@
+---
+const currentPath = Astro.url.pathname;
+
+const links = [
+  { label: "Manifesto", href: "/manifesto" },
+  { label: "Consultas", href: "/consultas" },
+  { label: "Átris.social", href: "/social" },
+  { label: "Átris.edu",   href: "/edu" },
+  { label: "Médicos",   href: "/medicos" },
+  { label: "Contato",   href: "/contato" },
+];
+---
+
+<!-- ═══════════════════════════════════
+     Bloco superior — logo grande
+════════════════════════════════════ -->
+<div class="header-logo" id="header-logo">
+  <a href="/" aria-label="Átris — página inicial">
+    <img src="/logo.svg" alt="Átris" class="header-logo__full" />
+  </a>
+  <!-- Mobile: logo menor + hamburguer -->
+  <div class="header-logo__mobile">
+    <a href="/" aria-label="Átris">
+      <img src="/logo.svg" alt="Átris" height="72" />
+    </a>
+    <button class="burger" aria-label="Abrir menu" aria-expanded="false" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     Barra de navegação sticky
+════════════════════════════════════ -->
+<header class="header-nav" id="header-nav">
+  <div class="header-nav__inner">
+
+    <!-- Pássaro: aparece quando logo sai da tela -->
+    <a href="/" class="nav-bird" aria-label="Átris — início">
+      <img src="/bird-icon.png" alt="" width="56" height="56" />
+      <span class="nav-bird__name">ÁTRIS</span>
+    </a>
+
+    <!-- Links centrais -->
+    <nav class="nav-links" aria-label="Navegação principal">
+      {links.map(({ label, href }) => (
+        <a
+          href={href}
+          class:list={[{ "nav-links__active": currentPath.startsWith(href) }]}
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- CTA -->
+    <a
+      href="https://wa.me/5516XXXXXXXXX"
+      class="nav-cta"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Agendar consulta
+    </a>
+
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════
+     Overlay mobile
+════════════════════════════════════ -->
+<div class="mobile-overlay" id="mobile-overlay" aria-hidden="true">
+  <div class="mobile-overlay__header">
+    <a href="/" aria-label="Átris">
+      <img src="/logo.svg" alt="Átris" height="64" />
+    </a>
+    <button class="mobile-overlay__close" aria-label="Fechar menu" id="overlay-close">
+      &#xd7;
+    </button>
+  </div>
+
+  <nav class="mobile-overlay__links">
+    {links.map(({ label, href }) => (
+      <a href={href}>{label}</a>
+    ))}
+  </nav>
+
+  <a
+    href="https://wa.me/5516XXXXXXXXX"
+    class="mobile-overlay__cta"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Agendar consulta
+  </a>
+</div>
+
+<style>
+  /* ─── Logo block ─── */
+  .header-logo {
+    background: var(--color-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 28px 56px 20px;
+    border-bottom: 1px solid rgba(23, 63, 115, 0.05);
+  }
+
+  .header-logo__full {
+    display: block;
+    height: 180px;
+    width: auto;
+  }
+
+  /* Mobile logo row hidden on desktop */
+  .header-logo__mobile {
+    display: none;
+  }
+
+  /* ─── Sticky nav bar ─── */
+  .header-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-bg);
+    border-bottom: 1px solid rgba(23, 63, 115, 0.07);
+  }
+
+  .header-nav__inner {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    align-items: center;
+    padding: 0 48px;
+    height: 52px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* ─── Bird icon ─── */
+  .nav-bird {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 12px 4px 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 300ms ease;
+  }
+
+  .nav-bird img {
+    display: block;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+  }
+
+  .nav-bird__name {
+    font-size: 20px;
+    font-style: italic;
+    font-family: var(--font-body);
+    color: #173f73;
+    margin-left: 10px;
+    line-height: 1;
+  }
+
+  /* Activated by JS when logo scrolls out */
+  .header-nav.bird-visible .nav-bird {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ─── Links ─── */
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-family: var(--font-body);
+    color: #666;
+    transition: color var(--transition);
+  }
+
+  .nav-links a:hover,
+  .nav-links a.nav-links__active {
+    color: #173f73;
+  }
+
+  /* ─── CTA ─── */
+  .nav-cta {
+    font-size: 13px;
+    font-family: var(--font-body);
+    color: #173f73;
+    border: 1px solid #f28f38;
+    padding: 8px 20px;
+    border-radius: 4px;
+    background: transparent;
+    transition: background var(--transition), color var(--transition);
+    white-space: nowrap;
+  }
+
+  .nav-cta:hover {
+    background: #f28f38;
+    color: #ffffff;
+  }
+
+  /* ─── Burger (mobile only) ─── */
+  .burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #173f73;
+    border-radius: 2px;
+    transition: transform var(--transition), opacity var(--transition);
+  }
+
+  /* ─── Mobile overlay ─── */
+  .mobile-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    padding: 28px 32px 48px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms ease;
+  }
+
+  .mobile-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-overlay__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 56px;
+  }
+
+  .mobile-overlay__close {
+    font-size: 32px;
+    font-weight: 300;
+    color: #173f73;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px 8px;
+    opacity: 0.6;
+    transition: opacity var(--transition);
+  }
+
+  .mobile-overlay__close:hover {
+    opacity: 1;
+  }
+
+  .mobile-overlay__links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .mobile-overlay__links a {
+    font-size: 36px;
+    font-style: italic;
+    font-family: var(--font-body);
+    color: #173f73;
+    line-height: 1.3;
+    transition: opacity var(--transition);
+  }
+
+  .mobile-overlay__links a:hover {
+    opacity: 0.6;
+  }
+
+  .mobile-overlay__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 16px;
+    background: #f28f38;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: var(--font-body);
+    border-radius: 4px;
+    transition: opacity var(--transition);
+  }
+
+  .mobile-overlay__cta:hover {
+    opacity: 0.88;
+  }
+
+  /* ─── Responsivo ─── */
+  @media (max-width: 768px) {
+    /* Esconde logo grande, mostra bloco mobile */
+    .header-logo {
+      justify-content: space-between;
+      padding: 16px 24px;
+    }
+
+    .header-logo__full {
+      display: none;
+    }
+
+    .header-logo__mobile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    /* Esconde barra de nav em mobile */
+    .header-nav {
+      display: none;
+    }
+
+    /* Mostra hamburguer */
+    .burger {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  // ── IntersectionObserver: pássaro ──
+  const logoBlock  = document.getElementById("header-logo") as HTMLElement;
+  const headerNav  = document.getElementById("header-nav")  as HTMLElement;
+
+  if (logoBlock && headerNav) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        headerNav.classList.toggle("bird-visible", !entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+    observer.observe(logoBlock);
+  }
+
+  // ── Mobile overlay ──
+  const burger       = document.getElementById("burger")        as HTMLButtonElement;
+  const overlay      = document.getElementById("mobile-overlay") as HTMLElement;
+  const overlayClose = document.getElementById("overlay-close") as HTMLButtonElement;
+
+  function openOverlay() {
+    overlay.classList.add("is-open");
+    overlay.setAttribute("aria-hidden", "false");
+    burger.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeOverlay() {
+    overlay.classList.remove("is-open");
+    overlay.setAttribute("aria-hidden", "true");
+    burger.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+
+  burger?.addEventListener("click", openOverlay);
+  overlayClose?.addEventListener("click", closeOverlay);
+
+  // Fecha ao clicar em link do overlay
+  overlay?.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeOverlay);
+  });
+
+  // Fecha com Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && overlay.classList.contains("is-open")) {
+      closeOverlay();
+    }
+  });
+</script>
