@@ -1,0 +1,164 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Átris.edu — Em Breve"
+  description="Formação continuada para profissionais de saúde mental. Minicursos, masterclasses e grupos de estudo conduzidos por quem está na prática clínica."
+  bodyClass="page-edu"
+>
+  <div class="edu-page">
+    <div class="edu-col">
+
+      <span class="eyebrow">Em breve</span>
+
+      <h1 class="headline">
+        Formação continuada para quem cuida de saúde mental.
+      </h1>
+
+      <span class="divider" aria-hidden="true"></span>
+
+      <p class="body">
+        Cuidar bem exige atualização constante. A Átris.edu é um espaço de
+        formação continuada para médicos, psicólogos, enfermeiros e todos que
+        atuam com saúde mental.
+      </p>
+
+      <p class="body">
+        Minicursos, masterclasses e grupos de estudo conduzidos por quem está
+        na prática clínica diária. Conteúdo aplicável, linguagem direta, sem
+        distância entre teoria e realidade do consultório.
+      </p>
+
+      <blockquote class="quote">
+        Acreditamos que melhorar o cuidado em saúde mental começa por quem
+        cuida. A Átris.edu é nossa contribuição para isso.
+      </blockquote>
+
+      <a
+        href="https://wa.me/5516XXXXXXXXX"
+        class="btn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Fale pelo WhatsApp para ser avisado
+      </a>
+
+      <p class="note">Avisaremos quando abrir.</p>
+
+    </div>
+
+    <!-- Divider antes do footer -->
+    <div class="pre-footer-rule" aria-hidden="true"></div>
+  </div>
+</Layout>
+
+<style is:global>
+  /* Fundo azul em todo o body — elimina gaps entre conteúdo e footer */
+  body.page-edu {
+    background: #173f73;
+  }
+
+  /* Main não tem fundo próprio — garante que não vaze cor do body */
+  body.page-edu main {
+    background: #173f73;
+  }
+
+  /* Footer ligeiramente mais escuro para criar separação sutil dentro do azul */
+  body.page-edu footer {
+    background: #0f2d52;
+  }
+</style>
+
+<style>
+  .edu-page {
+    font-family: var(--font-body);
+  }
+
+  .edu-col {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 72px 24px 80px;
+    text-align: center;
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+    margin-bottom: 24px;
+  }
+
+  .headline {
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .divider {
+    display: block;
+    width: 48px;
+    height: 2px;
+    background: #eda27f;
+    margin: 24px auto 40px;
+  }
+
+  .body {
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 28px;
+  }
+
+  .quote {
+    border-left: 2px solid rgba(237, 162, 127, 0.4);
+    padding-left: 16px;
+    text-align: left;
+    font-size: 16px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.75;
+    margin: 8px 0 40px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    font-size: 13px;
+    font-family: var(--font-body);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background var(--transition), border-color var(--transition);
+  }
+
+  .btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.65);
+  }
+
+  .note {
+    font-size: 12px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.35);
+    margin: 16px 0 0;
+  }
+
+  /* Divider pré-footer */
+  .pre-footer-rule {
+    width: calc(100% - 48px);
+    margin: 0 24px;
+    border-top: 1px solid rgba(237, 162, 127, 0.25);
+  }
+</style>

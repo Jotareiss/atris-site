@@ -1,0 +1,386 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const pillars = [
+  { n: "01", title: "Tempo de verdade" },
+  { n: "02", title: "Rigor clínico" },
+  { n: "03", title: "Relação contínua" },
+  { n: "04", title: "Acesso sem fronteira" },
+];
+---
+
+<Layout
+  title="Manifesto — Átris Instituto de Psiquiatria"
+  description="Uma declaração sobre o tipo de cuidado que acreditamos ser possível — e necessário. A Átris foi fundada por médicos que decidiram fazer diferente."
+>
+  <div class="manifesto-page">
+    <article class="manifesto-body">
+
+      <!-- ── Eyebrow ── -->
+      <span class="eyebrow">Manifesto</span>
+
+      <!-- ── Subtítulo editorial ── -->
+      <p class="subtitle">
+        Uma declaração sobre o tipo de cuidado que acreditamos ser possível — e necessário.
+      </p>
+
+      <!-- ── Bloco 1 ── -->
+      <p class="block">
+        A psiquiatria convencional funciona sob pressão. Consultas cronometradas,
+        filas que não terminam, prescrições que substituem conversas. Não é má
+        vontade — é estrutura. <strong>E estruturas moldam o que é possível
+        fazer dentro delas.</strong>
+      </p>
+
+      <span class="divider" aria-hidden="true"></span>
+
+      <!-- ── Bloco 2 ── -->
+      <p class="block">
+        O joão-de-barro não terceiriza o ninho. Carrega barro por conta própria,
+        mistura com capim, molda com o bico até que a forma seja exatamente certa.
+        <span class="highlight">Construção</span> é o oposto de conveniência —
+        é escolha deliberada, repetida, paciente.
+      </p>
+
+      <span class="divider" aria-hidden="true"></span>
+
+      <!-- ── Bloco 3 ── -->
+      <p class="block">
+        Acreditamos que <span class="highlight">bom cuidado é um ato de
+        construção</span>. Que uma consulta de verdade precisa de tempo. Que o
+        vínculo entre médico e paciente não é bônus — é condição clínica. Que
+        rigor e acolhimento não são opostos.
+      </p>
+
+      <span class="divider" aria-hidden="true"></span>
+
+      <!-- ── Closing ── -->
+      <p class="closing">Bem-vindo à Átris.</p>
+
+      <!-- ── Assinatura ── -->
+      <div class="signature">
+        <img
+          src="/assets/bird-swirl.png"
+          alt="Átris"
+          style="width: 96px; height: 96px; object-fit: contain; margin-bottom: 16px;"
+        />
+        <p class="signature__names">
+          Dr. José Augusto Silva Reis<br />
+          Dr. Lean Pampana Basoli
+        </p>
+      </div>
+
+    </article>
+
+    <!-- ── Pilares ── -->
+    <section class="pillars">
+      <span class="eyebrow eyebrow--muted">Os alicerces do cuidado que praticamos</span>
+      <div class="pillars__grid">
+        {pillars.map(({ n, title }) => (
+          <div class="pillar">
+            <span class="pillar__n">{n}</span>
+            <p class="pillar__title">{title}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ── Fundadores ── -->
+    <section class="founders">
+      <img
+        src="/assets/founders.jpg"
+        alt="Dr. José Augusto e Dr. Lean Basoli — fundadores da Átris"
+        class="founders__photo"
+      />
+      <div class="founders__caption">
+        <div class="founders__doctor">
+          <strong>Dr. José Augusto Silva Reis</strong>
+          <span>CRM 199536 · RQE 128556</span>
+          <span>Psicose, Reabilitação Psicossocial</span>
+        </div>
+        <div class="founders__doctor">
+          <strong>Dr. Lean Pampana Basoli</strong>
+          <span>CRM 199566 · RQE 127180</span>
+          <span>Sexualidade, Diversidade de Gênero</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA final ── -->
+    <section class="cta">
+      <p class="cta__label">Pronto para começar?</p>
+      <h2 class="cta__headline">
+        Uma consulta com tempo. Um médico que permanece.
+      </h2>
+      <div class="cta__buttons">
+        <a href="/consultas" class="btn btn--primary">Agendar consulta</a>
+        <a href="/medicos"   class="btn btn--outline">Conhecer os médicos</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>
+
+<style>
+  /* ── Wrapper ── */
+  .manifesto-page {
+    background: var(--color-bg);
+    font-family: var(--font-body);
+  }
+
+  /* ── Coluna central ── */
+  .manifesto-body {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 72px 24px 80px;
+  }
+
+  /* ── Eyebrow ── */
+  .eyebrow {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+    margin-bottom: 20px;
+  }
+
+  .eyebrow--muted {
+    color: #666;
+    margin-bottom: 28px;
+  }
+
+  /* ── Subtítulo editorial ── */
+  .subtitle {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--color-primary);
+    line-height: 1.7;
+    margin: 0 0 48px;
+  }
+
+  /* ── Blocos de texto ── */
+  .block {
+    font-size: 19px;
+    font-style: italic;
+    line-height: 1.85;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .block strong {
+    font-style: normal;
+    font-weight: 500;
+    color: var(--color-primary);
+  }
+
+  .highlight {
+    color: var(--color-orange);
+  }
+
+  /* ── Divider ── */
+  .divider {
+    display: block;
+    width: 48px;
+    height: 2px;
+    background: var(--color-orange);
+    margin: 48px 0;
+  }
+
+  /* ── Closing ── */
+  .closing {
+    font-size: 24px;
+    font-style: italic;
+    color: var(--color-primary);
+    margin: 48px 0 56px;
+  }
+
+  /* ── Assinatura ── */
+  .signature {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 72px;
+  }
+
+  .signature__names {
+    font-size: 14px;
+    font-style: italic;
+    color: rgba(23, 63, 115, 0.75);
+    line-height: 2;
+    text-align: right;
+    margin: 0;
+  }
+
+  /* ── Pilares ── */
+  .pillars {
+    max-width: 640px;
+    margin: 0 auto 0;
+    padding: 0 24px;
+  }
+
+  .pillars__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid rgba(237, 162, 127, 0.27);
+    margin-bottom: 72px;
+  }
+
+  .pillar {
+    background: var(--color-card);
+    padding: 28px 20px;
+    border-right: 1px solid rgba(237, 162, 127, 0.2);
+  }
+
+  .pillar:last-child {
+    border-right: none;
+  }
+
+  .pillar__n {
+    font-size: 11px;
+    color: var(--color-orange);
+    letter-spacing: 0.18em;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .pillar__title {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--color-primary);
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  /* ── Fundadores ── */
+  .founders {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .founders__photo {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .founders__caption {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+  }
+
+  .founders__doctor {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    font-style: italic;
+    color: #666;
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  .founders__doctor strong {
+    font-style: normal;
+    color: var(--color-primary);
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+
+  /* ── CTA final ── */
+  .cta {
+    max-width: 640px;
+    margin: 72px auto 0;
+    padding: 0 24px 96px;
+    border-top: 1px solid rgba(237, 162, 127, 0.27);
+    padding-top: 56px;
+    text-align: center;
+  }
+
+  .cta__label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #666;
+    margin: 0 0 16px;
+  }
+
+  .cta__headline {
+    font-size: 26px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-primary);
+    line-height: 1.3;
+    margin: 0 0 40px;
+  }
+
+  .cta__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 14px 32px;
+    font-size: 13px;
+    font-family: var(--font-body);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: opacity var(--transition), background var(--transition), color var(--transition);
+  }
+
+  .btn--primary {
+    background: var(--color-orange);
+    color: #ffffff;
+    border: 1px solid var(--color-orange);
+  }
+
+  .btn--primary:hover {
+    opacity: 0.88;
+  }
+
+  .btn--outline {
+    background: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+  }
+
+  .btn--outline:hover {
+    background: var(--color-primary);
+    color: #ffffff;
+  }
+
+  /* ── Responsivo ── */
+  @media (max-width: 768px) {
+    .pillars__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pillar:nth-child(2) {
+      border-right: none;
+    }
+
+    .pillar:nth-child(3) {
+      border-right: 1px solid rgba(237, 162, 127, 0.2);
+      border-top: 1px solid rgba(237, 162, 127, 0.2);
+    }
+
+    .pillar:nth-child(4) {
+      border-right: none;
+      border-top: 1px solid rgba(237, 162, 127, 0.2);
+    }
+
+    .founders__caption {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+  }
+</style>
