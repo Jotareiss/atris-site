@@ -16,41 +16,26 @@ import Layout from "../layouts/Layout.astro";
       <span class="divider" aria-hidden="true"></span>
 
       <p class="body">
-        Escolha o médico e entre em contato diretamente pelo WhatsApp. Sem
-        triagem, sem formulário. O vínculo começa no primeiro contato.
+        O agendamento é feito por WhatsApp.
       </p>
 
-      <div class="buttons">
+      <a
+        href="https://wa.me/5516993732111?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20%C3%81tris."
+        class="btn btn--primary"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Agendar consulta
+      </a>
 
-        <div class="btn-group">
-          <a
-            href="https://wa.me/5516993732111"
-            class="btn btn--primary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Dr. José Augusto Silva Reis
-          </a>
-          <span class="btn-crm">CRM/SP 199536 · RQE 128556</span>
-        </div>
+      <p class="support">
+        A equipe pode orientar na escolha do médico e na organização do atendimento, de acordo com cada caso e disponibilidade.
+      </p>
 
-        <div class="btn-group">
-          <a
-            href="https://wa.me/5516999930259"
-            class="btn btn--outline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Dr. Lean Pampana Basoli
-          </a>
-          <span class="btn-crm">CRM/SP 199566 · RQE 127180</span>
-        </div>
-
+      <div class="info">
+        <p class="info__line">Atendimento presencial · Av. Independência, 3115, sala 20 — Ribeirão Preto, SP</p>
+        <p class="info__line">Telemedicina para todo o Brasil</p>
       </div>
-
-      <p class="note">
-        Atendimento presencial em Ribeirão Preto, SP · Telemedicina para todo o Brasil
-      </p>
 
     </div>
   </div>
@@ -100,21 +85,7 @@ import Layout from "../layouts/Layout.astro";
     font-style: italic;
     line-height: 1.85;
     color: #666;
-    margin: 0 0 48px;
-  }
-
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .btn-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
+    margin: 0 0 40px;
   }
 
   .btn {
@@ -126,9 +97,9 @@ import Layout from "../layouts/Layout.astro";
     font-family: var(--font-body);
     letter-spacing: 0.12em;
     text-transform: uppercase;
+    text-decoration: none;
     border-radius: 2px;
-    min-width: 320px;
-    transition: opacity var(--transition), background var(--transition), color var(--transition);
+    transition: opacity var(--transition);
   }
 
   .btn--primary {
@@ -141,35 +112,33 @@ import Layout from "../layouts/Layout.astro";
     opacity: 0.88;
   }
 
-  .btn--outline {
-    background: transparent;
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-  }
-
-  .btn--outline:hover {
-    background: var(--color-primary);
-    color: #ffffff;
-  }
-
-  .btn-crm {
-    font-size: 11px;
+  .support {
+    font-size: 14px;
     font-style: italic;
-    color: #aaa;
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+    max-width: 400px;
+    margin: 32px auto 0;
   }
 
-  .note {
+  .info {
+    margin-top: 48px;
+    border-top: 1px solid rgba(237, 162, 127, 0.27);
+    padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .info__line {
     font-size: 13px;
     font-style: italic;
     color: #aaa;
-    margin-top: 56px;
-    border-top: 1px solid rgba(237, 162, 127, 0.27);
-    padding-top: 32px;
+    margin: 0;
   }
 
   @media (max-width: 400px) {
     .btn {
-      min-width: 0;
       width: 100%;
     }
   }

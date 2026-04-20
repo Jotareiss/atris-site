@@ -1,11 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const pillars = [
-  { n: "01", title: "Tempo de verdade" },
-  { n: "02", title: "Rigor clínico" },
-  { n: "03", title: "Relação contínua" },
-  { n: "04", title: "Acesso sem fronteira" },
+const WA = "https://wa.me/5516993732111?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20%C3%81tris.";
+
+const alicerces = [
+  {
+    title: "Tempo",
+    body: "Consultas com duração suficiente para que cada caso possa ser compreendido com precisão, sem a necessidade de decisões apressadas.",
+  },
+  {
+    title: "Rigor clínico",
+    body: "As decisões não são automáticas nem baseadas apenas em protocolos. Cada caso é avaliado a partir do que apresenta, com critério na condução.",
+  },
+  {
+    title: "Relação",
+    body: "O vínculo entre médico e paciente não é um elemento secundário, mas parte do próprio tratamento e do que sustenta sua continuidade.",
+  },
+  {
+    title: "Acesso",
+    body: "O contato não se limita ao momento da consulta. O acompanhamento se organiza de forma a manter consistência ao longo do tempo.",
+  },
 ];
 ---
 
@@ -14,55 +28,64 @@ const pillars = [
   description="Uma declaração sobre o tipo de cuidado que acreditamos ser possível — e necessário. A Átris foi fundada por médicos que decidiram fazer diferente."
 >
   <div class="manifesto-page">
+
+    <!-- ══════════════════════════════════════
+         MANIFESTO
+    ══════════════════════════════════════ -->
     <article class="manifesto-body">
 
-      <!-- ── Eyebrow ── -->
       <span class="eyebrow">Manifesto</span>
 
-      <!-- ── Subtítulo editorial ── -->
-      <p class="subtitle">
-        Uma declaração sobre o tipo de cuidado que acreditamos ser possível — e necessário.
-      </p>
-
-      <!-- ── Bloco 1 ── -->
       <p class="block">
-        A psiquiatria convencional funciona sob pressão. Consultas cronometradas,
-        filas que não terminam, prescrições que substituem conversas. Não é má
-        vontade — é estrutura. <strong>E estruturas moldam o que é possível
-        fazer dentro delas.</strong>
+        A psiquiatria atual atravessa uma crise de produtividade. Consultas cada vez
+        mais rápidas, decisões protocolares e uma homogeneização em nome da eficiência.
       </p>
 
-      <span class="divider" aria-hidden="true"></span>
-
-      <!-- ── Bloco 2 ── -->
       <p class="block">
-        O joão-de-barro não terceiriza o ninho. Carrega barro por conta própria,
-        mistura com capim, molda com o bico até que a forma seja exatamente certa.
-        <span class="highlight">Construção</span> é o oposto de conveniência —
-        é escolha deliberada, repetida, paciente.
+        Não é má vontade. É uma estrutura que reflete o nosso tempo.
+        E estruturas moldam o que é possível fazer dentro delas.
       </p>
 
-      <span class="divider" aria-hidden="true"></span>
-
-      <!-- ── Bloco 3 ── -->
       <p class="block">
-        Acreditamos que <span class="highlight">bom cuidado é um ato de
-        construção</span>. Que uma consulta de verdade precisa de tempo. Que o
-        vínculo entre médico e paciente não é bônus — é condição clínica. Que
-        rigor e acolhimento não são opostos.
+        Acreditamos que outro tipo de cuidado é possível. E necessário.
       </p>
 
-      <span class="divider" aria-hidden="true"></span>
+      <p class="block">
+        Um cuidado que parte da ideia de que compreender um caso exige mais do que
+        isso. Exige atenção ao que não é imediato, organização do que é relevante e
+        uma relação capaz de sustentar as decisões que precisam ser tomadas.
+      </p>
 
-      <!-- ── Closing ── -->
+      <p class="block">
+        A Átris nasce dessa ideia.
+      </p>
+
+      <p class="block">
+        De que o atendimento precisa ser organizado para permitir esse tipo de
+        trabalho, e não o contrário.
+      </p>
+
+      <p class="block">
+        Adotamos como símbolo o joão-de-barro. O joão-de-barro não terceiriza o ninho.
+        Carrega barro por conta própria, mistura com capim, molda com o bico até que
+        a forma seja exatamente certa. Construir é o oposto de conveniência.
+      </p>
+
+      <p class="block">
+        Acreditamos que bom cuidado é um ato de construção. Que o vínculo entre médico
+        e paciente não é um acessório, mas parte do tratamento.
+        Que rigor e acolhimento não são opostos.
+      </p>
+
+      <span class="closing-rule" aria-hidden="true"></span>
+
       <p class="closing">Bem-vindo à Átris.</p>
 
-      <!-- ── Assinatura ── -->
       <div class="signature">
         <img
           src="/assets/bird-swirl.png"
           alt="Átris"
-          style="width: 200px; height: auto; object-fit: contain; margin-bottom: 16px;"
+          class="signature__bird"
         />
         <p class="signature__names">
           Dr. José Augusto Silva Reis<br />
@@ -72,20 +95,35 @@ const pillars = [
 
     </article>
 
-    <!-- ── Pilares ── -->
-    <section class="pillars">
-      <span class="eyebrow eyebrow--muted">Os alicerces do cuidado que praticamos</span>
-      <div class="pillars__grid">
-        {pillars.map(({ n, title }) => (
-          <div class="pillar">
-            <span class="pillar__n">{n}</span>
-            <p class="pillar__title">{title}</p>
-          </div>
-        ))}
-      </div>
+    <!-- ══════════════════════════════════════
+         TRANSIÇÃO 1
+    ══════════════════════════════════════ -->
+    <div class="transition">
+      <span class="transition__text">Como isso se traduz na prática</span>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         ALICERCES
+    ══════════════════════════════════════ -->
+    <section class="alicerces">
+      {alicerces.map(({ title, body }) => (
+        <div class="alicerce">
+          <h3 class="alicerce__title">{title}</h3>
+          <p class="alicerce__body">{body}</p>
+        </div>
+      ))}
     </section>
 
-    <!-- ── Fundadores ── -->
+    <!-- ══════════════════════════════════════
+         TRANSIÇÃO 2
+    ══════════════════════════════════════ -->
+    <div class="transition transition--medicos">
+      <span class="transition__text">Os médicos</span>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         FUNDADORES
+    ══════════════════════════════════════ -->
     <section class="founders">
       <img
         src="/assets/founders.jpg"
@@ -94,105 +132,88 @@ const pillars = [
       />
       <div class="founders__caption">
         <div class="founders__doctor">
-          <strong>Dr. José Augusto Silva Reis</strong>
-          <span>CRM 199536 · RQE 128556</span>
-          <span>Psicose, Reabilitação Psicossocial</span>
+          <span class="founders__doctor-name">Dr. José Augusto Silva Reis</span>
+          <span class="founders__doctor-sub">CRM 199536 · RQE 128556</span>
         </div>
         <div class="founders__doctor">
-          <strong>Dr. Lean Pampana Basoli</strong>
-          <span>CRM 199566 · RQE 127180</span>
-          <span>Sexualidade, Diversidade de Gênero</span>
+          <span class="founders__doctor-name">Dr. Lean Pampana Basoli</span>
+          <span class="founders__doctor-sub">CRM 199566 · RQE 127180</span>
         </div>
       </div>
     </section>
 
-    <!-- ── CTA final ── -->
-    <section class="cta">
-      <p class="cta__label">Pronto para começar?</p>
-      <h2 class="cta__headline">
-        Uma consulta com tempo. Um médico que permanece.
-      </h2>
-      <div class="cta__buttons">
-        <a href="/consultas" class="btn btn--primary">Agendar consulta</a>
-        <a href="/medicos"   class="btn btn--outline">Conhecer os médicos</a>
-      </div>
-    </section>
+    <!-- ══════════════════════════════════════
+         CTA FINAL
+    ══════════════════════════════════════ -->
+    <div class="cta-final">
+      <a href={WA} class="mf-btn mf-btn--primary" target="_blank" rel="noopener noreferrer">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.59 5.99L0 24l6.18-1.62A11.96 11.96 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.67-.5-5.24-1.44l-.38-.22-3.67.96.98-3.58-.25-.37A9.95 9.95 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.64-.93-2.24-.24-.59-.49-.51-.68-.52-.17 0-.37-.02-.57-.02s-.52.08-.79.37C7.5 8.6 6.7 9.33 6.7 10.85s1.04 3.02 1.18 3.23c.15.2 2.04 3.11 4.94 4.36.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.55-.08 1.7-.7 1.94-1.37.24-.67.24-1.25.17-1.37-.07-.12-.27-.19-.57-.34z" fill="rgba(255,255,255,0.9)"/>
+        </svg>
+        Agendar consulta
+      </a>
+      <a href="/medicos" class="mf-btn mf-btn--outline">Conhecer os médicos</a>
+    </div>
 
   </div>
 </Layout>
 
 <style>
-  /* ── Wrapper ── */
   .manifesto-page {
-    background: var(--color-bg);
     font-family: var(--font-body);
   }
 
   /* ── Coluna central ── */
+  .col-center {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ════════════════════════════════
+     MANIFESTO
+  ════════════════════════════════ */
   .manifesto-body {
     max-width: 640px;
     margin: 0 auto;
-    padding: 72px 24px 80px;
+    padding: 80px 24px 0;
   }
 
-  /* ── Eyebrow ── */
   .eyebrow {
     display: block;
     font-size: 11px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--color-orange);
-    margin-bottom: 20px;
+    margin-bottom: 48px;
   }
 
-  .eyebrow--muted {
-    color: #666;
-    margin-bottom: 28px;
-  }
-
-  /* ── Subtítulo editorial ── */
-  .subtitle {
-    font-size: 13px;
-    font-style: italic;
-    color: var(--color-primary);
-    line-height: 1.7;
-    margin: 0 0 48px;
-  }
-
-  /* ── Blocos de texto ── */
   .block {
     font-size: 19px;
     font-style: italic;
     line-height: 1.85;
     color: var(--color-text);
-    margin: 0;
+    margin: 0 0 44px;
   }
 
-  .block strong {
-    font-style: normal;
-    font-weight: 500;
-    color: var(--color-primary);
+  .block:last-of-type {
+    margin-bottom: 0;
   }
 
-  .highlight {
-    color: var(--color-orange);
-  }
-
-  /* ── Divider ── */
-  .divider {
+  /* único divisor — sinaliza fim do manifesto */
+  .closing-rule {
     display: block;
-    width: 48px;
-    height: 2px;
+    width: 32px;
+    height: 1px;
     background: var(--color-orange);
-    margin: 48px 0;
+    margin: 56px 0 48px;
   }
 
-  /* ── Closing ── */
   .closing {
-    font-size: 24px;
+    font-size: 22px;
     font-style: italic;
     color: var(--color-primary);
-    margin: 48px 0 56px;
+    margin: 0 0 48px;
   }
 
   /* ── Assinatura ── */
@@ -200,64 +221,97 @@ const pillars = [
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-bottom: 72px;
+    padding-bottom: 96px;
+  }
+
+  .signature__bird {
+    width: 160px;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.85;
+    margin-bottom: 14px;
   }
 
   .signature__names {
     font-size: 14px;
     font-style: italic;
-    color: rgba(23, 63, 115, 0.75);
+    color: rgba(23, 63, 115, 0.65);
     line-height: 2;
     text-align: right;
     margin: 0;
   }
 
-  /* ── Pilares ── */
-  .pillars {
+  /* ════════════════════════════════
+     TRANSIÇÃO
+  ════════════════════════════════ */
+  .transition {
     max-width: 640px;
-    margin: 0 auto 0;
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 56px;
     padding: 0 24px;
   }
 
-  .pillars__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border: 1px solid rgba(237, 162, 127, 0.27);
-    margin-bottom: 72px;
+  .transition--medicos {
+    margin-bottom: 48px !important;
   }
 
-  .pillar {
-    background: var(--color-card);
-    padding: 28px 20px;
-    border-right: 1px solid rgba(237, 162, 127, 0.2);
-  }
-
-  .pillar:last-child {
-    border-right: none;
-  }
-
-  .pillar__n {
-    font-size: 11px;
-    color: var(--color-orange);
-    letter-spacing: 0.18em;
-    display: block;
-    margin-bottom: 12px;
-  }
-
-  .pillar__title {
-    font-size: 16px;
+  .transition__text {
+    font-size: 14px;
     font-style: italic;
-    font-weight: 600;
-    color: var(--color-primary);
-    line-height: 1.3;
-    margin: 0;
+    color: rgba(23, 63, 115, 0.55);
+    letter-spacing: 0.04em;
   }
 
-  /* ── Fundadores ── */
+  /* ════════════════════════════════
+     ALICERCES
+  ════════════════════════════════ */
+  .alicerces {
+    max-width: 640px;
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 24px 96px;
+  }
+
+  .alicerce {
+    padding-bottom: 44px;
+    border-bottom: 1px solid rgba(23, 63, 115, 0.07);
+    margin-bottom: 44px;
+  }
+
+  .alicerce:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .alicerce__title {
+    font-size: 17px !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
+    color: var(--color-primary) !important;
+    line-height: 1.2 !important;
+    margin: 0 0 14px !important;
+  }
+
+  .alicerce__body {
+    font-size: 15px !important;
+    color: var(--color-text-sec) !important;
+    line-height: 1.85 !important;
+    margin: 0 !important;
+  }
+
+  /* ════════════════════════════════
+     FUNDADORES
+  ════════════════════════════════ */
   .founders {
     max-width: 640px;
-    margin: 0 auto;
-    padding: 0 24px;
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 24px 80px;
   }
 
   .founders__photo {
@@ -265,121 +319,95 @@ const pillars = [
     height: 320px;
     object-fit: cover;
     border-radius: 4px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     display: block;
   }
 
   .founders__caption {
     display: flex;
     justify-content: center;
-    gap: 48px;
+    gap: 56px;
   }
 
   .founders__doctor {
     display: flex;
     flex-direction: column;
+    text-align: center;
+  }
+
+  .founders__doctor-name {
+    font-size: 15px;
+    font-style: italic;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+  }
+
+  .founders__doctor-sub {
     font-size: 13px;
-    font-style: italic;
-    color: #666;
-    text-align: center;
-    line-height: 1.7;
+    color: var(--color-text-sec);
   }
 
-  .founders__doctor strong {
-    font-style: normal;
-    color: var(--color-primary);
-    font-size: 14px;
-    margin-bottom: 2px;
-  }
-
-  /* ── CTA final ── */
-  .cta {
+  /* ════════════════════════════════
+     CTA FINAL
+  ════════════════════════════════ */
+  .cta-final {
     max-width: 640px;
-    margin: 72px auto 0;
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
     padding: 0 24px 96px;
-    border-top: 1px solid rgba(237, 162, 127, 0.27);
-    padding-top: 56px;
-    text-align: center;
-  }
-
-  .cta__label {
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #666;
-    margin: 0 0 16px;
-  }
-
-  .cta__headline {
-    font-size: 26px;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--color-primary);
-    line-height: 1.3;
-    margin: 0 0 40px;
-  }
-
-  .cta__buttons {
     display: flex;
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
   }
 
-  .btn {
-    padding: 14px 32px;
-    font-size: 13px;
+  .mf-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 28px;
     font-family: var(--font-body);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    border-radius: 2px;
+    font-size: 14px;
+    font-style: italic;
+    border-radius: 4px;
+    text-decoration: none;
     transition: opacity var(--transition), background var(--transition), color var(--transition);
   }
 
-  .btn--primary {
-    background: var(--color-orange);
+  .mf-btn--primary {
+    background: var(--color-primary);
     color: #ffffff;
-    border: 1px solid var(--color-orange);
-  }
-
-  .btn--primary:hover {
-    opacity: 0.88;
-  }
-
-  .btn--outline {
-    background: transparent;
-    color: var(--color-primary);
     border: 1px solid var(--color-primary);
   }
 
-  .btn--outline:hover {
-    background: var(--color-primary);
-    color: #ffffff;
+  .mf-btn--primary:hover {
+    opacity: 0.85;
   }
 
-  /* ── Responsivo ── */
+  .mf-btn--outline {
+    background: transparent;
+    color: var(--color-primary);
+    border: 1px solid rgba(23, 63, 115, 0.28);
+  }
+
+  .mf-btn--outline:hover {
+    border-color: rgba(23, 63, 115, 0.55);
+    background: rgba(23, 63, 115, 0.04);
+  }
+
+  /* ════════════════════════════════
+     RESPONSIVO
+  ════════════════════════════════ */
   @media (max-width: 768px) {
-    .pillars__grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .pillar:nth-child(2) {
-      border-right: none;
-    }
-
-    .pillar:nth-child(3) {
-      border-right: 1px solid rgba(237, 162, 127, 0.2);
-      border-top: 1px solid rgba(237, 162, 127, 0.2);
-    }
-
-    .pillar:nth-child(4) {
-      border-right: none;
-      border-top: 1px solid rgba(237, 162, 127, 0.2);
-    }
-
     .founders__caption {
       flex-direction: column;
       gap: 20px;
+      align-items: center;
+    }
+
+    .cta-final {
+      flex-direction: column;
       align-items: center;
     }
   }

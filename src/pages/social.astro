@@ -12,7 +12,7 @@ import Layout from "../layouts/Layout.astro";
     <div class="hero">
       <span class="hero__tag">Átris.social</span>
       <h1 class="hero__headline">
-        Cuidado psiquiátrico de qualidade não deveria depender de quanto você pode pagar.
+        O mesmo cuidado, para mais pessoas.
       </h1>
     </div>
 
@@ -24,30 +24,31 @@ import Layout from "../layouts/Layout.astro";
       <span class="divider" aria-hidden="true"></span>
 
       <p class="body">
-        A Átris.social nasceu de uma convicção simples: atendimento psiquiátrico
-        de qualidade não deveria ser privilégio de quem pode pagar mais.
+        Estamos estruturando um modelo que permita manter o mesmo padrão de
+        cuidado, em um formato que possa alcançar mais pessoas.
       </p>
 
       <p class="body">
-        Atendimentos conduzidos por profissionais parceiros criteriosamente
-        selecionados, com supervisão clínica direta dos fundadores da Átris.
-        O mesmo rigor. O mesmo cuidado. Um modelo que cabe em mais vidas.
+        Atendimentos conduzidos por profissionais parceiros, com acompanhamento
+        clínico próximo dos fundadores da Átris.
       </p>
+
+      <span class="separator" aria-hidden="true"></span>
 
       <p class="body body--muted">
         Estamos construindo com cuidado — como fazemos tudo aqui.
       </p>
 
       <a
-        href="https://wa.me/5516XXXXXXXXX"
+        href="https://wa.me/5516XXXXXXXXX?text=Ol%C3%A1%2C%20gostaria%20de%20ser%20avisado%20quando%20a%20%C3%81tris.social%20estiver%20dispon%C3%ADvel."
         class="btn"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Fale pelo WhatsApp para ser avisado
+        Entrar na lista de espera
       </a>
 
-      <p class="note">Avisaremos quando abrir.</p>
+      <p class="note">Avisaremos quando abrirmos.</p>
 
     </div>
   </div>
@@ -129,6 +130,14 @@ import Layout from "../layouts/Layout.astro";
 
   .body--muted {
     color: #666;
+  }
+
+  .separator {
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: rgba(242, 143, 56, 0.4);
+    margin: 48px auto 36px;
   }
 
   .btn {

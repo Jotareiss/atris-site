@@ -29,17 +29,7 @@ const year = new Date().getFullYear();
       </p>
     </div>
 
-    <!-- Coluna 2: Navegação -->
-    <nav class="footer__nav" aria-label="Links do rodapé">
-      <p class="footer__heading">Páginas</p>
-      <ul>
-        {navLinks.map(({ label, href }) => (
-          <li><a href={href} class="footer__link">{label}</a></li>
-        ))}
-      </ul>
-    </nav>
-
-    <!-- Coluna 3: Equipe médica -->
+    <!-- Coluna 2: Equipe médica -->
     <div class="footer__team">
       <p class="footer__heading">Equipe médica</p>
       <ul>
@@ -52,16 +42,14 @@ const year = new Date().getFullYear();
       </ul>
     </div>
 
-    <!-- Coluna 4: Endereço + telemedicina -->
+    <!-- Coluna 3: Endereço + telemedicina -->
     <div class="footer__contact">
       <p class="footer__heading">Localização</p>
       <address class="footer__address">
-        Av. Independência, 3115 — sala 20<br />
-        Ribeirão Preto, SP
+        Av. Independência, 3115, sala 20 — Ribeirão Preto, SP
       </address>
       <p class="footer__telemedicine">
-        Atendimento presencial e por <strong>telemedicina</strong> em todo o Brasil,
-        conforme regulamentação CFM nº 2.314/2022.
+        Telemedicina para todo o Brasil · CFM nº 2.314/2022
       </p>
     </div>
 
@@ -70,7 +58,8 @@ const year = new Date().getFullYear();
   <!-- Rodapé inferior -->
   <div class="footer__bottom">
     <p class="footer__copy">
-      &copy; {year} Átris Clínica Psiquiátrica. Todos os direitos reservados.
+      &copy; {year} Átris Instituto de Psiquiatria. Todos os direitos reservados.
+      <a href="/privacidade" class="footer__privacy">Privacidade e dados</a>
     </p>
     <p class="footer__disclaimer">
       As informações deste site têm caráter educativo e não substituem avaliação médica.
@@ -82,16 +71,17 @@ const year = new Date().getFullYear();
   .footer {
     background-color: var(--color-primary);
     color: rgba(255, 255, 255, 0.85);
-    padding-top: var(--space-16);
+    padding-top: 48px;
   }
 
   .footer__inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--space-6) var(--space-12);
+    padding: 0 var(--space-6) 40px;
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
+    grid-template-columns: 1.4fr 1fr 1.4fr;
     gap: var(--space-12);
+    align-items: start;
   }
 
   /* Brand */
@@ -128,7 +118,7 @@ const year = new Date().getFullYear();
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
+    gap: 14px;
   }
 
   .footer__link {
@@ -145,7 +135,7 @@ const year = new Date().getFullYear();
   .footer__doctor {
     display: flex;
     flex-direction: column;
-    gap: var(--space-1);
+    gap: 2px;
   }
 
   .footer__doctor-name {
@@ -156,7 +146,7 @@ const year = new Date().getFullYear();
 
   .footer__crm {
     font-size: var(--text-xs);
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.4);
     letter-spacing: 0.02em;
   }
 
@@ -164,20 +154,15 @@ const year = new Date().getFullYear();
   .footer__address {
     font-size: var(--text-sm);
     font-style: normal;
-    line-height: 1.7;
+    line-height: 1.6;
     color: rgba(255, 255, 255, 0.75);
-    margin-bottom: var(--space-4);
+    margin-bottom: 8px;
   }
 
   .footer__telemedicine {
     font-size: var(--text-xs);
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.45);
-  }
-
-  .footer__telemedicine strong {
-    color: rgba(255, 255, 255, 0.65);
-    font-weight: 600;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.4);
   }
 
   /* Rodapé inferior */
@@ -196,6 +181,23 @@ const year = new Date().getFullYear();
   .footer__copy {
     font-size: var(--text-xs);
     color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .footer__privacy {
+    color: rgba(255, 255, 255, 0.35);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 1px;
+    transition: color var(--transition), border-color var(--transition);
+  }
+
+  .footer__privacy:hover {
+    color: rgba(255, 255, 255, 0.65);
+    border-color: rgba(255, 255, 255, 0.4);
   }
 
   .footer__disclaimer {

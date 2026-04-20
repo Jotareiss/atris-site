@@ -2,12 +2,10 @@
 const currentPath = Astro.url.pathname;
 
 const links = [
-  { label: "Manifesto", href: "/manifesto" },
-  { label: "Consultas", href: "/consultas" },
+  { label: "Médicos",      href: "/medicos" },
+  { label: "Manifesto",    href: "/manifesto" },
   { label: "Átris.social", href: "/social" },
-  { label: "Átris.edu",   href: "/edu" },
-  { label: "Médicos",   href: "/medicos" },
-  { label: "Contato",   href: "/contato" },
+  { label: "Contato",      href: "/contato" },
 ];
 ---
 
@@ -182,12 +180,35 @@ const links = [
     font-size: 14px;
     font-family: var(--font-body);
     color: #666;
-    transition: color var(--transition);
+    transition: color var(--transition), opacity 200ms ease;
   }
 
-  .nav-links a:hover,
+  .nav-links a:hover {
+    color: #173f73;
+  }
+
   .nav-links a.nav-links__active {
     color: #173f73;
+    font-weight: 500;
+  }
+
+  .nav-links a.nav-links__active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: var(--color-orange);
+    margin-top: 3px;
+    opacity: 0.7;
+  }
+
+  /* Dimming: quando qualquer link está em hover, os outros perdem opacidade */
+  .nav-links:has(a:hover) a:not(:hover) {
+    opacity: 0.45;
+  }
+
+  .nav-links:has(a:hover) a.nav-links__active:not(:hover) {
+    opacity: 0.45;
   }
 
   /* ─── CTA ─── */

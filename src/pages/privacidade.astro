@@ -1,0 +1,273 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Privacidade e dados — Átris Instituto de Psiquiatria"
+  description="Como a Átris trata as informações dos pacientes, em conformidade com a LGPD."
+>
+  <div class="priv-page">
+    <div class="priv-col">
+
+      <!-- ── Versão curta ── -->
+      <span class="eyebrow">Privacidade e dados</span>
+
+      <h1 class="page-title">Suas informações,<br />com cuidado.</h1>
+
+      <span class="divider" aria-hidden="true"></span>
+
+      <div class="short">
+        <p>
+          O contato com a Átris é feito, principalmente, por WhatsApp. As
+          informações compartilhadas nesse processo são utilizadas apenas para
+          organizar o agendamento e o acompanhamento do atendimento.
+        </p>
+        <p>
+          Não coletamos dados desnecessários nem utilizamos informações para
+          fins comerciais.
+        </p>
+        <p>
+          As informações fornecidas são tratadas com confidencialidade e
+          utilizadas exclusivamente no contexto do cuidado em saúde.
+        </p>
+        <p>
+          Os dados relacionados ao prontuário são registrados e armazenados em
+          plataformas adequadas e seguras, utilizadas na prática clínica.
+        </p>
+        <p>
+          Não compartilhamos dados com terceiros, exceto quando necessário para
+          o próprio atendimento ou por exigência legal.
+        </p>
+        <p>
+          Você pode, a qualquer momento, solicitar informações sobre seus dados
+          ou pedir a sua exclusão. Para isso, basta entrar em contato pelos
+          canais disponíveis no site.
+        </p>
+      </div>
+
+      <!-- ── Separador ── -->
+      <div class="section-rule" aria-hidden="true"></div>
+
+      <!-- ── Versão completa ── -->
+      <h2 class="section-title">Privacidade e proteção de dados</h2>
+
+      <p class="section-intro">
+        A Átris trata dados pessoais no contexto exclusivo do atendimento em
+        saúde mental.
+      </p>
+
+      <div class="detail">
+
+        <div class="detail__block">
+          <h3 class="detail__heading">Coleta de dados</h3>
+          <p class="detail__body">
+            Os dados são coletados principalmente por meio do contato via
+            WhatsApp, incluindo informações fornecidas espontaneamente para
+            organização de agendamento e acompanhamento do atendimento.
+          </p>
+        </div>
+
+        <div class="detail__block">
+          <h3 class="detail__heading">Uso das informações</h3>
+          <p class="detail__body">As informações são utilizadas apenas para:</p>
+          <ul class="detail__list">
+            <li>organização do agendamento</li>
+            <li>comunicação com o paciente</li>
+            <li>condução e continuidade do atendimento</li>
+          </ul>
+          <p class="detail__body">
+            Não utilizamos dados para fins comerciais ou publicitários.
+          </p>
+        </div>
+
+        <div class="detail__block">
+          <h3 class="detail__heading">Prontuário e registros clínicos</h3>
+          <p class="detail__body">
+            As informações clínicas e dados relacionados ao prontuário são
+            registrados e armazenados em plataformas adequadas, seguras e
+            utilizadas na prática médica, respeitando os padrões de
+            confidencialidade exigidos na área da saúde.
+          </p>
+        </div>
+
+        <div class="detail__block">
+          <h3 class="detail__heading">Compartilhamento de dados</h3>
+          <p class="detail__body">
+            Os dados não são compartilhados com terceiros, exceto:
+          </p>
+          <ul class="detail__list">
+            <li>quando necessário para a condução do atendimento</li>
+            <li>quando exigido por obrigação legal</li>
+          </ul>
+        </div>
+
+        <div class="detail__block">
+          <h3 class="detail__heading">Armazenamento e segurança</h3>
+          <p class="detail__body">
+            Os dados são armazenados de forma segura e apenas pelo tempo
+            necessário para cumprir sua finalidade, de acordo com as exigências
+            legais aplicáveis à prática médica.
+          </p>
+        </div>
+
+        <div class="detail__block">
+          <h3 class="detail__heading">Direitos do titular</h3>
+          <p class="detail__body">Você pode, a qualquer momento:</p>
+          <ul class="detail__list">
+            <li>solicitar acesso aos seus dados</li>
+            <li>pedir correção de informações</li>
+            <li>solicitar exclusão, quando aplicável</li>
+          </ul>
+        </div>
+
+        <div class="detail__block">
+          <h3 class="detail__heading">Contato</h3>
+          <p class="detail__body">
+            Para qualquer solicitação relacionada aos seus dados, basta entrar
+            em contato pelos canais disponíveis no site.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .priv-page {
+    background: var(--color-bg);
+    font-family: var(--font-body);
+  }
+
+  .priv-col {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 72px 24px 96px;
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+    margin-bottom: 20px;
+  }
+
+  .page-title {
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-primary);
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .divider {
+    display: block;
+    width: 48px;
+    height: 2px;
+    background: var(--color-orange);
+    margin: 28px 0 36px;
+  }
+
+  /* ── Versão curta ── */
+  .short p {
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.85;
+    color: var(--color-text);
+    margin: 0 0 22px;
+  }
+
+  .short p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── Separador entre versões ── */
+  .section-rule {
+    width: 100%;
+    height: 1px;
+    background: rgba(23, 63, 115, 0.1);
+    margin: 64px 0 56px;
+  }
+
+  /* ── Versão completa ── */
+  .section-title {
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-primary);
+    margin: 0 0 16px;
+  }
+
+  .section-intro {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+    margin: 0 0 48px;
+  }
+
+  .detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .detail__block {
+    padding: 32px 0;
+    border-bottom: 1px solid rgba(23, 63, 115, 0.07);
+  }
+
+  .detail__block:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .detail__heading {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0 0 12px;
+    letter-spacing: 0.01em;
+  }
+
+  .detail__body {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin: 0 0 12px;
+  }
+
+  .detail__body:last-child {
+    margin-bottom: 0;
+  }
+
+  .detail__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .detail__list li {
+    font-size: 15px;
+    font-style: italic;
+    color: var(--color-text-secondary);
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .detail__list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--color-orange);
+    font-style: normal;
+  }
+</style>

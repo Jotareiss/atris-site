@@ -42,64 +42,61 @@ const products = [
     <div class="hero__content">
       <div class="hero__line"></div>
       <h1 class="hero__headline">
-        Psiquiatria de excelência para quem entende a diferença.
+        Psiquiatria conduzida com o cuidado que o processo exige.
       </h1>
       <p class="hero__sub">
-        Um espaço construído com cuidado, para que você possa,
-        <em>finalmente, pousar.</em>
+        Um espaço criado com intenção, onde a escuta acontece com cuidado,
+        as decisões são conduzidas com critério e o acompanhamento se mantém.
       </p>
+      <a href={WA} class="hero__cta" target="_blank" rel="noopener noreferrer">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.59 5.99L0 24l6.18-1.62A11.96 11.96 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.67-.5-5.24-1.44l-.38-.22-3.67.96.98-3.58-.25-.37A9.95 9.95 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.64-.93-2.24-.24-.59-.49-.51-.68-.52-.17 0-.37-.02-.57-.02s-.52.08-.79.37C7.5 8.6 6.7 9.33 6.7 10.85s1.04 3.02 1.18 3.23c.15.2 2.04 3.11 4.94 4.36.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.55-.08 1.7-.7 1.94-1.37.24-.67.24-1.25.17-1.37-.07-.12-.27-.19-.57-.34z" fill="rgba(255,255,255,0.85)"/>
+        </svg>
+        Agendar consulta
+      </a>
     </div>
   </section>
 
   <!-- ══════════════════════════════════════
-       INTRO
+       PITCH
   ══════════════════════════════════════ -->
-  <section class="intro">
-    <div class="intro__grid">
-
-      <div class="intro__left">
-        <p class="kicker">O que nos define</p>
-        <h2 class="intro__heading">
-          Cuidado que leva tempo. E faz sentido
-          <em>quando é feito para durar.</em>
+  <section class="pitch">
+    <div class="pitch__grid">
+      <div class="pitch__left">
+        <p class="kicker">Como trabalhamos</p>
+        <h2 class="pitch__heading">
+          Como o atendimento é conduzido faz diferença.
         </h2>
       </div>
-
-      <div class="intro__right">
-        <p class="intro__body">
-          Dois médicos formados e residentes pela FMRP-USP. Um espaço pequeno por
-          escolha, com atenção que só cabe quando a agenda permite. Atendimento
-          presencial em Ribeirão Preto e por telemedicina em todo o Brasil.
+      <div class="pitch__right">
+        <p class="pitch__body">
+          Quando o processo permite compreender melhor cada caso, as decisões se tornam
+          mais precisas e o acompanhamento ganha consistência.
         </p>
-        <a href="/medicos" class="intro__link">Conheça os médicos →</a>
+        <span class="pitch__dash" aria-hidden="true"></span>
+        <p class="pitch__close">
+          É assim que estruturamos nosso modelo de atendimento.
+        </p>
       </div>
-
     </div>
   </section>
 
   <!-- ══════════════════════════════════════
-       DIVISOR
+       NA PRÁTICA
   ══════════════════════════════════════ -->
-  <hr class="divider" />
-
-  <!-- ══════════════════════════════════════
-       PRODUTOS
-  ══════════════════════════════════════ -->
-  <section class="products">
-    <p class="kicker">Nossos serviços</p>
-    <div class="products__grid">
-      {products.map(({ tag, title, body, linkLabel, href }) => (
-        <article class="card">
-          <p class="card__tag">{tag}</p>
-          <h3 class="card__title">{title}</h3>
-          <p class="card__body">{body}</p>
-          <a href={href} class="card__link">
-            <em>{linkLabel}</em>
-            <span class="card__dash"></span>
-          </a>
-        </article>
-      ))}
-    </div>
+  <section class="pratica" id="pratica">
+    <h2 class="pratica__title">
+      Na prática, o processo de agendamento é direto.
+    </h2>
+    <p class="pratica__p">
+      Você conhece os médicos, escolhe com quem deseja se consultar
+      e marca a consulta pelo WhatsApp.
+    </p>
+    <p class="pratica__p">
+      O atendimento pode ser presencial ou por telemedicina,
+      conforme a necessidade de cada caso.
+    </p>
+    <a href="/medicos" class="pratica__cta">Conhecer os médicos</a>
   </section>
 
   <!-- ══════════════════════════════════════
@@ -114,18 +111,19 @@ const products = [
 
       <div class="manifesto__body">
         <blockquote class="manifesto__quote">
-          A psiquiatria convencional funciona sob pressão. Agendas lotadas,
-          consultas curtas, condutas padronizadas. Não por má intenção — mas
-          porque o modelo <em>não foi desenhado para ter tempo.</em> E sem
-          tempo, não há escuta. Sem escuta, não há cuidado de verdade.
+          A psiquiatria atual atravessa uma crise de produtividade. Consultas
+          cada vez mais rápidas, decisões protocolares e uma homogeneização em
+          nome da eficiência. Não é má vontade, <em>é uma estrutura que
+          reflete o nosso tempo.</em> Acreditamos que outro tipo de cuidado
+          é possível. E necessário.
         </blockquote>
         <span class="manifesto__dash"></span>
         <div class="manifesto__actions">
           <a href="/manifesto" class="manifesto__link">
             <em>Leia o manifesto completo →</em>
           </a>
-          <a href={WA} class="manifesto__cta" target="_blank" rel="noopener noreferrer">
-            Agendar consulta
+          <a href={WA} class="manifesto__link manifesto__link--wa" target="_blank" rel="noopener noreferrer">
+            <em>Agendar consulta →</em>
           </a>
         </div>
       </div>
@@ -196,62 +194,153 @@ const products = [
   }
 
   .hero__sub {
-    font-size: 18px;
+    font-size: 17px;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.78;
+    margin: 0 0 44px;
+    max-width: 520px;
+  }
+
+  .hero__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 26px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 14px;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.65);
-    line-height: 1.75;
-    margin: 0;
+    color: #ffffff;
+    background: transparent;
+    text-decoration: none;
+    transition: border-color var(--transition), background var(--transition);
+  }
+
+  .hero__cta:hover {
+    border-color: rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  .hero__cta svg {
+    flex-shrink: 0;
   }
 
   /* ════════════════════════════════
-     INTRO
+     PITCH
   ════════════════════════════════ */
-  .intro {
-    padding: 96px 56px;
+  .pitch {
+    padding: 88px 56px 72px;
   }
 
-  .intro__grid {
+  .pitch__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: start;
   }
 
-  .intro__left .kicker {
+  .pitch__left .kicker {
     margin-bottom: 24px;
   }
 
-  .intro__heading {
-    font-size: 36px;
+  .pitch__heading {
+    font-size: clamp(28px, 3vw, 38px);
+    font-style: italic;
     font-weight: 400;
     color: #173f73;
-    line-height: 1.28;
+    line-height: 1.24;
     margin: 0;
   }
 
-  .intro__right {
-    padding-top: 52px;
+  .pitch__right {
+    padding-top: 48px;
   }
 
-  .intro__body {
+  .pitch__body {
     font-size: 16px;
     color: #666;
     line-height: 1.88;
-    margin: 0 0 28px;
+    margin: 0;
   }
 
-  .intro__link {
+  .pitch__dash {
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: #f28f38;
+    margin: 28px 0 24px;
+  }
+
+  .pitch__close {
     font-size: 15px;
+    font-style: italic;
+    color: #173f73;
+    opacity: 0.75;
+  }
+
+  /* ════════════════════════════════
+     NA PRÁTICA
+  ════════════════════════════════ */
+  .pratica {
+    margin: 0 56px 72px;
+    padding: 72px 40px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #FAF6F1;
+    border-radius: 32px;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 600ms ease, transform 600ms ease;
+  }
+
+  .pratica.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .pratica__title {
+    font-size: clamp(22px, 2.6vw, 30px);
+    font-style: italic;
+    font-weight: 400;
+    color: #173f73;
+    line-height: 1.3;
+    max-width: 460px;
+    text-wrap: balance;
+    margin: 0 auto 36px;
+  }
+
+  .pratica__p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.88;
+    max-width: 500px;
+    margin: 0 auto 20px;
+  }
+
+  .pratica__p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .pratica__cta {
+    display: inline-block;
+    margin-top: 52px;
+    font-size: 16px;
     font-style: italic;
     color: #173f73;
     text-decoration: underline;
     text-decoration-color: #f28f38;
-    text-underline-offset: 4px;
-    transition: opacity var(--transition);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 6px;
+    transition: opacity var(--transition), text-decoration-color var(--transition);
   }
 
-  .intro__link:hover {
-    opacity: 0.65;
+  .pratica__cta:hover {
+    opacity: 0.75;
+    text-decoration-color: #eda27f;
   }
 
   /* ════════════════════════════════
@@ -349,6 +438,7 @@ const products = [
     background: #173f73;
     color: rgba(255, 255, 255, 0.82);
     padding: 96px 56px;
+    border-bottom: 3px solid #f28f38;
   }
 
   .manifesto__grid {
@@ -403,20 +493,8 @@ const products = [
     opacity: 0.75;
   }
 
-  .manifesto__cta {
-    display: inline-flex;
-    align-items: center;
-    padding: 8px 20px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #ffffff;
-    font-size: 13px;
-    border-radius: 4px;
-    transition: border-color var(--transition), background var(--transition);
-  }
-
-  .manifesto__cta:hover {
-    border-color: rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.06);
+  .manifesto__link--wa {
+    color: rgba(255, 255, 255, 0.55);
   }
 
   /* ════════════════════════════════
@@ -427,24 +505,33 @@ const products = [
       padding: 0 24px 72px;
     }
 
-    .intro,
+    .hero__sub {
+      max-width: 100%;
+    }
+
+    .pratica {
+      margin: 0 24px;
+      border-radius: 20px;
+    }
+
+    .pitch,
     .products,
     .manifesto {
       padding-left: 24px;
       padding-right: 24px;
     }
 
+    .pitch__grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .pitch__right {
+      padding-top: 0;
+    }
+
     .divider {
       margin: 0 24px;
-    }
-
-    .intro__grid {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-
-    .intro__right {
-      padding-top: 0;
     }
 
     .products__grid {
@@ -455,7 +542,22 @@ const products = [
       grid-template-columns: 1fr;
       gap: 28px;
     }
-
   }
 
 </style>
+
+<script>
+  const pratica = document.getElementById('pratica');
+  if (pratica) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          pratica.classList.add('visible');
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(pratica);
+  }
+</script>

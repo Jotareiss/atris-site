@@ -7,7 +7,7 @@ const doctors = [
     tag: "Psiquiatra",
     name: "Dr. José Augusto Silva Reis",
     crm: "CRM/SP 199536 · RQE 128556",
-    specialties: "Esquizofrenia · Reabilitação Psicossocial · Psicodélicos em Psiquiatria",
+    specialties: "Psicoses · Reabilitação Psicossocial · Transtornos mentais crônicos",
     bio: "Graduação e residência em psiquiatria pela FMRP-USP. Doutorando em saúde mental com foco em psicodélicos para transtornos psiquiátricos. Atua no HCRP-USP nos serviços de esquizofrenia e reabilitação psicossocial.",
     wa: "https://wa.me/5516993732111",
     waLabel: "Agendar com Dr. José Augusto",
@@ -18,7 +18,7 @@ const doctors = [
     tag: "Psiquiatra",
     name: "Dr. Lean Pampana Basoli",
     crm: "CRM/SP 199566 · RQE 127180",
-    specialties: "Sexualidade · Diversidade de Gênero · Saúde Mental LGBTQIA+",
+    specialties: "Sexualidade · Violência Sexual · Saúde Mental LGBTQIA+",
     bio: "Graduação e residência em psiquiatria pela FMRP-USP. Atua nos ambulatórios de sexualidade e diversidade de gênero do HCRP-USP, no SEAVIDAS-USP e no Hospital Estadual de Américo Brasiliense.",
     wa: "https://wa.me/5516999930259",
     waLabel: "Agendar com Dr. Lean",
@@ -44,11 +44,10 @@ const doctors = [
 >
   <!-- ── Header ── -->
   <div class="page-header">
-    <span class="eyebrow">Nossa equipe</span>
     <h1 class="page-title">Os médicos por trás da Átris.</h1>
-    <p class="page-sub">
-      Formados e residentes pela FMRP-USP, com atuação no HCRP-USP.
-      Dois médicos que decidiram fazer diferente.
+    <p class="page-sub">Psiquiatras pela FMRP-USP, com atuação no HCRP-USP.</p>
+    <p class="page-sub page-sub--secondary">
+      A escolha pode considerar afinidade, disponibilidade ou áreas de maior interesse clínico.
     </p>
     <span class="header-rule" aria-hidden="true"></span>
   </div>
@@ -109,15 +108,6 @@ const doctors = [
     font-family: var(--font-body);
   }
 
-  .eyebrow {
-    display: block;
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--color-orange);
-    margin-bottom: 20px;
-  }
-
   .page-title {
     font-size: 36px;
     font-style: italic;
@@ -130,8 +120,16 @@ const doctors = [
   .page-sub {
     font-size: 17px;
     font-style: italic;
-    color: #666;
+    color: var(--color-primary);
     line-height: 1.65;
+    margin: 0 0 12px;
+    opacity: 0.8;
+  }
+
+  .page-sub--secondary {
+    font-size: 15px;
+    color: #666;
+    opacity: 1;
     margin: 0;
   }
 
