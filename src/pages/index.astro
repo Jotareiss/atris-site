@@ -40,20 +40,23 @@ const products = [
   <section class="hero">
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="hero__content">
-      <div class="hero__line"></div>
+      <p class="hero__location">Ribeirão Preto · SP</p>
       <h1 class="hero__headline">
-        Psiquiatria conduzida com o cuidado que o processo exige.
+        <span>Psiquiatria com escuta,</span>
+        <em>presença e profundidade.</em>
       </h1>
       <p class="hero__sub">
-        Um espaço criado com intenção, onde a escuta acontece com cuidado,
-        as decisões são conduzidas com critério e o acompanhamento se mantém.
+        <span>Atendimento individualizado para adultos.</span>
+        <span>Consultas presenciais e online.</span>
       </p>
-      <a href={WA} class="hero__cta" target="_blank" rel="noopener noreferrer">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.59 5.99L0 24l6.18-1.62A11.96 11.96 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.67-.5-5.24-1.44l-.38-.22-3.67.96.98-3.58-.25-.37A9.95 9.95 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.64-.93-2.24-.24-.59-.49-.51-.68-.52-.17 0-.37-.02-.57-.02s-.52.08-.79.37C7.5 8.6 6.7 9.33 6.7 10.85s1.04 3.02 1.18 3.23c.15.2 2.04 3.11 4.94 4.36.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.55-.08 1.7-.7 1.94-1.37.24-.67.24-1.25.17-1.37-.07-.12-.27-.19-.57-.34z" fill="rgba(255,255,255,0.85)"/>
-        </svg>
-        Agendar consulta
-      </a>
+      <div class="hero__actions">
+        <a href={WA} class="hero__cta" target="_blank" rel="noopener noreferrer">
+          Agendar consulta
+        </a>
+        <a href="/manifesto" class="hero__secondary">
+          Conhecer a Átris <span aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -141,7 +144,7 @@ const products = [
     font-size: 14px;
     font-style: italic !important;
     text-transform: none;
-    color: #f28f38 !important;
+    color: var(--cobre) !important;
     margin: 0;
   }
 
@@ -150,81 +153,128 @@ const products = [
   ════════════════════════════════ */
   .hero {
     position: relative;
-    min-height: 92vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    overflow: hidden;
+    background: var(--vinho);
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
     background-image: url('/assets/hero.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: 50% 52%;
+    transform: scaleX(-1);
+    filter: brightness(0.86) contrast(1.02) saturate(0.88);
+    transform-origin: center;
   }
 
   .hero__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      to top,
-      rgba(18, 42, 75, 0.75) 0%,
-      rgba(18, 42, 75, 0.2) 55%,
-      transparent 100%
-    );
+    background:
+      radial-gradient(ellipse at 13% 78%, rgba(12, 8, 10, 0.76) 0%, rgba(66, 30, 41, 0.48) 28%, rgba(66, 30, 41, 0.12) 56%, transparent 74%),
+      linear-gradient(to right, rgba(23, 10, 15, 0.82) 0%, rgba(66, 30, 41, 0.54) 24%, rgba(66, 30, 41, 0.2) 54%, transparent 100%),
+      linear-gradient(to top, rgba(16, 8, 11, 0.74) 0%, rgba(66, 30, 41, 0.22) 42%, transparent 76%),
+      linear-gradient(to bottom, rgba(20, 10, 13, 0.44) 0%, transparent 30%);
   }
 
   .hero__content {
     position: relative;
-    padding: 0 64px 104px;
-    max-width: 700px;
+    padding: 0 5.3vw 8.8vh;
+    max-width: 1080px;
   }
 
-  .hero__line {
-    width: 36px;
-    height: 1px;
-    background: #f28f38;
-    margin-bottom: 36px;
+  .hero__location {
+    margin: 0 0 42px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: rgba(216, 119, 68, 0.82);
   }
 
   .hero__headline {
-    font-size: clamp(40px, 4.5vw, 54px);
+    font-size: clamp(42px, 3.6vw, 64px);
+    font-style: normal;
+    font-weight: 300;
+    color: var(--creme);
+    line-height: 1.08;
+    letter-spacing: 0;
+    margin: 0 0 36px;
+  }
+
+  .hero__headline span,
+  .hero__headline em {
+    display: block;
+  }
+
+  .hero__headline em {
     font-style: italic;
-    font-weight: 400;
-    color: #ffffff;
-    line-height: 1.14;
-    letter-spacing: -0.015em;
-    margin: 0 0 28px;
+    font-weight: 300;
   }
 
   .hero__sub {
-    font-size: 17px;
+    font-size: clamp(16px, 1.12vw, 21px);
     font-style: normal;
-    color: rgba(255, 255, 255, 0.62);
-    line-height: 1.78;
-    margin: 0 0 44px;
-    max-width: 520px;
+    color: rgba(246, 239, 227, 0.58);
+    line-height: 1.7;
+    margin: 0 0 58px;
+    max-width: 760px;
+  }
+
+  .hero__sub span {
+    display: block;
+  }
+
+  .hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+    flex-wrap: wrap;
   }
 
   .hero__cta {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 13px 26px;
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 4px;
+    justify-content: center;
+    min-width: 300px;
+    padding: 22px 42px;
+    border: 1px solid rgba(216, 119, 68, 0.82);
+    border-radius: 0;
     font-family: var(--font-body);
-    font-size: 14px;
-    font-style: italic;
-    color: #ffffff;
-    background: transparent;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: rgba(246, 239, 227, 0.78);
+    background: rgba(66, 30, 41, 0.08);
     text-decoration: none;
-    transition: border-color var(--transition), background var(--transition);
+    transition: border-color var(--transition), background var(--transition), color var(--transition);
   }
 
   .hero__cta:hover {
-    border-color: rgba(255, 255, 255, 0.65);
-    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--dourado);
+    background: rgba(216, 119, 68, 0.12);
+    color: var(--creme);
   }
 
-  .hero__cta svg {
-    flex-shrink: 0;
+  .hero__secondary {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(246, 239, 227, 0.36);
+    transition: color var(--transition);
+  }
+
+  .hero__secondary:hover {
+    color: rgba(246, 239, 227, 0.72);
   }
 
   /* ════════════════════════════════
@@ -249,7 +299,7 @@ const products = [
     font-size: clamp(28px, 3vw, 38px);
     font-style: italic;
     font-weight: 400;
-    color: #173f73;
+    color: var(--vinho);
     line-height: 1.24;
     margin: 0;
   }
@@ -269,14 +319,14 @@ const products = [
     display: block;
     width: 24px;
     height: 1px;
-    background: #f28f38;
+    background: var(--cobre);
     margin: 28px 0 24px;
   }
 
   .pitch__close {
     font-size: 15px;
     font-style: italic;
-    color: #173f73;
+    color: var(--vinho);
     opacity: 0.75;
   }
 
@@ -290,7 +340,7 @@ const products = [
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background: #FAF6F1;
+    background: var(--areia);
     border-radius: 32px;
     opacity: 0;
     transform: translateY(18px);
@@ -306,7 +356,7 @@ const products = [
     font-size: clamp(22px, 2.6vw, 30px);
     font-style: italic;
     font-weight: 400;
-    color: #173f73;
+    color: var(--vinho);
     line-height: 1.3;
     max-width: 460px;
     text-wrap: balance;
@@ -330,9 +380,9 @@ const products = [
     margin-top: 52px;
     font-size: 16px;
     font-style: italic;
-    color: #173f73;
+    color: var(--vinho);
     text-decoration: underline;
-    text-decoration-color: #f28f38;
+    text-decoration-color: var(--cobre);
     text-decoration-thickness: 1.5px;
     text-underline-offset: 6px;
     transition: opacity var(--transition), text-decoration-color var(--transition);
@@ -340,7 +390,7 @@ const products = [
 
   .pratica__cta:hover {
     opacity: 0.75;
-    text-decoration-color: #eda27f;
+    text-decoration-color: var(--dourado);
   }
 
   /* ════════════════════════════════
@@ -349,7 +399,7 @@ const products = [
   .divider {
     border: none;
     height: 1px;
-    background: rgba(23, 63, 115, 0.07);
+    background: rgba(66, 30, 41, 0.07);
     margin: 0 56px;
   }
 
@@ -371,7 +421,7 @@ const products = [
   }
 
   .card {
-    background: #faf6f1;
+    background: var(--areia);
     padding: 48px 40px 44px;
     border-radius: 48px 48px 6px 6px;
     display: flex;
@@ -382,7 +432,7 @@ const products = [
     font-size: 13px;
     font-style: italic !important;
     text-transform: none;
-    color: #eda27f;
+    color: var(--dourado);
     margin: 0 0 16px;
   }
 
@@ -390,7 +440,7 @@ const products = [
     font-size: 28px;
     font-style: italic !important;
     font-weight: 400;
-    color: #173f73;
+    color: var(--vinho);
     line-height: 1.15;
     margin: 0 0 20px;
   }
@@ -410,7 +460,7 @@ const products = [
     font-size: 14px;
     font-style: italic;
     text-transform: none;
-    color: #173f73;
+    color: var(--vinho);
     transition: opacity var(--transition);
   }
 
@@ -422,7 +472,7 @@ const products = [
     display: block;
     width: 18px;
     height: 1px;
-    background: #f28f38;
+    background: var(--cobre);
     flex-shrink: 0;
     transition: width var(--transition);
   }
@@ -435,10 +485,10 @@ const products = [
      MANIFESTO
   ════════════════════════════════ */
   .manifesto {
-    background: #173f73;
-    color: rgba(255, 255, 255, 0.82);
+    background: var(--vinho);
+    color: rgba(246, 239, 227, 0.82);
     padding: 96px 56px;
-    border-bottom: 3px solid #f28f38;
+    border-bottom: 3px solid var(--cobre);
   }
 
   .manifesto__grid {
@@ -451,28 +501,28 @@ const products = [
   .manifesto__label {
     font-size: 14px;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.28);
+    color: rgba(246, 239, 227, 0.28);
     margin: 0;
     padding-top: 6px;
   }
 
   .manifesto__quote {
     font-size: 23px;
-    color: rgba(255, 255, 255, 0.82);
+    color: rgba(246, 239, 227, 0.82);
     line-height: 1.75;
     margin: 0 0 0;
   }
 
   .manifesto__quote em {
     font-style: italic;
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(246, 239, 227, 0.95);
   }
 
   .manifesto__dash {
     display: block;
     width: 24px;
     height: 1px;
-    background: #f28f38;
+    background: var(--cobre);
     margin: 32px 0 28px;
   }
 
@@ -485,7 +535,7 @@ const products = [
 
   .manifesto__link {
     font-size: 15px;
-    color: #eda27f;
+    color: var(--dourado);
     transition: opacity var(--transition);
   }
 
@@ -494,19 +544,69 @@ const products = [
   }
 
   .manifesto__link--wa {
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(246, 239, 227, 0.55);
   }
 
   /* ════════════════════════════════
      RESPONSIVO
   ════════════════════════════════ */
   @media (max-width: 768px) {
+    .hero {
+      min-height: 100svh;
+    }
+
+    .hero::before {
+      background-position: 47% 50%;
+      filter: brightness(0.82) contrast(1.04) saturate(0.88);
+    }
+
+    .hero__overlay {
+      background:
+        radial-gradient(ellipse at 18% 72%, rgba(16, 8, 11, 0.72) 0%, rgba(66, 30, 41, 0.44) 32%, rgba(66, 30, 41, 0.14) 60%, transparent 78%),
+        linear-gradient(to right, rgba(23, 10, 15, 0.76) 0%, rgba(66, 30, 41, 0.48) 44%, rgba(66, 30, 41, 0.18) 100%),
+        linear-gradient(to top, rgba(16, 8, 11, 0.72) 0%, rgba(66, 30, 41, 0.18) 46%, transparent 78%);
+    }
+
     .hero__content {
-      padding: 0 24px 72px;
+      padding: 0 24px 52px;
+      max-width: 100%;
+    }
+
+    .hero__location {
+      margin-bottom: 26px;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+    }
+
+    .hero__headline {
+      font-size: clamp(34px, 10.8vw, 44px);
+      line-height: 1.13;
+      margin-bottom: 26px;
     }
 
     .hero__sub {
       max-width: 100%;
+      font-size: 15px;
+      line-height: 1.72;
+      margin-bottom: 36px;
+    }
+
+    .hero__actions {
+      gap: 18px;
+    }
+
+    .hero__cta {
+      width: 100%;
+      min-width: 0;
+      padding: 18px 22px;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+    }
+
+    .hero__secondary {
+      width: 100%;
+      font-size: 10px;
+      letter-spacing: 0.28em;
     }
 
     .pratica {

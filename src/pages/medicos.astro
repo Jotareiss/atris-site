@@ -1,286 +1,489 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const doctors = [
+const professionals = [
   {
-    photo: "/assets/founders-individual.jpg",
-    tag: "Psiquiatra",
     name: "Dr. José Augusto Silva Reis",
+    photo: "/assets/Founder3_placeholder.png",
+    alt: "Retrato editorial do Dr. José Augusto Silva Reis",
+    signature: "Psiquiatria de adultos",
+    line: "Acompanhamento longitudinal, psicoses e reabilitação psicossocial.",
+    text: "Sua prática parte da escuta clínica como ponto de sustentação para decisões precisas. Atua com quadros complexos, continuidade de cuidado e atenção aos efeitos concretos do sofrimento psíquico na vida cotidiana.",
     crm: "CRM/SP 199536 · RQE 128556",
-    specialties: "Psicoses · Reabilitação Psicossocial · Transtornos mentais crônicos",
-    bio: "Graduação e residência em psiquiatria pela FMRP-USP. Doutorando em saúde mental com foco em psicodélicos para transtornos psiquiátricos. Atua no HCRP-USP nos serviços de esquizofrenia e reabilitação psicossocial.",
+    areas: "Psicoses · Reabilitação Psicossocial · Psicodélicos em Psiquiatria",
     wa: "https://wa.me/5516993732111",
-    waLabel: "Agendar com Dr. José Augusto",
-    placeholder: false,
+    cta: "Entrar em contato",
   },
   {
-    photo: "/assets/founders-individual.jpg",
-    tag: "Psiquiatra",
+    name: "Dra. Lara Zancaner Ueta",
+    photo: "/assets/Founder1_placeholder.png",
+    alt: "Retrato editorial da Dra. Lara Zancaner Ueta",
+    signature: "Psiquiatria de adultos",
+    line: "Presença clínica, continuidade e construção cuidadosa do tratamento.",
+    text: "A terceira seção mantém a mesma escala editorial dos demais profissionais enquanto os dados finais são definidos. O foco permanece no modo de cuidado da Átris: atenção, tempo e acompanhamento sem automatismos.",
+    crm: "CRM/SP em definição · RQE em definição",
+    areas: "Áreas de atuação em definição",
+    wa: "/contato",
+    cta: "Em breve",
+  },
+  {
     name: "Dr. Lean Pampana Basoli",
+    photo: "/assets/Founder2_placeholder.png",
+    alt: "Retrato editorial do Dr. Lean Pampana Basoli",
+    signature: "Psiquiatria de adultos",
+    line: "Sexualidade, diversidade de gênero e cuidado em saúde mental LGBTQIA+.",
+    text: "Conduz o atendimento com presença, rigor e respeito às singularidades de cada história. Seu trabalho articula escuta clínica, acompanhamento contínuo e atenção aos contextos sociais que atravessam o sofrimento psíquico.",
     crm: "CRM/SP 199566 · RQE 127180",
-    specialties: "Sexualidade · Violência Sexual · Saúde Mental LGBTQIA+",
-    bio: "Graduação e residência em psiquiatria pela FMRP-USP. Atua nos ambulatórios de sexualidade e diversidade de gênero do HCRP-USP, no SEAVIDAS-USP e no Hospital Estadual de Américo Brasiliense.",
+    areas: "Sexualidade · Diversidade de Gênero · Saúde Mental LGBTQIA+",
     wa: "https://wa.me/5516999930259",
-    waLabel: "Agendar com Dr. Lean",
-    placeholder: false,
-  },
-  {
-    photo: null,
-    tag: "Psiquiatra",
-    name: "Dra. Lorem Ipsum",
-    crm: "CRM/SP 000000 · RQE 000000",
-    specialties: "Especialidade · Área de atuação",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Formação e residência pela instituição de referência.",
-    wa: "#",
-    waLabel: "Em breve",
-    placeholder: true,
+    cta: "Entrar em contato",
   },
 ];
 ---
 
 <Layout
   title="Médicos — Átris Instituto de Psiquiatria"
-  description="Conheça Dr. José Augusto Silva Reis e Dr. Lean Pampana Basoli, psiquiatras formados e residentes pela FMRP-USP. Atendimento presencial em Ribeirão Preto e por telemedicina."
+  description="Conheça os profissionais da Átris Instituto de Psiquiatria. Atendimento presencial em Ribeirão Preto e por telemedicina."
 >
-  <!-- ── Header ── -->
-  <div class="page-header">
-    <h1 class="page-title">Os médicos por trás da Átris.</h1>
-    <p class="page-sub">Psiquiatras pela FMRP-USP, com atuação no HCRP-USP.</p>
-    <p class="page-sub page-sub--secondary">
-      A escolha pode considerar afinidade, disponibilidade ou áreas de maior interesse clínico.
-    </p>
-    <span class="header-rule" aria-hidden="true"></span>
-  </div>
+  <section class="hero professionals-hero">
+    <div class="professionals-hero__overlay" aria-hidden="true"></div>
+    <div class="professionals-hero__content">
+      <p class="professionals-hero__kicker">Equipe clínica</p>
+      <h1 class="professionals-hero__title">Profissionais</h1>
+      <p class="professionals-hero__text">
+        Psiquiatria conduzida com presença clínica,<br />
+        continuidade e escuta.
+      </p>
+    </div>
+  </section>
 
-  <!-- ── Grid de cards ── -->
-  <div class="cards-wrap">
-    <div class="cards-grid">
-      {doctors.map(({ photo, tag, name, crm, specialties, bio, wa, waLabel, placeholder }) => (
-        <article class:list={["card", { "card--placeholder": placeholder }]}>
+  <section class="professionals-intro">
+    <p class="professionals-intro__kicker">Presença clínica</p>
+    <div class="professionals-intro__grid">
+      <h2>Um modo de cuidar que não começa pelo sintoma isolado.</h2>
+      <p>
+        Cada atendimento parte de uma história inteira: o tempo do sofrimento,
+        o contexto em que ele aparece e a continuidade necessária para que uma
+        decisão clínica faça sentido.
+      </p>
+    </div>
+  </section>
 
-          <!-- Foto -->
-          {photo ? (
-            <img src={photo} alt={name} class="card__photo" />
-          ) : (
-            <div class="card__photo-empty" aria-hidden="true"></div>
-          )}
+  <div class="professionals-list">
+    {professionals.map((professional, index) => (
+      <div class="professional-entry">
+        <section class:list={["professional-section", { "professional-section--reverse": index % 2 === 1 }]}>
+          <figure class="professional-section__figure">
+            <img src={professional.photo} alt={professional.alt} />
+          </figure>
 
-          <!-- Body -->
-          <div class="card__body">
-            <p class="card__tag">{tag}</p>
-
-            {placeholder && (
-              <div class="card__badge">Em breve</div>
-            )}
-
-            <h2 class="card__name">{name}</h2>
-            <p class="card__crm">{crm}</p>
-
-            <span class="card__rule" aria-hidden="true"></span>
-
-            <p class="card__specialties">{specialties}</p>
-            <p class="card__bio">{bio}</p>
-
-            <a
-              href={wa}
-              class="card__wa"
-              target={placeholder ? undefined : "_blank"}
-              rel={placeholder ? undefined : "noopener noreferrer"}
-              style={placeholder ? "opacity: 0.4; pointer-events: none;" : undefined}
-            >
-              — {waLabel}
+          <div class="professional-section__content">
+            <p class="professional-section__eyebrow">Psiquiatra</p>
+            <h2>{professional.name}</h2>
+            <p class="professional-section__signature">{professional.signature}</p>
+            <p class="professional-section__line">{professional.line}</p>
+            <span class="professional-section__rule" aria-hidden="true"></span>
+            <p class="professional-section__text">{professional.text}</p>
+            <div class="professional-section__meta">
+              <p>{professional.crm}</p>
+              <p>{professional.areas}</p>
+            </div>
+            <a href={professional.wa} class="professional-section__link">
+              {professional.cta}
             </a>
           </div>
+        </section>
 
-        </article>
-      ))}
-    </div>
+        {index < professionals.length - 1 && (
+          <figure class="space-break" aria-hidden="true">
+            <img
+              src={index === 0 ? "/assets/ambient_2.jpg" : "/assets/ambient_3.jpg"}
+              alt=""
+            />
+          </figure>
+        )}
+      </div>
+    ))}
   </div>
+
+  <section class="professionals-cta">
+    <p>O cuidado começa quando há tempo suficiente para compreender.</p>
+    <a href="/contato">Entrar em contato</a>
+  </section>
 </Layout>
 
-<style>
-  /* ── Header ── */
-  .page-header {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 64px 24px 48px;
-    text-align: center;
-    font-family: var(--font-body);
-  }
-
-  .page-title {
-    font-size: 36px;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--color-primary);
-    line-height: 1.2;
-    margin: 0 0 20px;
-  }
-
-  .page-sub {
-    font-size: 17px;
-    font-style: italic;
-    color: var(--color-primary);
-    line-height: 1.65;
-    margin: 0 0 12px;
-    opacity: 0.8;
-  }
-
-  .page-sub--secondary {
-    font-size: 15px;
-    color: #666;
-    opacity: 1;
-    margin: 0;
-  }
-
-  .header-rule {
-    display: block;
-    width: 48px;
-    height: 2px;
-    background: var(--color-orange);
-    margin: 40px auto 0;
-  }
-
-  /* ── Grid ── */
-  .cards-wrap {
-    max-width: 1040px;
-    margin: 56px auto 0;
-    padding: 0 24px 96px;
-    font-family: var(--font-body);
-  }
-
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-
-  /* ── Card ── */
-  .card {
-    background: var(--color-card);
-    border-radius: 48px 48px 6px 6px;
+<style is:global>
+  .professionals-hero {
+    position: relative;
+    min-height: 82vh;
+    display: flex;
+    align-items: flex-end;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    background:
+      linear-gradient(rgba(66, 30, 41, 0.18), rgba(66, 30, 41, 0.18)),
+      url("/assets/ambient_1.jpg") center 54% / cover;
+    color: var(--creme);
+    font-family: var(--font-body);
   }
 
-  .card--placeholder {
-    opacity: 0.55;
+  .professionals-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 16% 76%, rgba(14, 7, 10, 0.7) 0%, rgba(66, 30, 41, 0.42) 34%, transparent 68%),
+      linear-gradient(to right, rgba(23, 10, 15, 0.78) 0%, rgba(66, 30, 41, 0.46) 38%, rgba(66, 30, 41, 0.12) 100%),
+      linear-gradient(to top, rgba(18, 9, 12, 0.74) 0%, rgba(66, 30, 41, 0.16) 50%, transparent 82%);
   }
 
-  .card__photo {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    display: block;
+  .professionals-hero__content {
+    position: relative;
+    width: min(920px, 100%);
+    padding: 0 5.3vw 11vh;
   }
 
-  .card__photo-empty {
-    width: 100%;
-    height: 260px;
-    background: rgba(237, 162, 127, 0.12);
-    border-bottom: 1px dashed rgba(237, 162, 127, 0.3);
-  }
-
-  .card__body {
-    padding: 24px 24px 28px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-
-  .card__tag {
-    font-size: 10px;
-    font-style: italic;
+  .professionals-hero__kicker {
+    margin: 0 0 28px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.38em;
+    color: rgba(216, 119, 68, 0.86);
     text-transform: uppercase;
-    color: var(--color-salmon);
-    margin: 0 0 10px;
-    letter-spacing: 0.1em;
   }
 
-  .card__badge {
-    background: rgba(237, 162, 127, 0.13);
-    border: 1px dashed rgba(237, 162, 127, 0.55);
-    border-radius: 3px;
-    padding: 6px 12px;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #eda27f;
-    text-align: center;
-    margin-bottom: 14px;
-    align-self: flex-start;
+  .professionals-hero__title {
+    margin: 0 0 30px;
+    font-size: clamp(54px, 6.2vw, 108px);
+    font-weight: 300;
+    line-height: 0.98;
+    letter-spacing: 0;
+    color: var(--creme);
   }
 
-  .card__name {
-    font-size: 20px;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--color-primary);
-    line-height: 1.2;
-    margin: 0 0 6px;
-  }
-
-  .card__crm {
-    font-size: 11px;
-    color: #aaa;
+  .professionals-hero__text {
     margin: 0;
-    letter-spacing: 0.04em;
-  }
-
-  .card__rule {
-    display: block;
-    width: 32px;
-    height: 1.5px;
-    background: var(--color-orange);
-    margin: 12px 0;
-    flex-shrink: 0;
-  }
-
-  .card__specialties {
-    font-size: 13px;
+    max-width: 620px;
+    font-size: clamp(18px, 1.55vw, 25px);
     font-style: italic;
-    color: #444;
-    line-height: 1.6;
-    margin: 0 0 14px;
+    line-height: 1.55;
+    color: rgba(246, 239, 227, 0.72);
   }
 
-  .card__bio {
-    font-size: 13px;
-    font-style: italic;
-    color: #666;
-    line-height: 1.75;
-    margin: 0 0 20px;
-    flex: 1;
-  }
-
-  .card__wa {
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--color-orange);
-    transition: opacity var(--transition);
-    align-self: flex-start;
-  }
-
-  .card__wa:hover {
-    opacity: 0.7;
-  }
-
-  /* ── Responsivo ── */
-  @media (max-width: 900px) {
-    .cards-grid {
-      grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 560px) {
+    .professionals-hero {
+      min-height: 100svh;
+      background-position: center center;
     }
 
-    .card--placeholder {
-      display: none;
+    .professionals-hero__content {
+      padding: 0 24px 62px;
+    }
+
+    .professionals-hero__kicker {
+      margin-bottom: 22px;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+    }
+
+    .professionals-hero__title {
+      margin-bottom: 24px;
+      font-size: clamp(44px, 15vw, 62px);
+    }
+
+    .professionals-hero__text {
+      font-size: 17px;
+    }
+  }
+</style>
+
+<style>
+  .professionals-intro {
+    padding: 110px 5.3vw 96px;
+    font-family: var(--font-body);
+  }
+
+  .professionals-intro__kicker,
+  .professional-section__eyebrow {
+    margin: 0 0 26px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    color: var(--cobre);
+    text-transform: uppercase;
+  }
+
+  .professionals-intro__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.7fr);
+    gap: 12vw;
+    align-items: start;
+  }
+
+  .professionals-intro h2 {
+    max-width: 620px;
+    margin: 0;
+    font-size: clamp(34px, 4.2vw, 64px);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--vinho);
+  }
+
+  .professionals-intro p:not(.professionals-intro__kicker) {
+    margin: 12px 0 0;
+    font-size: clamp(18px, 1.55vw, 24px);
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
+  .professionals-list {
+    font-family: var(--font-body);
+  }
+
+  .professional-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.78fr);
+    gap: 7vw;
+    align-items: center;
+    padding: 34px 5.3vw 132px;
+  }
+
+  .professional-section--reverse {
+    grid-template-columns: minmax(360px, 0.78fr) minmax(0, 1fr);
+  }
+
+  .professional-section--reverse .professional-section__figure {
+    order: 2;
+  }
+
+  .professional-section--reverse .professional-section__content {
+    order: 1;
+  }
+
+  .professional-section__figure {
+    margin: 0;
+    min-height: 640px;
+    overflow: hidden;
+    background: var(--areia);
+    border-radius: 48px 48px 6px 6px;
+  }
+
+  .professional-section__figure img {
+    width: 100%;
+    height: 100%;
+    min-height: 640px;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(0.92) contrast(1.02);
+  }
+
+  .professional-section__content {
+    max-width: 500px;
+  }
+
+  .professional-section__content h2 {
+    margin: 0 0 22px;
+    font-size: clamp(42px, 4.8vw, 78px);
+    font-weight: 300;
+    line-height: 1.02;
+    color: var(--vinho);
+  }
+
+  .professional-section__signature {
+    margin: 0 0 8px;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--mogno);
+  }
+
+  .professional-section__line {
+    margin: 0;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+
+  .professional-section__rule {
+    display: block;
+    width: 34px;
+    height: 1px;
+    margin: 34px 0 32px;
+    background: var(--cobre);
+  }
+
+  .professional-section__text {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.82;
+    color: rgba(27, 22, 22, 0.76);
+  }
+
+  .professional-section__meta {
+    margin: 38px 0 0;
+    padding-top: 24px;
+    border-top: 1px solid rgba(66, 30, 41, 0.1);
+  }
+
+  .professional-section__meta p {
+    margin: 0 0 8px;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  .professional-section__link {
+    display: inline-flex;
+    margin-top: 34px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--cobre);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 8px;
+    transition: color var(--transition), opacity var(--transition);
+  }
+
+  .professional-section__link:hover {
+    color: var(--vinho);
+    opacity: 0.78;
+  }
+
+  .space-break {
+    position: relative;
+    height: 54vh;
+    min-height: 420px;
+    margin: 0 5.3vw 124px;
+    overflow: hidden;
+    border-radius: 0;
+    background: var(--vinho);
+  }
+
+  .space-break::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right, rgba(66, 30, 41, 0.44), rgba(66, 30, 41, 0.08)),
+      linear-gradient(to top, rgba(27, 22, 22, 0.18), transparent 42%);
+  }
+
+  .space-break img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.88) contrast(1.03);
+  }
+
+  .professionals-cta {
+    margin: 0;
+    padding: 128px 5.3vw 138px;
+    text-align: center;
+    background: var(--vinho);
+    color: var(--creme);
+    font-family: var(--font-body);
+  }
+
+  .professionals-cta p {
+    max-width: 760px;
+    margin: 0 auto 42px;
+    font-size: clamp(32px, 4.6vw, 72px);
+    font-weight: 300;
+    line-height: 1.08;
+  }
+
+  .professionals-cta a {
+    display: inline-flex;
+    padding: 18px 36px;
+    border: 1px solid rgba(216, 119, 68, 0.82);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(246, 239, 227, 0.82);
+    transition: border-color var(--transition), color var(--transition);
+  }
+
+  .professionals-cta a:hover {
+    border-color: var(--dourado);
+    color: var(--creme);
+  }
+
+  @media (max-width: 900px) {
+    .professionals-intro,
+    .professional-section,
+    .professionals-cta {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .professionals-intro__grid,
+    .professional-section,
+    .professional-section--reverse {
+      grid-template-columns: 1fr;
+      gap: 42px;
+    }
+
+    .professional-section--reverse .professional-section__figure,
+    .professional-section--reverse .professional-section__content {
+      order: initial;
+    }
+
+    .professional-section__figure,
+    .professional-section__figure img {
+      min-height: 520px;
+    }
+
+    .space-break {
+      margin-left: 24px;
+      margin-right: 24px;
+      height: 44vh;
+      min-height: 320px;
     }
   }
 
   @media (max-width: 560px) {
-    .cards-grid {
-      grid-template-columns: 1fr;
+    .professionals-intro {
+      padding-top: 78px;
+      padding-bottom: 64px;
+    }
+
+    .professionals-intro h2 {
+      font-size: 36px;
+    }
+
+    .professionals-intro p:not(.professionals-intro__kicker),
+    .professional-section__text {
+      font-size: 16px;
+    }
+
+    .professional-section {
+      padding-top: 16px;
+      padding-bottom: 82px;
+    }
+
+    .professional-section__figure,
+    .professional-section__figure img {
+      min-height: 440px;
+    }
+
+    .professional-section__content h2 {
+      font-size: 40px;
+    }
+
+    .professional-section__line {
+      font-size: 18px;
+    }
+
+    .space-break {
+      margin-bottom: 82px;
+      min-height: 280px;
+    }
+
+    .professionals-cta {
+      padding-top: 88px;
+      padding-bottom: 96px;
     }
   }
 </style>

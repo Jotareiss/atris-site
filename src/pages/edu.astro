@@ -56,17 +56,17 @@ import Layout from "../layouts/Layout.astro";
 <style is:global>
   /* Fundo azul em todo o body — elimina gaps entre conteúdo e footer */
   body.page-edu {
-    background: #173f73;
+    background: var(--vinho);
   }
 
   /* Main não tem fundo próprio — garante que não vaze cor do body */
   body.page-edu main {
-    background: #173f73;
+    background: var(--vinho);
   }
 
   /* Footer ligeiramente mais escuro para criar separação sutil dentro do azul */
   body.page-edu footer {
-    background: #0f2d52;
+    background: #2A131A;
   }
 </style>
 
@@ -95,7 +95,7 @@ import Layout from "../layouts/Layout.astro";
     font-size: 32px;
     font-style: italic;
     font-weight: 400;
-    color: #ffffff;
+    color: var(--creme);
     line-height: 1.25;
     margin: 0;
   }
@@ -104,7 +104,7 @@ import Layout from "../layouts/Layout.astro";
     display: block;
     width: 48px;
     height: 2px;
-    background: #eda27f;
+    background: var(--dourado);
     margin: 24px auto 40px;
   }
 
@@ -112,17 +112,17 @@ import Layout from "../layouts/Layout.astro";
     font-size: 18px;
     font-style: italic;
     line-height: 1.85;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(246, 239, 227, 0.8);
     margin: 0 0 28px;
   }
 
   .quote {
-    border-left: 2px solid rgba(237, 162, 127, 0.4);
+    border-left: 2px solid rgba(231, 184, 100, 0.4);
     padding-left: 16px;
     text-align: left;
     font-size: 16px;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(246, 239, 227, 0.65);
     line-height: 1.75;
     margin: 8px 0 40px;
   }
@@ -133,8 +133,8 @@ import Layout from "../layouts/Layout.astro";
     justify-content: center;
     padding: 14px 32px;
     background: transparent;
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: var(--creme);
+    border: 1px solid rgba(246, 239, 227, 0.4);
     font-size: 13px;
     font-family: var(--font-body);
     letter-spacing: 0.12em;
@@ -144,14 +144,14 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .btn:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.65);
+    background: rgba(246, 239, 227, 0.08);
+    border-color: rgba(246, 239, 227, 0.65);
   }
 
   .note {
     font-size: 12px;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(246, 239, 227, 0.35);
     margin: 16px 0 0;
   }
 
@@ -159,6 +159,6 @@ import Layout from "../layouts/Layout.astro";
   .pre-footer-rule {
     width: calc(100% - 48px);
     margin: 0 24px;
-    border-top: 1px solid rgba(237, 162, 127, 0.25);
+    border-top: 1px solid rgba(231, 184, 100, 0.25);
   }
 </style>

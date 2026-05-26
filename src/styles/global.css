@@ -118,13 +118,23 @@
 /* ---------- Variáveis CSS ---------- */
 :root {
   /* Cores */
-  --color-primary: #173f73;
-  --color-orange: #f28f38;
-  --color-salmon: #eda27f;
-  --color-bg: #f4ede3;
-  --color-card: #faf6f1;
-  --color-text: #1a1a1a;
-  --color-text-secondary: #666666;
+  --vinho: #421E29;
+  --mogno: #7A3D27;
+  --cobre: #D87744;
+  --dourado: #E7B864;
+  --areia: #EAD7B8;
+  --creme: #F6EFE3;
+  --texto: #1B1616;
+  --muted: #7B6762;
+
+  --color-primary: var(--vinho);
+  --color-orange: var(--cobre);
+  --color-salmon: var(--dourado);
+  --color-bg: var(--creme);
+  --color-card: var(--areia);
+  --color-text: var(--texto);
+  --color-text-secondary: var(--muted);
+  --color-text-sec: var(--muted);
 
   /* Tipografia */
   --font-serif: "Petala Pro", Georgia, serif;
@@ -203,4 +213,60 @@ a {
 button {
   cursor: pointer;
   font-family: inherit;
+}
+
+/* ---------- Ajuste global de escala tipográfica ----------
+   Reduz textos médios/grandes sem afetar navegação, labels e metadados pequenos. */
+@media (min-width: 769px) {
+  .hero__headline {
+    font-size: clamp(32px, 2.7vw, 48px) !important;
+  }
+
+  .hero__sub,
+  .professionals-hero__text,
+  .manifesto-hero__text,
+  .professionals-intro p:not(.professionals-intro__kicker),
+  .body {
+    font-size: clamp(16px, 1.15vw, 20px) !important;
+  }
+
+  .professional-section__line {
+    font-size: clamp(13px, 0.85vw, 16px) !important;
+  }
+
+  .professionals-hero__title,
+  .manifesto-hero h1 {
+    font-size: clamp(40px, 4.65vw, 81px) !important;
+  }
+
+  .professionals-intro h2 {
+    font-size: clamp(26px, 3.15vw, 48px) !important;
+  }
+
+  .professional-section__content h2 {
+    font-size: clamp(32px, 3.6vw, 59px) !important;
+  }
+
+  .professional-section__text {
+    font-size: 14px !important;
+  }
+
+  .professionals-cta p {
+    font-size: clamp(24px, 3.45vw, 54px) !important;
+  }
+
+  .manifesto-block__text p {
+    font-size: clamp(15px, 1.35vw, 22px) !important;
+  }
+
+  .manifesto-aside p {
+    font-size: clamp(21px, 2.25vw, 33px) !important;
+  }
+
+  .page-title,
+  .pitch__heading,
+  .pratica__title,
+  .card__title {
+    font-size: clamp(21px, 2.25vw, 29px) !important;
+  }
 }

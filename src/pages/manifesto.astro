@@ -1,414 +1,354 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-const WA = "https://wa.me/5516993732111?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20%C3%81tris.";
-
-const alicerces = [
-  {
-    title: "Tempo",
-    body: "Consultas com duração suficiente para que cada caso possa ser compreendido com precisão, sem a necessidade de decisões apressadas.",
-  },
-  {
-    title: "Rigor clínico",
-    body: "As decisões não são automáticas nem baseadas apenas em protocolos. Cada caso é avaliado a partir do que apresenta, com critério na condução.",
-  },
-  {
-    title: "Relação",
-    body: "O vínculo entre médico e paciente não é um elemento secundário, mas parte do próprio tratamento e do que sustenta sua continuidade.",
-  },
-  {
-    title: "Acesso",
-    body: "O contato não se limita ao momento da consulta. O acompanhamento se organiza de forma a manter consistência ao longo do tempo.",
-  },
-];
 ---
 
 <Layout
   title="Manifesto — Átris Instituto de Psiquiatria"
-  description="Uma declaração sobre o tipo de cuidado que acreditamos ser possível — e necessário. A Átris foi fundada por médicos que decidiram fazer diferente."
+  description="Uma clínica construída ao redor do tempo, da escuta e da continuidade."
 >
-  <div class="manifesto-page">
-
-    <!-- ══════════════════════════════════════
-         MANIFESTO
-    ══════════════════════════════════════ -->
-    <article class="manifesto-body">
-
-      <span class="eyebrow">Manifesto</span>
-
-      <p class="block">
-        A psiquiatria atual atravessa uma crise de produtividade. Consultas cada vez
-        mais rápidas, decisões protocolares e uma homogeneização em nome da eficiência.
+  <section class="hero manifesto-hero">
+    <div class="manifesto-hero__overlay" aria-hidden="true"></div>
+    <div class="manifesto-hero__content">
+      <p class="manifesto-hero__kicker">Quem somos</p>
+      <h1>Manifesto</h1>
+      <p class="manifesto-hero__text">
+        Uma clínica construída ao redor do tempo,<br />
+        da escuta e da continuidade.
       </p>
+    </div>
+  </section>
 
-      <p class="block">
-        Não é má vontade. É uma estrutura que reflete o nosso tempo.
-        E estruturas moldam o que é possível fazer dentro delas.
-      </p>
-
-      <p class="block">
-        Acreditamos que outro tipo de cuidado é possível. E necessário.
-      </p>
-
-      <p class="block">
-        Um cuidado que parte da ideia de que compreender um caso exige mais do que
-        isso. Exige atenção ao que não é imediato, organização do que é relevante e
-        uma relação capaz de sustentar as decisões que precisam ser tomadas.
-      </p>
-
-      <p class="block">
-        A Átris nasce dessa ideia.
-      </p>
-
-      <p class="block">
-        De que o atendimento precisa ser organizado para permitir esse tipo de
-        trabalho, e não o contrário.
-      </p>
-
-      <p class="block">
-        Adotamos como símbolo o joão-de-barro. O joão-de-barro não terceiriza o ninho.
-        Carrega barro por conta própria, mistura com capim, molda com o bico até que
-        a forma seja exatamente certa. Construir é o oposto de conveniência.
-      </p>
-
-      <p class="block">
-        Acreditamos que bom cuidado é um ato de construção. Que o vínculo entre médico
-        e paciente não é um acessório, mas parte do tratamento.
-        Que rigor e acolhimento não são opostos.
-      </p>
-
-      <span class="closing-rule" aria-hidden="true"></span>
-
-      <p class="closing">Bem-vindo à Átris.</p>
-
-      <div class="signature">
-        <img
-          src="/assets/bird-swirl.png"
-          alt="Átris"
-          class="signature__bird"
-        />
-        <p class="signature__names">
-          Dr. José Augusto Silva Reis<br />
-          Dr. Lean Pampana Basoli
+  <article class="manifesto-essay">
+    <section class="manifesto-block manifesto-block--opening">
+      <div class="manifesto-block__text">
+        <p>
+          A psiquiatria não acontece apenas no instante da prescrição.
+        </p>
+        <p>
+          Ela acontece no tempo que permite compreender uma história,
+          reconhecer seus contornos e sustentar decisões que não deveriam ser apressadas.
         </p>
       </div>
-
-    </article>
-
-    <!-- ══════════════════════════════════════
-         TRANSIÇÃO 1
-    ══════════════════════════════════════ -->
-    <div class="transition">
-      <span class="transition__text">Como isso se traduz na prática</span>
-    </div>
-
-    <!-- ══════════════════════════════════════
-         ALICERCES
-    ══════════════════════════════════════ -->
-    <section class="alicerces">
-      {alicerces.map(({ title, body }) => (
-        <div class="alicerce">
-          <h3 class="alicerce__title">{title}</h3>
-          <p class="alicerce__body">{body}</p>
-        </div>
-      ))}
     </section>
 
-    <!-- ══════════════════════════════════════
-         TRANSIÇÃO 2
-    ══════════════════════════════════════ -->
-    <div class="transition transition--medicos">
-      <span class="transition__text">Os médicos</span>
-    </div>
+    <section class="manifesto-aside">
+      <p>Nem toda escuta pode ser acelerada.</p>
+    </section>
 
-    <!-- ══════════════════════════════════════
-         FUNDADORES
-    ══════════════════════════════════════ -->
-    <section class="founders">
-      <img
-        src="/assets/founders.jpg"
-        alt="Dr. José Augusto e Dr. Lean Basoli — fundadores da Átris"
-        class="founders__photo"
-      />
-      <div class="founders__caption">
-        <div class="founders__doctor">
-          <span class="founders__doctor-name">Dr. José Augusto Silva Reis</span>
-          <span class="founders__doctor-sub">CRM 199536 · RQE 128556</span>
-        </div>
-        <div class="founders__doctor">
-          <span class="founders__doctor-name">Dr. Lean Pampana Basoli</span>
-          <span class="founders__doctor-sub">CRM 199566 · RQE 127180</span>
-        </div>
+    <section class="manifesto-block manifesto-block--right">
+      <div class="manifesto-block__text">
+        <p>
+          Em muitos lugares, o cuidado foi comprimido por agendas,
+          protocolos e expectativas de resposta imediata.
+        </p>
+        <p>
+          A Átris nasce de outra escolha: organizar a clínica para que o encontro
+          tenha presença, continuidade e consequência.
+        </p>
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════
-         CTA FINAL
-    ══════════════════════════════════════ -->
-    <div class="cta-final">
-      <a href={WA} class="mf-btn mf-btn--primary" target="_blank" rel="noopener noreferrer">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.59 5.99L0 24l6.18-1.62A11.96 11.96 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.67-.5-5.24-1.44l-.38-.22-3.67.96.98-3.58-.25-.37A9.95 9.95 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.64-.93-2.24-.24-.59-.49-.51-.68-.52-.17 0-.37-.02-.57-.02s-.52.08-.79.37C7.5 8.6 6.7 9.33 6.7 10.85s1.04 3.02 1.18 3.23c.15.2 2.04 3.11 4.94 4.36.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.55-.08 1.7-.7 1.94-1.37.24-.67.24-1.25.17-1.37-.07-.12-.27-.19-.57-.34z" fill="rgba(255,255,255,0.9)"/>
-        </svg>
-        Agendar consulta
-      </a>
-      <a href="/medicos" class="mf-btn mf-btn--outline">Conhecer os médicos</a>
-    </div>
+    <figure class="manifesto-image manifesto-image--portrait">
+      <img src="/assets/ambient_5.jpg" alt="Textura e atmosfera do espaço da Átris" />
+    </figure>
 
-  </div>
+    <section class="manifesto-block">
+      <div class="manifesto-block__text">
+        <p>
+          Rigor clínico e acolhimento não são forças opostas.
+        </p>
+        <p>
+          Uma decisão precisa pode ser tomada com delicadeza.
+          Uma escuta humana pode ser conduzida com método.
+        </p>
+      </div>
+    </section>
+
+    <section class="manifesto-aside manifesto-aside--quiet">
+      <p>O vínculo não é um detalhe do tratamento.</p>
+    </section>
+
+    <section class="manifesto-block manifesto-block--right">
+      <div class="manifesto-block__text">
+        <p>
+          O acompanhamento em saúde mental exige uma relação capaz de atravessar
+          dúvidas, recaídas, ajustes e descobertas.
+        </p>
+        <p>
+          Por isso, cada caso precisa ser visto como construção:
+          algo que se forma aos poucos, com atenção ao que aparece e ao que ainda não pôde ser dito.
+        </p>
+      </div>
+    </section>
+
+    <section class="manifesto-signature">
+      <img src="/images/brand/bird_swirl_colorido.svg" alt="" aria-hidden="true" />
+      <p>
+        Átris Instituto de Psiquiatria<br />
+        Ribeirão Preto, SP
+      </p>
+    </section>
+
+    <figure class="manifesto-founders">
+      <img
+        src="/assets/Founders_placeholder.png"
+        alt="Fundadores da Átris Instituto de Psiquiatria"
+      />
+    </figure>
+  </article>
 </Layout>
 
-<style>
-  .manifesto-page {
+<style is:global>
+  .manifesto-hero {
+    position: relative;
+    min-height: 82vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background:
+      linear-gradient(rgba(66, 30, 41, 0.18), rgba(66, 30, 41, 0.18)),
+      url("/assets/ambient_6.JPG") center 54% / cover;
+    color: var(--creme);
     font-family: var(--font-body);
   }
 
-  /* ── Coluna central ── */
-  .col-center {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 0 24px;
+  .manifesto-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 16% 76%, rgba(14, 7, 10, 0.7) 0%, rgba(66, 30, 41, 0.42) 34%, transparent 68%),
+      linear-gradient(to right, rgba(23, 10, 15, 0.78) 0%, rgba(66, 30, 41, 0.46) 38%, rgba(66, 30, 41, 0.12) 100%),
+      linear-gradient(to top, rgba(18, 9, 12, 0.74) 0%, rgba(66, 30, 41, 0.16) 50%, transparent 82%);
   }
 
-  /* ════════════════════════════════
-     MANIFESTO
-  ════════════════════════════════ */
-  .manifesto-body {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 80px 24px 0;
+  .manifesto-hero__content {
+    position: relative;
+    width: min(920px, 100%);
+    padding: 0 5.3vw 11vh;
   }
 
-  .eyebrow {
-    display: block;
-    font-size: 11px;
-    letter-spacing: 0.22em;
+  .manifesto-hero__kicker {
+    margin: 0 0 28px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.38em;
+    color: rgba(216, 119, 68, 0.86);
     text-transform: uppercase;
-    color: var(--color-orange);
-    margin-bottom: 48px;
   }
 
-  .block {
-    font-size: 19px;
+  .manifesto-hero h1 {
+    margin: 0 0 30px;
+    font-size: clamp(54px, 6.2vw, 108px);
+    font-weight: 300;
+    line-height: 0.98;
+    letter-spacing: 0;
+    color: var(--creme);
+  }
+
+  .manifesto-hero__text {
+    margin: 0;
+    max-width: 620px;
+    font-size: clamp(18px, 1.55vw, 25px);
     font-style: italic;
-    line-height: 1.85;
-    color: var(--color-text);
-    margin: 0 0 44px;
+    line-height: 1.55;
+    color: rgba(246, 239, 227, 0.72);
   }
 
-  .block:last-of-type {
+  .manifesto-essay {
+    font-family: var(--font-body);
+    background: var(--creme);
+  }
+
+  .manifesto-block {
+    width: min(720px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 76px 0;
+  }
+
+  .manifesto-block--opening {
+    padding-top: 96px;
+  }
+
+  .manifesto-block--right {
+    margin-right: auto;
+  }
+
+  .manifesto-block__text p {
+    margin: 0 0 24px;
+    font-size: clamp(20px, 1.8vw, 29px);
+    font-weight: 300;
+    line-height: 1.56;
+    color: var(--vinho);
+  }
+
+  .manifesto-block__text p:last-child {
     margin-bottom: 0;
-  }
-
-  /* único divisor — sinaliza fim do manifesto */
-  .closing-rule {
-    display: block;
-    width: 32px;
-    height: 1px;
-    background: var(--color-orange);
-    margin: 56px 0 48px;
-  }
-
-  .closing {
-    font-size: 22px;
+    color: var(--muted);
     font-style: italic;
-    color: var(--color-primary);
-    margin: 0 0 48px;
   }
 
-  /* ── Assinatura ── */
-  .signature {
+  .manifesto-image {
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .manifesto-image img,
+  .manifesto-founders img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.9) contrast(1.03);
+  }
+
+  .manifesto-image--wide {
+    width: min(720px, calc(100% - 48px));
+    height: 36vh;
+    min-height: 280px;
+    margin: 12px auto;
+  }
+
+  .manifesto-image--wide img {
+    object-position: 50% 28%;
+  }
+
+  .manifesto-image--portrait {
+    width: min(720px, calc(100% - 48px));
+    height: 42vh;
+    min-height: 320px;
+    margin: 12px auto;
+  }
+
+  .manifesto-aside {
+    width: min(720px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 56px 0 50px;
+    border-top: 1px solid rgba(216, 119, 68, 0.32);
+    border-bottom: 1px solid rgba(66, 30, 41, 0.08);
+  }
+
+  .manifesto-aside p {
+    margin: 0;
+    font-size: clamp(28px, 3vw, 44px);
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.18;
+    color: var(--vinho);
+  }
+
+  .manifesto-aside--quiet {
+    background: transparent;
+  }
+
+  .manifesto-signature {
+    width: min(680px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 118px 0 104px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding-bottom: 96px;
   }
 
-  .signature__bird {
-    width: 160px;
+  .manifesto-signature img {
+    width: 116px;
     height: auto;
-    object-fit: contain;
-    opacity: 0.85;
-    margin-bottom: 14px;
+    margin: 0 0 24px;
+    opacity: 0.9;
   }
 
-  .signature__names {
-    font-size: 14px;
-    font-style: italic;
-    color: rgba(23, 63, 115, 0.65);
-    line-height: 2;
-    text-align: right;
+  .manifesto-signature p {
     margin: 0;
-  }
-
-  /* ════════════════════════════════
-     TRANSIÇÃO
-  ════════════════════════════════ */
-  .transition {
-    max-width: 640px;
-    width: 100%;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-bottom: 56px;
-    padding: 0 24px;
-  }
-
-  .transition--medicos {
-    margin-bottom: 48px !important;
-  }
-
-  .transition__text {
-    font-size: 14px;
+    text-align: right;
+    font-size: 16px;
     font-style: italic;
-    color: rgba(23, 63, 115, 0.55);
-    letter-spacing: 0.04em;
+    line-height: 1.8;
+    color: var(--muted);
   }
 
-  /* ════════════════════════════════
-     ALICERCES
-  ════════════════════════════════ */
-  .alicerces {
-    max-width: 640px;
-    width: 100%;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding: 0 24px 96px;
+  .manifesto-founders {
+    height: 92vh;
+    min-height: 680px;
+    margin: 0;
+    background: var(--vinho);
   }
 
-  .alicerce {
-    padding-bottom: 44px;
-    border-bottom: 1px solid rgba(23, 63, 115, 0.07);
-    margin-bottom: 44px;
-  }
-
-  .alicerce:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  .alicerce__title {
-    font-size: 17px !important;
-    font-style: italic !important;
-    font-weight: 600 !important;
-    color: var(--color-primary) !important;
-    line-height: 1.2 !important;
-    margin: 0 0 14px !important;
-  }
-
-  .alicerce__body {
-    font-size: 15px !important;
-    color: var(--color-text-sec) !important;
-    line-height: 1.85 !important;
-    margin: 0 !important;
-  }
-
-  /* ════════════════════════════════
-     FUNDADORES
-  ════════════════════════════════ */
-  .founders {
-    max-width: 640px;
-    width: 100%;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding: 0 24px 80px;
-  }
-
-  .founders__photo {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 24px;
-    display: block;
-  }
-
-  .founders__caption {
-    display: flex;
-    justify-content: center;
-    gap: 56px;
-  }
-
-  .founders__doctor {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .founders__doctor-name {
-    font-size: 15px;
-    font-style: italic;
-    color: var(--color-primary);
-    margin-bottom: 4px;
-  }
-
-  .founders__doctor-sub {
-    font-size: 13px;
-    color: var(--color-text-sec);
-  }
-
-  /* ════════════════════════════════
-     CTA FINAL
-  ════════════════════════════════ */
-  .cta-final {
-    max-width: 640px;
-    width: 100%;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding: 0 24px 96px;
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .mf-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 13px 28px;
-    font-family: var(--font-body);
-    font-size: 14px;
-    font-style: italic;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: opacity var(--transition), background var(--transition), color var(--transition);
-  }
-
-  .mf-btn--primary {
-    background: var(--color-primary);
-    color: #ffffff;
-    border: 1px solid var(--color-primary);
-  }
-
-  .mf-btn--primary:hover {
-    opacity: 0.85;
-  }
-
-  .mf-btn--outline {
-    background: transparent;
-    color: var(--color-primary);
-    border: 1px solid rgba(23, 63, 115, 0.28);
-  }
-
-  .mf-btn--outline:hover {
-    border-color: rgba(23, 63, 115, 0.55);
-    background: rgba(23, 63, 115, 0.04);
-  }
-
-  /* ════════════════════════════════
-     RESPONSIVO
-  ════════════════════════════════ */
-  @media (max-width: 768px) {
-    .founders__caption {
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
+  @media (max-width: 900px) {
+    .manifesto-block,
+    .manifesto-block--right {
+      width: min(680px, calc(100% - 48px));
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .cta-final {
-      flex-direction: column;
-      align-items: center;
+    .manifesto-image--portrait {
+      width: min(680px, calc(100% - 48px));
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .manifesto-hero {
+      min-height: 100svh;
+      background-position: center center;
+    }
+
+    .manifesto-hero__content {
+      padding: 0 24px 62px;
+    }
+
+    .manifesto-hero__kicker {
+      margin-bottom: 22px;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+    }
+
+    .manifesto-hero h1 {
+      margin-bottom: 24px;
+      font-size: clamp(44px, 15vw, 62px);
+    }
+
+    .manifesto-hero__text {
+      font-size: 17px;
+    }
+
+    .manifesto-block {
+      padding: 58px 0;
+    }
+
+    .manifesto-block--opening {
+      padding-top: 72px;
+    }
+
+    .manifesto-block__text p {
+      font-size: 22px;
+    }
+
+    .manifesto-image--wide {
+      height: 30vh;
+      min-height: 230px;
+    }
+
+    .manifesto-image--portrait {
+      min-height: 280px;
+      height: 36vh;
+    }
+
+    .manifesto-aside {
+      padding: 34px 0 30px;
+    }
+
+    .manifesto-aside p {
+      font-size: clamp(28px, 8vw, 36px);
+    }
+
+    .manifesto-signature {
+      padding: 86px 0 82px;
+    }
+
+    .manifesto-founders {
+      height: 72vh;
+      min-height: 520px;
     }
   }
 </style>
