@@ -3,213 +3,268 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-  title="Átris.social — Átris Instituto de Psiquiatria"
-  description="Estamos estruturando um modelo clínico capaz de ampliar acesso sem perder presença, continuidade e critério."
+  title="Acesso e cuidado em saúde mental — Átris"
+  description="Projetos de acesso à psiquiatria: consultas a valor acessível e, no futuro, cuidado em saúde mental levado ao território."
+  bodyClass="page-terra"
 >
-  <div class="social-page">
-    <section class="social-hero" aria-labelledby="social-title">
-      <div class="social-hero__inner">
-        <p class="social-kicker">Átris.social</p>
-        <h1 id="social-title">
-          O mesmo cuidado,<br />
-          em outros formatos.
-        </h1>
-        <p class="social-hero__text">
-          Estamos estruturando um modelo clínico capaz de ampliar acesso sem perder
-          presença, continuidade e critério.
+  <!-- HERO — class 'hero' é necessária para o IntersectionObserver da Nav -->
+  <section class="hero terra-hero" aria-labelledby="terra-title">
+    <div class="terra-hero__content">
+      <p class="terra-hero__kicker">Extensão</p>
+      <h1 id="terra-title" class="terra-hero__headline">Átris Terra</h1>
+      <p class="terra-hero__sub">Projetos de acesso e cuidado em saúde mental.</p>
+    </div>
+  </section>
+
+  <main class="terra-body">
+
+    <!-- Parte 1 -->
+    <section class="terra-block">
+      <p class="terra-block__label">O primeiro passo</p>
+      <div>
+        <h2 class="terra-block__title">Cuidado ao alcance.</h2>
+        <p class="terra-block__text">
+          Consultas de psiquiatria a valor acessível, para quem precisa e não
+          chegaria de outra forma. Conduzido por psiquiatras parceiros da Átris,
+          sob os mesmos critérios: tempo, vínculo e rigor.
+        </p>
+        <a
+          class="terra-cta"
+          href="https://wa.me/5516993732111?text=Ol%C3%A1%2C%20gostaria%20de%20ser%20avisado%20quando%20as%20consultas%20acess%C3%ADveis%20da%20%C3%81tris%20come%C3%A7arem."
+          target="_blank"
+          rel="noopener noreferrer"
+        >Quero ser avisado</a>
+      </div>
+    </section>
+
+    <!-- Parte 2 -->
+    <section class="terra-block">
+      <p class="terra-block__label">Depois</p>
+      <div>
+        <h2 class="terra-block__title">Os projetos de território.</h2>
+        <p class="terra-block__text">
+          Levar cuidado a comunidades que não chegam ao consultório. É a parte
+          mais lenta de construir, e a que mais nos interessa. Virá quando puder
+          vir inteira.
         </p>
       </div>
     </section>
 
-    <article class="social-note">
-      <div class="social-note__body">
-        <section class="social-copy">
-          <p>Nem todo cuidado precisa acontecer da mesma forma.</p>
-          <p>
-            A Átris.social nasce da tentativa de construir formatos mais acessíveis
-            sem transformar escuta em escala automática.
-          </p>
-          <p>
-            Estamos estudando modelos clínicos capazes de ampliar acesso preservando
-            supervisão, acompanhamento e responsabilidade.
-          </p>
-        </section>
+    <!-- Assinatura: logo da submarca, alinhada à direita -->
+    <div class="terra-sign">
+      <img
+        src="/images/brand/TERRAatris_completo.svg"
+        alt="Átris Terra"
+        class="terra-sign__logo"
+      />
+    </div>
 
-        <section class="social-copy social-copy--quiet">
-          <p>O projeto está sendo estruturado com calma.</p>
-          <p>
-            Preferimos construir devagar a oferecer algo que não consiga sustentar
-            a mesma qualidade clínica que orienta a Átris.
-          </p>
-        </section>
-
-        <a
-          class="social-link"
-          href="https://wa.me/5516993732111?text=Ol%C3%A1%2C%20gostaria%20de%20receber%20atualiza%C3%A7%C3%B5es%20sobre%20a%20%C3%81tris.social."
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Receber atualizações do projeto →
-        </a>
-      </div>
-    </article>
-  </div>
+  </main>
 </Layout>
 
-<style>
-  .social-page {
-    min-height: 100vh;
+<!-- Recolore Nav + Footer (compartilhados) para oliva apenas em /social -->
+<style is:global>
+  body.page-terra {
     background: var(--creme);
-    color: var(--vinho);
+  }
+  body.page-terra main {
+    background: var(--creme);
+  }
+
+  /* Nav/overlay olivas → centralizado em Nav.astro (tema por submarca) */
+
+  /* Footer oliva */
+  body.page-terra footer {
+    background: #344023;
+  }
+</style>
+
+<style>
+  /* ─────────── HERO (oliva — a ponta escura de cima) ─────────── */
+  .terra-hero {
+    position: relative;
+    min-height: 82vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    background-color: #344023;
+    background-image:
+      linear-gradient(rgba(52, 64, 35, 0.18), rgba(52, 64, 35, 0.18)),
+      url("/assets/ambient_2.jpg");
+    background-size: cover;
+    background-position: center;
     font-family: var(--font-body);
   }
 
-  .social-hero {
-    background: var(--areia);
-    border-bottom: 1px solid rgba(66, 30, 41, 0.08);
+  /* Overlay para legibilidade — gradiente na cor da submarca (oliva), não vinho */
+  .terra-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 16% 78%, rgba(10, 13, 6, 0.68) 0%, rgba(52, 64, 35, 0.42) 34%, transparent 68%),
+      linear-gradient(to right, rgba(12, 16, 8, 0.72) 0%, rgba(52, 64, 35, 0.4) 40%, rgba(52, 64, 35, 0.1) 100%),
+      linear-gradient(to top, rgba(10, 13, 6, 0.74) 0%, rgba(52, 64, 35, 0.16) 50%, transparent 82%);
   }
 
-  .social-hero__inner {
-    width: min(1180px, calc(100% - 12vw));
-    margin: 0 auto;
-    padding: 122px 0 90px;
+  .terra-hero__content {
+    position: relative;
+    width: min(920px, 100%);
+    padding: 0 5.3vw 11vh;
   }
 
-  .social-kicker {
-    margin: 0 0 36px;
+  .terra-hero__kicker {
+    margin: 0 0 28px;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.38em;
     text-transform: uppercase;
-    color: var(--cobre);
+    color: rgba(216, 119, 68, 0.86);
   }
 
-  .social-hero h1 {
-    max-width: 760px;
-    margin: 0;
-    font-size: clamp(36px, 3.15vw, 48px);
+  /* EXCEÇÃO à regra do itálico: só no H1 do hero o wordmark é ROMANO, para
+     bater exatamente com o tratamento do medicos/manifesto (o itálico tem
+     métrica diferente e destoava). No corpo, "Átris Terra" segue em itálico. */
+  .terra-hero__headline {
+    font-size: clamp(54px, 6.2vw, 108px);
+    font-style: normal;
     font-weight: 300;
-    font-style: italic;
-    line-height: 1.06;
+    color: var(--creme);
+    line-height: 0.98;
     letter-spacing: 0;
-    color: var(--vinho);
+    margin: 0 0 30px;
   }
 
-  .social-hero__text {
+  .terra-hero__sub {
+    font-size: clamp(18px, 1.55vw, 25px);
+    font-style: italic;
+    color: rgba(246, 239, 227, 0.72);
+    line-height: 1.55;
+    margin: 0;
     max-width: 620px;
-    margin: 34px 0 0;
-    font-size: clamp(17px, 1.2vw, 20px);
-    font-style: italic;
-    line-height: 1.65;
-    color: var(--muted);
   }
 
-  .social-note {
-    background: var(--creme);
-  }
-
-  .social-note__body {
-    width: min(1180px, calc(100% - 12vw));
+  /* ─────────── CORPO (creme — o miolo claro) ─────────── */
+  .terra-body {
+    width: min(1080px, calc(100% - 12vw));
     margin: 0 auto;
-    padding: 76px 0 96px;
+    padding: 112px 0 40px;
+    font-family: var(--font-body);
   }
 
-  .social-copy {
-    max-width: 760px;
-    padding: 0 0 48px;
-    border-bottom: 1px solid rgba(216, 119, 68, 0.28);
+  .terra-block {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 64px;
+    padding: 76px 0;
+    border-top: 1px solid rgba(52, 64, 35, 0.12);
   }
 
-  .social-copy + .social-copy {
-    margin-top: 48px;
+  .terra-block:first-of-type {
+    border-top: none;
+    padding-top: 8px;
   }
 
-  .social-copy p {
-    margin: 0 0 20px;
-    font-size: clamp(18px, 1.35vw, 22px);
-    font-weight: 300;
-    line-height: 1.58;
-    color: var(--vinho);
-  }
-
-  .social-copy p:last-child {
-    margin-bottom: 0;
-  }
-
-  .social-copy--quiet {
-    max-width: 760px;
-    margin-left: 0;
-    color: var(--muted);
-  }
-
-  .social-copy--quiet p {
-    color: var(--muted);
+  .terra-block__label {
+    font-size: 13px;
     font-style: italic;
-  }
-
-  .social-link {
-    display: inline-flex;
-    margin-top: 46px;
-    font-size: clamp(17px, 1.15vw, 20px);
-    font-style: italic;
-    line-height: 1.4;
+    letter-spacing: 0.02em;
     color: var(--cobre);
-    transition: color var(--transition), transform var(--transition);
+    padding-top: 6px;
   }
 
-  .social-link:hover {
-    color: var(--vinho);
-    transform: translateX(4px);
+  .terra-block__label::before {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 1px;
+    background: var(--cobre);
+    opacity: 0.6;
+    margin-bottom: 18px;
+  }
+
+  .terra-block__title {
+    font-size: clamp(26px, 2.6vw, 36px);
+    font-style: italic;
+    font-weight: 400;
+    color: #344023;
+    line-height: 1.2;
+    margin: 0 0 22px;
+  }
+
+  .terra-block__text {
+    font-size: clamp(16px, 1.15vw, 19px);
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.82;
+    max-width: 56ch;
+  }
+
+  /* CTA — cobre discreto sobre creme */
+  .terra-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 36px;
+    padding: 18px 40px;
+    border: 1px solid var(--cobre);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--cobre);
+    background: transparent;
+    transition: background var(--transition), color var(--transition);
+  }
+
+  .terra-cta:hover {
+    background: var(--cobre);
+    color: var(--creme);
+  }
+
+  /* Assinatura final — logo da submarca, jogada à direita */
+  .terra-sign {
+    margin-top: 104px;
+    padding-top: 56px;
+    border-top: 1px solid rgba(52, 64, 35, 0.12);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .terra-sign__logo {
+    width: 200px;
+    height: auto;
+    opacity: 0.92;
+  }
+
+  @media (max-width: 820px) {
+    .terra-block {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
   }
 
   @media (max-width: 760px) {
-    .social-hero__inner,
-    .social-note__body {
-      width: calc(100% - 48px);
-    }
-
-    .social-hero__inner {
-      padding: 112px 0 76px;
-    }
-
-    .social-kicker {
-      margin-bottom: 28px;
+    .terra-hero__kicker {
+      margin-bottom: 22px;
       font-size: 10px;
       letter-spacing: 0.3em;
     }
-
-    .social-hero h1 {
-      font-size: clamp(36px, 11vw, 48px);
+    .terra-hero__headline {
+      font-size: clamp(44px, 15vw, 62px);
     }
-
-    .social-hero__text {
-      margin-top: 28px;
+    .terra-hero__sub {
       font-size: 17px;
     }
-
-    .social-note__body {
-      padding: 60px 0 82px;
+    .terra-body {
+      padding: 84px 0 32px;
     }
-
-    .social-copy,
-    .social-copy--quiet {
-      max-width: none;
-      margin-left: 0;
-      padding-bottom: 42px;
+    .terra-sign {
+      margin-top: 80px;
     }
-
-    .social-copy + .social-copy {
-      margin-top: 42px;
-    }
-
-    .social-copy p {
-      font-size: 18px;
-      line-height: 1.62;
-    }
-
-    .social-link {
-      margin-top: 42px;
-      font-size: 18px;
+    .terra-sign__logo {
+      width: 150px;
     }
   }
 </style>

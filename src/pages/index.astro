@@ -12,7 +12,7 @@ const products = [
     href: "/consultas",
   },
   {
-    tag: "Acesso popular",
+    tag: "Acesso",
     title: "Átris.social",
     body: "A mesma qualidade de cuidado, num modelo acessível. Porque saúde mental não deveria ser privilégio.",
     linkLabel: "Saiba como funciona",
@@ -42,11 +42,10 @@ const products = [
     <div class="hero__content">
       <p class="hero__location">Ribeirão Preto · SP</p>
       <h1 class="hero__headline">
-        <span>Psiquiatria com escuta,</span>
-        <em>presença e profundidade.</em>
+        <em>Psiquiatria feita à mão.</em>
       </h1>
       <p class="hero__sub">
-        <span>Atendimento individualizado para adultos.</span>
+        <span>Atendimento psiquiátrico para adultos.</span>
         <span>Consultas presenciais e online.</span>
       </p>
       <div class="hero__actions">
@@ -61,48 +60,6 @@ const products = [
   </section>
 
   <!-- ══════════════════════════════════════
-       PITCH
-  ══════════════════════════════════════ -->
-  <section class="pitch">
-    <div class="pitch__grid">
-      <div class="pitch__left">
-        <p class="kicker">Como trabalhamos</p>
-        <h2 class="pitch__heading">
-          Como o atendimento é conduzido faz diferença.
-        </h2>
-      </div>
-      <div class="pitch__right">
-        <p class="pitch__body">
-          Quando o processo permite compreender melhor cada caso, as decisões se tornam
-          mais precisas e o acompanhamento ganha consistência.
-        </p>
-        <span class="pitch__dash" aria-hidden="true"></span>
-        <p class="pitch__close">
-          É assim que estruturamos nosso modelo de atendimento.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       NA PRÁTICA
-  ══════════════════════════════════════ -->
-  <section class="pratica" id="pratica">
-    <h2 class="pratica__title">
-      Na prática, o processo de agendamento é direto.
-    </h2>
-    <p class="pratica__p">
-      Você conhece os médicos, escolhe com quem deseja se consultar
-      e marca a consulta pelo WhatsApp.
-    </p>
-    <p class="pratica__p">
-      O atendimento pode ser presencial ou por telemedicina,
-      conforme a necessidade de cada caso.
-    </p>
-    <a href="/medicos" class="pratica__cta">Conhecer os médicos</a>
-  </section>
-
-  <!-- ══════════════════════════════════════
        MANIFESTO
   ══════════════════════════════════════ -->
   <section class="manifesto">
@@ -114,23 +71,40 @@ const products = [
 
       <div class="manifesto__body">
         <blockquote class="manifesto__quote">
-          A psiquiatria atual atravessa uma crise de produtividade. Consultas
-          cada vez mais rápidas, decisões protocolares e uma homogeneização em
-          nome da eficiência. Não é má vontade, <em>é uma estrutura que
-          reflete o nosso tempo.</em> Acreditamos que outro tipo de cuidado
-          é possível. E necessário.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, <em>quis nostrud exercitation ullamco laboris.</em>
+          Nisi ut aliquip ex ea commodo consequat duis aute irure dolor.
         </blockquote>
         <span class="manifesto__dash"></span>
         <div class="manifesto__actions">
           <a href="/manifesto" class="manifesto__link">
             <em>Leia o manifesto completo →</em>
           </a>
-          <a href={WA} class="manifesto__link manifesto__link--wa" target="_blank" rel="noopener noreferrer">
-            <em>Agendar consulta →</em>
-          </a>
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       COMO TRABALHAMOS
+  ══════════════════════════════════════ -->
+  <section class="pitch">
+    <div class="pitch__grid">
+      <div class="pitch__left">
+        <p class="kicker">Como trabalhamos</p>
+        <h2 class="pitch__heading">
+          Você escolhe o médico. O resto é direto.
+        </h2>
+      </div>
+      <div class="pitch__right">
+        <p class="pitch__body">
+          Você decide com quem quer se tratar e marca pelo WhatsApp.
+          Presencial em Ribeirão Preto ou por telemedicina.
+        </p>
+        <a href="/medicos" class="pratica__cta">Conheça os médicos</a>
+      </div>
     </div>
   </section>
 
@@ -281,7 +255,8 @@ const products = [
      PITCH
   ════════════════════════════════ */
   .pitch {
-    padding: 88px 56px 72px;
+    padding: 72px 56px 80px;
+    background: rgba(122, 61, 39, 0.06);
   }
 
   .pitch__grid {
@@ -403,6 +378,7 @@ const products = [
     margin: 0 56px;
   }
 
+
   /* ════════════════════════════════
      PRODUTOS
   ════════════════════════════════ */
@@ -485,10 +461,7 @@ const products = [
      MANIFESTO
   ════════════════════════════════ */
   .manifesto {
-    background: var(--vinho);
-    color: rgba(246, 239, 227, 0.82);
-    padding: 96px 56px;
-    border-bottom: 3px solid var(--cobre);
+    padding: 104px 56px 56px;
   }
 
   .manifesto__grid {
@@ -501,21 +474,23 @@ const products = [
   .manifesto__label {
     font-size: 14px;
     font-style: italic;
-    color: rgba(246, 239, 227, 0.28);
+    color: var(--cobre);
     margin: 0;
     padding-top: 6px;
   }
 
   .manifesto__quote {
-    font-size: 23px;
-    color: rgba(246, 239, 227, 0.82);
-    line-height: 1.75;
-    margin: 0 0 0;
+    font-size: 19px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--vinho);
+    line-height: 1.8;
+    margin: 0;
   }
 
   .manifesto__quote em {
     font-style: italic;
-    color: rgba(246, 239, 227, 0.95);
+    color: var(--mogno);
   }
 
   .manifesto__dash {
@@ -535,7 +510,7 @@ const products = [
 
   .manifesto__link {
     font-size: 15px;
-    color: var(--dourado);
+    color: var(--cobre);
     transition: opacity var(--transition);
   }
 

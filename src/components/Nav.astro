@@ -9,10 +9,11 @@ const logoFullLightMobile = isProfessionalsPage
   : "/images/brand/atris_limpo.svg";
 
 const links = [
-  { label: "Manifesto",    href: "/manifesto" },
+  { label: "Manifesto",     href: "/manifesto" },
   { label: "Profissionais", href: "/medicos" },
-  { label: "Átris.social", href: "/social" },
-  { label: "Contato",      href: "/contato" },
+  { label: "Social",        href: "/social" },
+  { label: "Educação",      href: "/edu" },
+  { label: "Contato",       href: "/contato" },
 ];
 ---
 
@@ -92,12 +93,15 @@ const links = [
     border-bottom: 1px solid transparent;
   }
 
-  .nav.is-solid {
+  /* Colapsada sobre o HERO escuro → barra CREME (contraste claro/escuro) */
+  .nav.is-compact.nav--on-hero:not(.is-solid) {
     background: var(--creme);
     border-bottom-color: rgba(66, 30, 41, 0.07);
   }
 
-  .nav.is-compact:not(.is-solid) {
+  /* Colapsada sobre o CORPO claro → barra ESCURA (contraste escuro/claro) */
+  .nav.is-solid,
+  .nav.is-compact:not(.nav--on-hero):not(.is-solid) {
     background: var(--vinho);
     border-bottom-color: var(--vinho);
   }
@@ -199,19 +203,20 @@ const links = [
   /* Dimming ao hover */
   .nav__links:has(a:hover) .nav__link:not(:hover) { opacity: 0.4; }
 
-  /* Estado sólido */
-  .nav.is-solid .nav__link { color: var(--color-text-secondary); }
-  .nav.is-solid .nav__link:hover { color: var(--vinho); }
-  .nav.is-solid .nav__link--active { color: var(--vinho); }
-  .nav.is-solid .nav__link--active::after { background: var(--cobre); opacity: 0.95; }
-  .nav.is-solid .nav__links:has(a:hover) .nav__link:not(:hover) { opacity: 0.45; }
+  /* Barra CREME (colapsada sobre hero escuro) → links escuros */
+  .nav.is-compact.nav--on-hero:not(.is-solid) .nav__link { color: var(--color-text-secondary); }
+  .nav.is-compact.nav--on-hero:not(.is-solid) .nav__link:hover { color: var(--vinho); }
+  .nav.is-compact.nav--on-hero:not(.is-solid) .nav__link--active { color: var(--vinho); }
+  .nav.is-compact.nav--on-hero:not(.is-solid) .nav__link--active::after { background: var(--cobre); opacity: 0.95; }
+  .nav.is-compact.nav--on-hero:not(.is-solid) .nav__links:has(a:hover) .nav__link:not(:hover) { opacity: 0.45; }
 
-  body:not(.page-edu) .nav:not(.nav--on-hero):not(.is-compact):not(.is-solid) .nav__link {
+  /* Topo transparente sobre corpo claro (páginas sem hero) → links escuros */
+  .nav:not(.nav--on-hero):not(.is-compact):not(.is-solid) .nav__link {
     color: var(--color-text-secondary);
   }
 
-  body:not(.page-edu) .nav:not(.nav--on-hero):not(.is-compact):not(.is-solid) .nav__link:hover,
-  body:not(.page-edu) .nav:not(.nav--on-hero):not(.is-compact):not(.is-solid) .nav__link--active {
+  .nav:not(.nav--on-hero):not(.is-compact):not(.is-solid) .nav__link:hover,
+  .nav:not(.nav--on-hero):not(.is-compact):not(.is-solid) .nav__link--active {
     color: var(--vinho);
   }
 
@@ -237,7 +242,8 @@ const links = [
     transition: background var(--transition);
   }
 
-  .nav.is-solid .nav__burger-text { color: var(--vinho); }
+  /* Barra CREME (colapsada sobre hero escuro) → burger escuro */
+  .nav.is-compact.nav--on-hero:not(.is-solid) .nav__burger-text { color: var(--vinho); }
 
   /* ─── Overlay mobile ─── */
   .nav-overlay {
@@ -300,12 +306,20 @@ const links = [
       border-bottom: 0;
     }
 
-    .nav.is-compact,
-    .nav.is-compact:not(.is-solid),
-    .nav.is-compact.is-solid {
-      background: rgba(66, 30, 41, 0.88);
+    /* Colapsada sobre corpo claro → barra escura translúcida */
+    .nav.is-solid,
+    .nav.is-compact:not(.nav--on-hero):not(.is-solid) {
+      background: rgba(66, 30, 41, 0.9);
       border-bottom: 0;
       box-shadow: 0 8px 24px rgba(27, 22, 22, 0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    /* Colapsada sobre hero escuro → barra creme translúcida */
+    .nav.is-compact.nav--on-hero:not(.is-solid) {
+      background: rgba(246, 239, 227, 0.92);
+      border-bottom: 0;
+      box-shadow: 0 8px 24px rgba(27, 22, 22, 0.06);
       backdrop-filter: blur(8px);
     }
 
@@ -367,12 +381,15 @@ const links = [
       display: flex;
     }
 
-    .nav.is-compact .nav__burger-text,
-    .nav.is-compact.is-solid .nav__burger-text {
+    /* burger claro sobre barra escura (corpo claro) */
+    .nav.is-solid .nav__burger-text,
+    .nav.is-compact:not(.nav--on-hero):not(.is-solid) .nav__burger-text {
       color: rgba(246, 239, 227, 0.86);
     }
 
-    body:not(.page-edu) .nav:not(.nav--on-hero):not(.is-compact) .nav__burger-text {
+    /* burger escuro sobre barra creme (hero) ou topo transparente claro */
+    .nav.is-compact.nav--on-hero:not(.is-solid) .nav__burger-text,
+    .nav:not(.nav--on-hero):not(.is-compact) .nav__burger-text {
       color: var(--vinho);
     }
 
@@ -395,6 +412,41 @@ const links = [
   }
 </style>
 
+<!-- ═══════════════════════════════════
+     Temas por submarca — recolore a nav e o overlay
+     (oliva na /social · teal na /edu). Global + !important
+     porque a regra base .nav.is-compact usa var(--vinho)
+     dentro do escopo do componente.
+════════════════════════════════════ -->
+<style is:global>
+  /* A barra ESCURA (colapsada sobre o corpo claro) recebe a cor da submarca.
+     A barra creme (colapsada sobre o hero) fica igual à marca-mãe. */
+  body.page-terra .nav.is-solid,
+  body.page-terra .nav.is-compact:not(.nav--on-hero):not(.is-solid) {
+    background: #344023 !important;
+    border-bottom-color: #344023 !important;
+  }
+  body.page-forma .nav.is-solid,
+  body.page-forma .nav.is-compact:not(.nav--on-hero):not(.is-solid) {
+    background: #153c40 !important;
+    border-bottom-color: #153c40 !important;
+  }
+
+  body.page-terra .nav-overlay { background: #344023; }
+  body.page-forma .nav-overlay { background: #153c40; }
+
+  @media (max-width: 768px) {
+    body.page-terra .nav.is-solid,
+    body.page-terra .nav.is-compact:not(.nav--on-hero):not(.is-solid) {
+      background: rgba(52, 64, 35, 0.92) !important;
+    }
+    body.page-forma .nav.is-solid,
+    body.page-forma .nav.is-compact:not(.nav--on-hero):not(.is-solid) {
+      background: rgba(21, 60, 64, 0.92) !important;
+    }
+  }
+</style>
+
 <script>
   const nav    = document.getElementById("nav") as HTMLElement;
   const fullLogo = document.querySelector(".nav__logo-full") as HTMLImageElement;
@@ -412,14 +464,19 @@ const links = [
     const isMobile = window.innerWidth <= 768;
     const compact = window.scrollY > (isMobile ? 96 : 48);
     const solid = nav.classList.contains("is-solid");
-    const darkSurface = document.body.classList.contains("page-edu") || (onHero && !solid) || (compact && (!solid || isMobile));
+    // Colapsada sobre o hero escuro → barra creme; nos demais casos a barra é
+    // escura (sobre o corpo claro). O logo contrasta com o fundo imediato:
+    // barra creme ou topo claro → logo colorido; barra escura ou hero escuro → logo claro.
+    const barCreme = compact && onHero && !solid;
+    const onLightBacking = barCreme || (!compact && !onHero);
+    const useClaroLogo = !onLightBacking;
 
     nav.classList.toggle("is-compact", compact);
     nav.classList.toggle("nav--on-hero", onHero);
-    nav.classList.toggle("nav--dark-surface", darkSurface);
+    nav.classList.toggle("nav--dark-surface", useClaroLogo);
 
     if (fullLogo) {
-      fullLogo.src = darkSurface
+      fullLogo.src = useClaroLogo
         ? (
             isMobile
               ? fullLogo.dataset.logoDarkMobile || "/images/brand/atris_limpo_claro.svg"
@@ -433,7 +490,7 @@ const links = [
     }
 
     if (birdLogo) {
-      birdLogo.src = darkSurface
+      birdLogo.src = useClaroLogo
         ? "/images/brand/bird_swirl_claro.svg"
         : "/images/brand/bird_swirl_colorido.svg";
     }

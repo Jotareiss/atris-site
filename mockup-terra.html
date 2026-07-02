@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Átris · Acesso e cuidado em saúde mental</title>
+
+  <!-- Tipografia real do site. Se abrir via file:// e a fonte não carregar,
+       cai em Georgia — a página .astro renderiza a Pétala Pro corretamente. -->
+  <style>
+    @font-face { font-family:"Petala Pro"; src:url("public/fonts/PetalaPro-Light.otf") format("opentype"); font-weight:300; font-style:normal; font-display:swap; }
+    @font-face { font-family:"Petala Pro"; src:url("public/fonts/PetalaPro-LightItalic.otf") format("opentype"); font-weight:300; font-style:italic; font-display:swap; }
+    @font-face { font-family:"Petala Pro"; src:url("public/fonts/PetalaPro-Regular.otf") format("opentype"); font-weight:400; font-style:normal; font-display:swap; }
+    @font-face { font-family:"Petala Pro"; src:url("public/fonts/PetalaPro-Italic.otf") format("opentype"); font-weight:400; font-style:italic; font-display:swap; }
+    @font-face { font-family:"Petala Pro"; src:url("public/fonts/PetalaPro-SemiBold.otf") format("opentype"); font-weight:600; font-style:normal; font-display:swap; }
+
+    :root{
+      /* Diferenciação cromática Átris Terra: oliva no lugar do vinho/ameixa */
+      --olive:      #344023;   /* verde escuro — nav, hero, footer */
+      --olive-lite: #657343;   /* oliva mais claro — texturas, detalhes */
+      /* Mantidos idênticos à Átris-mãe (mesma casa, outro cômodo) */
+      --cobre:  #D87744;
+      --dourado:#E7B864;
+      --areia:  #EAD7B8;
+      --creme:  #F6EFE3;
+      --muted:  #7B6762;
+      --font: "Petala Pro", Georgia, serif;
+    }
+
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    html{ scroll-behavior:smooth; }
+    body{ font-family:var(--font); background:var(--creme); color:#1B1616; line-height:1.6; -webkit-font-smoothing:antialiased; }
+    img{ max-width:100%; display:block; }
+    a{ color:inherit; text-decoration:none; }
+
+    /* ─────────── NAV (oliva sólido) ─────────── */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      background:var(--olive);
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 5.3vw; height:84px;
+      border-bottom:1px solid rgba(246,239,227,.08);
+    }
+    .nav__logo{ font-size:26px; font-weight:300; letter-spacing:.04em; color:var(--creme); }
+    .nav__links{ display:flex; gap:clamp(28px,3.4vw,54px); }
+    .nav__link{
+      font-size:13px; font-weight:600; letter-spacing:.28em;
+      color:rgba(246,239,227,.6); position:relative; transition:color .2s;
+    }
+    .nav__link:hover{ color:rgba(246,239,227,.9); }
+    .nav__link--active{ color:rgba(246,239,227,.82); }
+    .nav__link--active::after{
+      content:""; position:absolute; left:0; right:0; bottom:-8px;
+      height:1px; background:var(--cobre);
+    }
+    @media(max-width:820px){ .nav__links{ display:none; } }
+
+    /* ─────────── HERO (oliva — a "ponta" escura) ─────────── */
+    .hero{
+      position:relative; min-height:82vh;
+      display:flex; flex-direction:column; justify-content:flex-end;
+      background:var(--olive); overflow:hidden;
+    }
+    .hero::before{ /* textura sutil, evita chapado */
+      content:""; position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse at 12% 82%, rgba(101,115,67,.34) 0%, rgba(101,115,67,.10) 34%, transparent 62%),
+        linear-gradient(to top, rgba(20,26,13,.55) 0%, transparent 52%);
+    }
+    .hero__content{ position:relative; padding:0 5.3vw 8.8vh; max-width:1080px; }
+    .hero__kicker{
+      margin:0 0 40px; font-size:12px; font-weight:600; letter-spacing:.42em;
+      text-transform:uppercase; color:var(--cobre);
+    }
+    .hero__headline{
+      font-size:clamp(46px,6vw,78px); font-style:italic; font-weight:300;
+      color:var(--creme); line-height:1.04; margin:0 0 30px;
+    }
+    .hero__sub{
+      font-size:clamp(17px,1.3vw,22px); color:rgba(246,239,227,.64);
+      line-height:1.7; margin:0; max-width:52ch;
+    }
+
+    /* ─────────── CORPO (creme — o miolo claro) ─────────── */
+    .body{ width:min(1080px, calc(100% - 12vw)); margin:0 auto; padding:112px 0 40px; }
+
+    .block{ display:grid; grid-template-columns:220px 1fr; gap:64px; padding:76px 0; border-top:1px solid rgba(52,64,35,.12); }
+    .block:first-of-type{ border-top:none; padding-top:8px; }
+    .block__label{
+      font-size:13px; font-style:italic; letter-spacing:.02em;
+      color:var(--cobre); padding-top:6px;
+    }
+    .block__label::before{
+      content:""; display:block; width:26px; height:1px;
+      background:var(--cobre); opacity:.6; margin-bottom:18px;
+    }
+    .block__title{
+      font-size:clamp(26px,2.6vw,36px); font-style:italic; font-weight:400;
+      color:var(--olive); line-height:1.2; margin:0 0 22px;
+    }
+    .block__text{
+      font-size:clamp(16px,1.15vw,19px); font-weight:300; color:var(--muted);
+      line-height:1.82; max-width:56ch;
+    }
+
+    /* CTA — botão de aviso (cobre discreto sobre creme) */
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center;
+      margin-top:36px; padding:18px 40px;
+      border:1px solid var(--cobre); border-radius:0;
+      font-size:12px; font-weight:600; letter-spacing:.28em; text-transform:uppercase;
+      color:var(--cobre); background:transparent;
+      transition:background .2s, color .2s;
+    }
+    .cta:hover{ background:var(--cobre); color:var(--creme); }
+
+    /* Assinatura final — só a logo da submarca, jogada, sem texto */
+    .sign{ margin-top:104px; padding-top:56px; border-top:1px solid rgba(52,64,35,.12); }
+    .sign__logo-placeholder{
+      width:120px; height:120px; border:1px dashed rgba(216,119,68,.5);
+      border-radius:50%; display:flex; align-items:center; justify-content:center;
+      font-size:11px; font-style:italic; text-align:center; color:var(--muted);
+      line-height:1.4; padding:12px;
+    }
+
+    /* ─────────── FOOTER (oliva — a outra ponta escura) ─────────── */
+    .footer{ background:var(--olive); color:rgba(246,239,227,.85); margin-top:96px; padding:56px 0 0; }
+    .footer__inner{ width:min(1200px, calc(100% - 12vw)); margin:0 auto; padding-bottom:40px; display:grid; grid-template-columns:1.4fr 1fr 1.4fr; gap:48px; }
+    .footer__logo{ font-size:22px; font-weight:300; color:var(--creme); margin-bottom:16px; }
+    .footer__tag{ font-size:14px; color:rgba(246,239,227,.62); line-height:1.6; }
+    .footer__h{ font-size:12px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:rgba(246,239,227,.45); margin-bottom:16px; }
+    .footer__doc{ margin-bottom:14px; }
+    .footer__doc b{ display:block; font-size:14px; font-weight:500; color:rgba(246,239,227,.85); }
+    .footer__doc span{ font-size:12px; color:rgba(246,239,227,.4); }
+    .footer__addr{ font-size:14px; font-style:normal; color:rgba(246,239,227,.72); line-height:1.6; margin-bottom:8px; }
+    .footer__tele{ font-size:12px; color:rgba(246,239,227,.4); }
+    .footer__bottom{ border-top:1px solid rgba(246,239,227,.1); width:min(1200px, calc(100% - 12vw)); margin:0 auto; padding:24px 0; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    .footer__copy, .footer__disc{ font-size:12px; color:rgba(246,239,227,.4); }
+    @media(max-width:820px){
+      .block{ grid-template-columns:1fr; gap:20px; }
+      .footer__inner{ grid-template-columns:1fr; gap:32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <a href="#" class="nav__logo">Átris</a>
+    <nav class="nav__links">
+      <a href="#" class="nav__link">Manifesto</a>
+      <a href="#" class="nav__link">Consultas</a>
+      <a href="#" class="nav__link nav__link--active">Social</a>
+      <a href="#" class="nav__link">Edu</a>
+      <a href="#" class="nav__link">Médicos</a>
+      <a href="#" class="nav__link">Contato</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__content">
+      <p class="hero__kicker">Extensão</p>
+      <h1 class="hero__headline"><em>Átris Terra</em></h1>
+      <p class="hero__sub">Projetos de acesso e cuidado em saúde mental.</p>
+    </div>
+  </section>
+
+  <!-- CORPO -->
+  <main class="body">
+
+    <!-- Parte 1 -->
+    <section class="block">
+      <p class="block__label">O primeiro passo</p>
+      <div>
+        <h2 class="block__title">Uma clínica popular.</h2>
+        <p class="block__text">
+          Atendimento psiquiátrico a um valor que cabe em mais orçamentos.
+          Conduzido por psiquiatras parceiros da Átris, sob os mesmos critérios:
+          tempo, vínculo e rigor.
+        </p>
+        <a href="https://wa.me/5516993732111?text=Ol%C3%A1%2C%20gostaria%20de%20ser%20avisado%20quando%20a%20cl%C3%ADnica%20popular%20da%20%C3%81tris%20abrir." class="cta">Quero ser avisado</a>
+      </div>
+    </section>
+
+    <!-- Parte 2 -->
+    <section class="block">
+      <p class="block__label">Depois</p>
+      <div>
+        <h2 class="block__title">Os projetos de território.</h2>
+        <p class="block__text">
+          Levar cuidado a comunidades que não chegam ao consultório. É a parte
+          mais lenta de construir, e a que mais nos interessa. Virá quando puder
+          vir inteira.
+        </p>
+      </div>
+    </section>
+
+    <!-- Assinatura: logo da submarca (placeholder até o arquivo chegar) -->
+    <div class="sign">
+      <div class="sign__logo-placeholder">logo Átris&nbsp;Terra<br />(a inserir)</div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__logo">Átris</div>
+        <p class="footer__tag">Cuidado psiquiátrico de excelência,<br />com presença e escuta.</p>
+      </div>
+      <div>
+        <p class="footer__h">Equipe médica</p>
+        <div class="footer__doc"><b>Dr. José Augusto Silva Reis</b><span>CRM/SP 199536 · RQE 128556</span></div>
+        <div class="footer__doc"><b>Dr. Lean Pampana Basoli</b><span>CRM/SP 199566 · RQE 127180</span></div>
+      </div>
+      <div>
+        <p class="footer__h">Localização</p>
+        <address class="footer__addr">Av. Independência, 3115, sala 20 — Ribeirão Preto, SP</address>
+        <p class="footer__tele">Telemedicina para todo o Brasil · CFM nº 2.314/2022</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 Átris Instituto de Psiquiatria. Todos os direitos reservados.</p>
+      <p class="footer__disc">As informações deste site têm caráter educativo e não substituem avaliação médica.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

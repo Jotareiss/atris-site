@@ -225,6 +225,8 @@ button {
   .hero__sub,
   .professionals-hero__text,
   .manifesto-hero__text,
+  .terra-hero__sub,
+  .forma-hero__sub,
   .professionals-intro p:not(.professionals-intro__kicker),
   .body {
     font-size: clamp(16px, 1.15vw, 20px) !important;
@@ -235,7 +237,9 @@ button {
   }
 
   .professionals-hero__title,
-  .manifesto-hero h1 {
+  .manifesto-hero h1,
+  .terra-hero__headline,
+  .forma-hero__headline {
     font-size: clamp(40px, 4.65vw, 81px) !important;
   }
 

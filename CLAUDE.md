@@ -4,6 +4,10 @@
 
 Clínica psiquiátrica fundada por dois médicos da FMRP-USP. Site institucional estático com arquitetura guarda-chuva: três sub-marcas (consultas, social, edu) + páginas de apoio.
 
+## Voz da marca
+
+`Atris_Voz.md` é o guia de voz canônico. **Sempre consultar antes de gerar ou revisar qualquer texto da Átris** (legendas, microtextos, respostas, descrições, e-mails, copy de site). Ele traz a tábua de princípios, os três modos de dizer, o mapa de registro, o limite clínico inegociável e instruções diretas de uso para o Claude.
+
 ## Stack
 
 - **Framework:** Astro (geração estática)
@@ -76,7 +80,7 @@ Variável CSS: `--font-body: "Petala Pro", Georgia, serif`
 - Especialidades: Sexualidade · Diversidade de Gênero · Saúde Mental LGBTQIA+
 - Formação: FMRP-USP; atua no HCRP-USP, SEAVIDAS-USP e Hospital Estadual de Américo Brasiliense
 
-**Endereço:** Av. Independência, 3115, sala 20 — Ribeirão Preto, SP
+**Endereço:** Cavalheiro Torquato Rizzi, 1805, sala 24 — Ribeirão Preto, SP *(novo; substituiu Av. Independência, 3115, sala 20 — confirmar logradouro/bairro/CEP)*
 
 ## Decisões de design importantes
 

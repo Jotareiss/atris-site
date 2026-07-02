@@ -143,7 +143,14 @@ import Layout from "../layouts/Layout.astro";
   .priv-col {
     max-width: 640px;
     margin: 0 auto;
-    padding: 72px 24px 96px;
+    /* topo generoso para não passar por baixo da nav fixa (124px) */
+    padding: 148px 24px 96px;
+  }
+
+  @media (max-width: 560px) {
+    .priv-col {
+      padding: 112px 20px 72px;
+    }
   }
 
   .eyebrow {

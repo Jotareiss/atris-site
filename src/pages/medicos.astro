@@ -4,37 +4,31 @@ import Layout from "../layouts/Layout.astro";
 const professionals = [
   {
     name: "Dr. José Augusto Silva Reis",
-    photo: "/assets/Founder3_placeholder.png",
+    photo: "/assets/founder_jose.jpg",
     alt: "Retrato editorial do Dr. José Augusto Silva Reis",
-    signature: "Psiquiatria de adultos",
-    line: "Acompanhamento longitudinal, psicoses e reabilitação psicossocial.",
-    text: "Sua prática parte da escuta clínica como ponto de sustentação para decisões precisas. Atua com quadros complexos, continuidade de cuidado e atenção aos efeitos concretos do sofrimento psíquico na vida cotidiana.",
+    role: "Médico assistente no HCRP-USP, responsável pelo serviço de esquizofrenia e reabilitação psicossocial — acompanhamento longitudinal e recuperação no adoecimento mental crônico.",
+    formation: "Formado pela FMRP-USP. Psiquiatra pelo HCRP-USP. Doutorando em saúde mental, com foco no uso de psicodélicos para o tratamento de transtornos mentais.",
     crm: "CRM/SP 199536 · RQE 128556",
-    areas: "Psicoses · Reabilitação Psicossocial · Psicodélicos em Psiquiatria",
     wa: "https://wa.me/5516993732111",
     cta: "Entrar em contato",
   },
   {
     name: "Dra. Lara Zancaner Ueta",
-    photo: "/assets/Founder1_placeholder.png",
+    photo: "/assets/founder_lara.jpg",
     alt: "Retrato editorial da Dra. Lara Zancaner Ueta",
-    signature: "Psiquiatria de adultos",
-    line: "Presença clínica, continuidade e construção cuidadosa do tratamento.",
-    text: "A terceira seção mantém a mesma escala editorial dos demais profissionais enquanto os dados finais são definidos. O foco permanece no modo de cuidado da Átris: atenção, tempo e acompanhamento sem automatismos.",
-    crm: "CRM/SP em definição · RQE em definição",
-    areas: "Áreas de atuação em definição",
-    wa: "/contato",
-    cta: "Em breve",
+    role: "Médica assistente no HCRP-USP, responsável pela interconsulta psiquiátrica — cuidado psiquiátrico associado ao adoecimento físico — e pelo serviço de esquizofrenia e reabilitação psicossocial.",
+    formation: "Formada em medicina pela PUC-Campinas. Psiquiatra pelo HCRP-USP. Mestre em saúde mental pela FMRP-USP, com foco em neuroimagem na esquizofrenia.",
+    crm: "CRM/SP 164028 · RQE 65684",
+    wa: "https://wa.me/5516997081319",
+    cta: "Entrar em contato",
   },
   {
     name: "Dr. Lean Pampana Basoli",
-    photo: "/assets/Founder2_placeholder.png",
+    photo: "/assets/founder_lean.jpg",
     alt: "Retrato editorial do Dr. Lean Pampana Basoli",
-    signature: "Psiquiatria de adultos",
-    line: "Sexualidade, diversidade de gênero e cuidado em saúde mental LGBTQIA+.",
-    text: "Conduz o atendimento com presença, rigor e respeito às singularidades de cada história. Seu trabalho articula escuta clínica, acompanhamento contínuo e atenção aos contextos sociais que atravessam o sofrimento psíquico.",
+    role: "Médico assistente no ambulatório de sexualidade do HCRP-USP — diversidade de gênero, saúde sexual e cuidado em saúde mental LGBTQIA+.",
+    formation: "Formado pela FMRP-USP. Psiquiatra pelo HCRP-USP. Mestrando em saúde mental, com foco em stress pós-traumático e violência sexual.",
     crm: "CRM/SP 199566 · RQE 127180",
-    areas: "Sexualidade · Diversidade de Gênero · Saúde Mental LGBTQIA+",
     wa: "https://wa.me/5516999930259",
     cta: "Entrar em contato",
   },
@@ -49,22 +43,9 @@ const professionals = [
     <div class="professionals-hero__overlay" aria-hidden="true"></div>
     <div class="professionals-hero__content">
       <p class="professionals-hero__kicker">Equipe clínica</p>
-      <h1 class="professionals-hero__title">Profissionais</h1>
+      <h1 class="professionals-hero__title">Os médicos</h1>
       <p class="professionals-hero__text">
-        Psiquiatria conduzida com presença clínica,<br />
-        continuidade e escuta.
-      </p>
-    </div>
-  </section>
-
-  <section class="professionals-intro">
-    <p class="professionals-intro__kicker">Presença clínica</p>
-    <div class="professionals-intro__grid">
-      <h2>Um modo de cuidar que não começa pelo sintoma isolado.</h2>
-      <p>
-        Cada atendimento parte de uma história inteira: o tempo do sofrimento,
-        o contexto em que ele aparece e a continuidade necessária para que uma
-        decisão clínica faça sentido.
+        As mãos que fazem a Átris.
       </p>
     </div>
   </section>
@@ -80,13 +61,11 @@ const professionals = [
           <div class="professional-section__content">
             <p class="professional-section__eyebrow">Psiquiatra</p>
             <h2>{professional.name}</h2>
-            <p class="professional-section__signature">{professional.signature}</p>
-            <p class="professional-section__line">{professional.line}</p>
+            <p class="professional-section__role">{professional.role}</p>
             <span class="professional-section__rule" aria-hidden="true"></span>
-            <p class="professional-section__text">{professional.text}</p>
+            <p class="professional-section__formation">{professional.formation}</p>
             <div class="professional-section__meta">
               <p>{professional.crm}</p>
-              <p>{professional.areas}</p>
             </div>
             <a href={professional.wa} class="professional-section__link">
               {professional.cta}
@@ -95,20 +74,18 @@ const professionals = [
         </section>
 
         {index < professionals.length - 1 && (
-          <figure class="space-break" aria-hidden="true">
-            <img
-              src={index === 0 ? "/assets/ambient_2.jpg" : "/assets/ambient_3.jpg"}
-              alt=""
-            />
-          </figure>
+          <hr class="card-divider" aria-hidden="true" />
         )}
       </div>
     ))}
   </div>
 
   <section class="professionals-cta">
-    <p>O cuidado começa quando há tempo suficiente para compreender.</p>
-    <a href="/contato">Entrar em contato</a>
+    <div class="professionals-cta__overlay" aria-hidden="true"></div>
+    <div class="professionals-cta__content">
+      <p>Quando você estiver pronto, podemos começar</p>
+      <a href="/contato">Agende sua consulta</a>
+    </div>
   </section>
 </Layout>
 
@@ -193,6 +170,20 @@ const professionals = [
       font-size: 17px;
     }
   }
+
+  .professionals-list .card-divider {
+    width: min(720px, calc(100% - 48px));
+    height: 0;
+    margin: 0 auto 120px;
+    border: 0;
+    border-top: 1px solid rgba(216, 119, 68, 0.32);
+  }
+
+  @media (max-width: 900px) {
+    .professionals-list .card-divider {
+      margin-bottom: 88px;
+    }
+  }
 </style>
 
 <style>
@@ -237,6 +228,7 @@ const professionals = [
 
   .professionals-list {
     font-family: var(--font-body);
+    padding-top: 100px;
   }
 
   .professional-section {
@@ -288,34 +280,27 @@ const professionals = [
     color: var(--vinho);
   }
 
-  .professional-section__signature {
-    margin: 0 0 8px;
-    font-size: 15px;
-    font-weight: 300;
-    color: var(--mogno);
-  }
-
-  .professional-section__line {
+  .professional-section__role {
     margin: 0;
     font-size: 20px;
     font-style: italic;
-    line-height: 1.45;
-    color: var(--muted);
+    line-height: 1.6;
+    color: var(--vinho);
   }
 
   .professional-section__rule {
     display: block;
     width: 34px;
     height: 1px;
-    margin: 34px 0 32px;
+    margin: 32px 0 30px;
     background: var(--cobre);
   }
 
-  .professional-section__text {
+  .professional-section__formation {
     margin: 0;
-    font-size: 18px;
-    line-height: 1.82;
-    color: rgba(27, 22, 22, 0.76);
+    font-size: 17px;
+    line-height: 1.72;
+    color: rgba(27, 22, 22, 0.72);
   }
 
   .professional-section__meta {
@@ -350,47 +335,43 @@ const professionals = [
     opacity: 0.78;
   }
 
-  .space-break {
-    position: relative;
-    height: 54vh;
-    min-height: 420px;
-    margin: 0 5.3vw 124px;
-    overflow: hidden;
-    border-radius: 0;
-    background: var(--vinho);
-  }
-
-  .space-break::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(to right, rgba(66, 30, 41, 0.44), rgba(66, 30, 41, 0.08)),
-      linear-gradient(to top, rgba(27, 22, 22, 0.18), transparent 42%);
-  }
-
-  .space-break img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: saturate(0.88) contrast(1.03);
-  }
-
   .professionals-cta {
+    position: relative;
     margin: 0;
-    padding: 128px 5.3vw 138px;
-    text-align: center;
-    background: var(--vinho);
+    padding: 0;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: url("/assets/ambient_3.jpg") center / cover;
     color: var(--creme);
     font-family: var(--font-body);
   }
 
+  .professionals-cta__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(66, 30, 41, 0.82) 0%,
+      rgba(66, 30, 41, 0.56) 30%,
+      rgba(66, 30, 41, 0.16) 62%,
+      transparent 100%
+    );
+  }
+
+  .professionals-cta__content {
+    position: relative;
+    width: min(760px, 100%);
+    padding: 0 5.3vw;
+  }
+
   .professionals-cta p {
-    max-width: 760px;
-    margin: 0 auto 42px;
-    font-size: clamp(32px, 4.6vw, 72px);
+    max-width: 560px;
+    margin: 0 0 42px;
+    font-size: clamp(32px, 4.6vw, 64px);
     font-weight: 300;
-    line-height: 1.08;
+    line-height: 1.1;
   }
 
   .professionals-cta a {
@@ -401,7 +382,7 @@ const professionals = [
     font-weight: 600;
     letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: rgba(246, 239, 227, 0.82);
+    color: rgba(246, 239, 227, 0.92);
     transition: border-color var(--transition), color var(--transition);
   }
 
@@ -435,11 +416,8 @@ const professionals = [
       min-height: 520px;
     }
 
-    .space-break {
-      margin-left: 24px;
-      margin-right: 24px;
-      height: 44vh;
-      min-height: 320px;
+    .professionals-list {
+      padding-top: 56px;
     }
   }
 
@@ -453,8 +431,7 @@ const professionals = [
       font-size: 36px;
     }
 
-    .professionals-intro p:not(.professionals-intro__kicker),
-    .professional-section__text {
+    .professional-section__formation {
       font-size: 16px;
     }
 
@@ -472,18 +449,12 @@ const professionals = [
       font-size: 40px;
     }
 
-    .professional-section__line {
+    .professional-section__role {
       font-size: 18px;
     }
 
-    .space-break {
-      margin-bottom: 82px;
-      min-height: 280px;
-    }
-
     .professionals-cta {
-      padding-top: 88px;
-      padding-bottom: 96px;
+      min-height: 60vh;
     }
   }
 </style>

@@ -3,162 +3,262 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-  title="Átris.edu — Em Breve"
-  description="Formação continuada para profissionais de saúde mental. Minicursos, masterclasses e grupos de estudo conduzidos por quem está na prática clínica."
-  bodyClass="page-edu"
+  title="Formação e conhecimento em saúde mental — Átris"
+  description="Formação continuada e construção de conhecimento em saúde mental: cursos, grupos de estudo e pesquisa que nascem da prática clínica."
+  bodyClass="page-forma"
 >
-  <div class="edu-page">
-    <div class="edu-col">
+  <!-- HERO — class 'hero' é necessária para o IntersectionObserver da Nav -->
+  <section class="hero forma-hero" aria-labelledby="forma-title">
+    <div class="forma-hero__content">
+      <p class="forma-hero__kicker">Ensino</p>
+      <h1 id="forma-title" class="forma-hero__headline">Átris Forma</h1>
+      <p class="forma-hero__sub">Formação continuada e construção de conhecimento.</p>
+    </div>
+  </section>
 
-      <span class="eyebrow">Em breve</span>
+  <main class="forma-body">
 
-      <h1 class="headline">
-        Formação continuada para quem cuida de saúde mental.
-      </h1>
-
-      <span class="divider" aria-hidden="true"></span>
-
-      <p class="body">
-        Cuidar bem exige atualização constante. A Átris.edu é um espaço de
-        formação continuada para médicos, psicólogos, enfermeiros e todos que
-        atuam com saúde mental.
+    <section class="forma-copy">
+      <p class="forma-lead">
+        Cuidar bem exige seguir estudando. A <em>Átris Forma</em> é um espaço
+        para médicos, psicólogos, enfermeiros e todos que sustentam o cuidado
+        em saúde mental.
       </p>
-
-      <p class="body">
-        Minicursos, masterclasses e grupos de estudo conduzidos por quem está
-        na prática clínica diária. Conteúdo aplicável, linguagem direta, sem
-        distância entre teoria e realidade do consultório.
+      <span class="forma-rule" aria-hidden="true"></span>
+      <p class="forma-support">
+        Cursos e grupos de estudo conduzidos por quem ensina psiquiatria como
+        ofício. Conteúdo aplicável, sem distância entre teoria e consultório.
       </p>
+    </section>
 
-      <blockquote class="quote">
-        Acreditamos que melhorar o cuidado em saúde mental começa por quem
-        cuida. A Átris.edu é nossa contribuição para isso.
-      </blockquote>
-
+    <div class="forma-cta-wrap">
       <a
-        href="https://wa.me/5516XXXXXXXXX"
-        class="btn"
+        class="forma-cta"
+        href="https://wa.me/5516993732111?text=Ol%C3%A1%2C%20gostaria%20de%20ser%20avisado%20quando%20a%20%C3%81tris%20Forma%20abrir."
         target="_blank"
         rel="noopener noreferrer"
-      >
-        Fale pelo WhatsApp para ser avisado
-      </a>
-
-      <p class="note">Avisaremos quando abrir.</p>
-
+      >Quero ser avisado</a>
     </div>
 
-    <!-- Divider antes do footer -->
-    <div class="pre-footer-rule" aria-hidden="true"></div>
-  </div>
+    <!-- Assinatura: logo da submarca, alinhada à direita -->
+    <div class="forma-sign">
+      <img
+        src="/images/brand/FORMAatris_completo.svg"
+        alt="Átris Forma"
+        class="forma-sign__logo"
+      />
+    </div>
+
+  </main>
 </Layout>
 
+<!-- Recolore Nav + Footer (compartilhados) para teal apenas em /edu -->
 <style is:global>
-  /* Fundo azul em todo o body — elimina gaps entre conteúdo e footer */
-  body.page-edu {
-    background: var(--vinho);
+  body.page-forma {
+    background: var(--creme);
+  }
+  body.page-forma main {
+    background: var(--creme);
   }
 
-  /* Main não tem fundo próprio — garante que não vaze cor do body */
-  body.page-edu main {
-    background: var(--vinho);
-  }
+  /* Nav/overlay teal → centralizado em Nav.astro (tema por submarca) */
 
-  /* Footer ligeiramente mais escuro para criar separação sutil dentro do azul */
-  body.page-edu footer {
-    background: #2A131A;
+  /* Footer teal */
+  body.page-forma footer {
+    background: #153c40;
   }
 </style>
 
 <style>
-  .edu-page {
+  /* ─────────── HERO (teal — a ponta escura de cima) ─────────── */
+  .forma-hero {
+    position: relative;
+    min-height: 82vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    background-color: #153c40;
+    background-image:
+      linear-gradient(rgba(21, 60, 64, 0.18), rgba(21, 60, 64, 0.18)),
+      url("/assets/ambient_3.jpg");
+    background-size: cover;
+    background-position: center;
     font-family: var(--font-body);
   }
 
-  .edu-col {
-    max-width: 600px;
+  /* Overlay para legibilidade — gradiente na cor da submarca (teal), não vinho */
+  .forma-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 16% 78%, rgba(4, 16, 18, 0.68) 0%, rgba(21, 60, 64, 0.42) 34%, transparent 68%),
+      linear-gradient(to right, rgba(5, 18, 20, 0.72) 0%, rgba(21, 60, 64, 0.4) 40%, rgba(21, 60, 64, 0.1) 100%),
+      linear-gradient(to top, rgba(4, 16, 18, 0.74) 0%, rgba(21, 60, 64, 0.16) 50%, transparent 82%);
+  }
+
+  .forma-hero__content {
+    position: relative;
+    width: min(920px, 100%);
+    padding: 0 5.3vw 11vh;
+  }
+
+  .forma-hero__kicker {
+    margin: 0 0 28px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: rgba(216, 119, 68, 0.86);
+  }
+
+  /* EXCEÇÃO à regra do itálico: só no H1 do hero o wordmark é ROMANO, para
+     bater exatamente com o tratamento do medicos/manifesto (o itálico tem
+     métrica diferente e destoava). No corpo, "Átris Forma" segue em itálico. */
+  .forma-hero__headline {
+    font-size: clamp(54px, 6.2vw, 108px);
+    font-style: normal;
+    font-weight: 300;
+    color: var(--creme);
+    line-height: 0.98;
+    letter-spacing: 0;
+    margin: 0 0 30px;
+  }
+
+  .forma-hero__sub {
+    font-size: clamp(18px, 1.55vw, 25px);
+    font-style: italic;
+    color: rgba(246, 239, 227, 0.72);
+    line-height: 1.55;
+    margin: 0;
+    max-width: 620px;
+  }
+
+  /* ─────────── CORPO (creme — o miolo claro) ─────────── */
+  /* Molde do manifesto: coluna única contida, tipografia baixa, muito respiro */
+  .forma-body {
+    width: min(720px, calc(100% - 48px));
     margin: 0 auto;
-    padding: 72px 24px 80px;
+    padding: 84px 0 40px;
+    font-family: var(--font-body);
+  }
+
+  /* Tratamento do /medicos: lead em itálico teal, régua curta de cobre,
+     apoio em muted romano. Espaçamento apertado — o texto respira sem se perder. */
+  .forma-copy {
+    max-width: 600px;
+  }
+
+  .forma-lead {
+    margin: 0;
+    font-size: clamp(20px, 1.7vw, 24px);
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.58;
+    color: #153c40;
+  }
+
+  .forma-rule {
+    display: block;
+    width: 34px;
+    height: 1px;
+    margin: 30px 0 28px;
+    background: var(--cobre);
+  }
+
+  .forma-support {
+    margin: 0;
+    font-size: clamp(16px, 1.2vw, 18px);
+    font-weight: 300;
+    line-height: 1.72;
+    color: var(--muted);
+  }
+
+  /* CTA entre duas linhas finas em degradê — respiro antes e depois */
+  .forma-cta-wrap {
+    margin-top: 52px;
+    padding: 44px 0;
     text-align: center;
   }
 
-  .eyebrow {
+  .forma-cta-wrap::before,
+  .forma-cta-wrap::after {
+    content: "";
     display: block;
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--color-orange);
-    margin-bottom: 24px;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(216, 119, 68, 0.55) 50%,
+      transparent 100%
+    );
   }
 
-  .headline {
-    font-size: 32px;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--creme);
-    line-height: 1.25;
-    margin: 0;
+  .forma-cta-wrap::before {
+    margin-bottom: 36px;
   }
 
-  .divider {
-    display: block;
-    width: 48px;
-    height: 2px;
-    background: var(--dourado);
-    margin: 24px auto 40px;
+  .forma-cta-wrap::after {
+    margin-top: 36px;
   }
 
-  .body {
-    font-size: 18px;
-    font-style: italic;
-    line-height: 1.85;
-    color: rgba(246, 239, 227, 0.8);
-    margin: 0 0 28px;
-  }
-
-  .quote {
-    border-left: 2px solid rgba(231, 184, 100, 0.4);
-    padding-left: 16px;
-    text-align: left;
-    font-size: 16px;
-    font-style: italic;
-    color: rgba(246, 239, 227, 0.65);
-    line-height: 1.75;
-    margin: 8px 0 40px;
-  }
-
-  .btn {
+  /* CTA — cobre discreto sobre creme */
+  .forma-cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 32px;
-    background: transparent;
-    color: var(--creme);
-    border: 1px solid rgba(246, 239, 227, 0.4);
-    font-size: 13px;
-    font-family: var(--font-body);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    border-radius: 2px;
-    transition: background var(--transition), border-color var(--transition);
-  }
-
-  .btn:hover {
-    background: rgba(246, 239, 227, 0.08);
-    border-color: rgba(246, 239, 227, 0.65);
-  }
-
-  .note {
+    padding: 18px 40px;
+    border: 1px solid var(--cobre);
     font-size: 12px;
-    font-style: italic;
-    color: rgba(246, 239, 227, 0.35);
-    margin: 16px 0 0;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--cobre);
+    background: transparent;
+    transition: background var(--transition), color var(--transition);
   }
 
-  /* Divider pré-footer */
-  .pre-footer-rule {
-    width: calc(100% - 48px);
-    margin: 0 24px;
-    border-top: 1px solid rgba(231, 184, 100, 0.25);
+  .forma-cta:hover {
+    background: var(--cobre);
+    color: var(--creme);
+  }
+
+  /* Assinatura final — logo da submarca, jogada à direita */
+  .forma-sign {
+    margin-top: 72px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(21, 60, 64, 0.12);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .forma-sign__logo {
+    width: 200px;
+    height: auto;
+    opacity: 0.92;
+  }
+
+  @media (max-width: 760px) {
+    .forma-hero__kicker {
+      margin-bottom: 22px;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+    }
+    .forma-hero__headline {
+      font-size: clamp(44px, 15vw, 62px);
+    }
+    .forma-hero__sub {
+      font-size: 17px;
+    }
+    .forma-body {
+      padding: 84px 0 32px;
+    }
+    .forma-sign {
+      margin-top: 80px;
+    }
+    .forma-sign__logo {
+      width: 150px;
+    }
   }
 </style>
