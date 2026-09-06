@@ -7,12 +7,14 @@ interface Props {
   title?: string;
   description?: string;
   bodyClass?: string;
+  preloadImage?: string;
 }
 
 const {
   title = "Átris — Clínica Psiquiátrica",
   description = "Cuidado psiquiátrico com presença e escuta.",
   bodyClass,
+  preloadImage,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
@@ -72,6 +74,10 @@ const clinicSchema = {
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/bird-icon.png" />
+
+    {preloadImage && (
+      <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />
+    )}
 
     <meta name="generator" content={Astro.generator} />
 
