@@ -66,3 +66,20 @@ cosmética) ou se a expectativa era de proteção real.
 A limpeza de julho segurou bem — não apareceu nenhum código morto ou asset
 órfão novo nesta passada. O que falta é essencialmente fechar o redesign
 já em andamento (itens 1-5 acima).
+
+## Fluxo de branch para as edições pontuais
+
+As pendências acima (itens 1-5) vão ser resolvidas no branch
+`fix/pendencias-2026-09`, criado a partir do commit `265be23`, em vez de
+direto na `main` — porque o Cloudflare Pages faz deploy automático a cada
+push na `main`, e essa rodada de edições ainda está em revisão.
+
+Ainda falta dar push desse branch pro GitHub (backup fora da máquina).
+Rodar no terminal, dentro da pasta do projeto:
+
+```
+git push -u origin fix/pendencias-2026-09
+```
+
+Só depois de revisar e aprovar as edições é que o branch deve ser mesclado
+na `main` (e daí sim vai pro ar via Cloudflare Pages).
