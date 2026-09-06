@@ -42,11 +42,65 @@ const professionals = [
     cta: "Entrar em contato",
   },
 ];
+
+const SITE = "https://atrispsiquiatria.com.br";
+const pageSchema = [
+  {
+    "@type": "Physician",
+    "@id": `${SITE}/medicos#dr-jose-augusto-silva-reis`,
+    "name": "Dr. José Augusto Silva Reis",
+    "image": `${SITE}/assets/founder_jose.jpg`,
+    "description": "Médico assistente no HCRP-USP, responsável pelo serviço de esquizofrenia e reabilitação psicossocial.",
+    "medicalSpecialty": "Psychiatric",
+    "worksFor": { "@id": `${SITE}/#organization` },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Faculdade de Medicina de Ribeirão Preto - USP" },
+    "identifier": [
+      { "@type": "PropertyValue", "propertyID": "CRM/SP", "value": "199536" },
+      { "@type": "PropertyValue", "propertyID": "RQE", "value": "128556" },
+    ],
+  },
+  {
+    "@type": "Physician",
+    "@id": `${SITE}/medicos#dra-lara-zancaner-ueta`,
+    "name": "Dra. Lara Zancaner Ueta",
+    "image": `${SITE}/assets/founder_lara.jpg`,
+    "description": "Médica assistente no HCRP-USP, responsável pela interconsulta psiquiátrica e pelo serviço de esquizofrenia e reabilitação psicossocial.",
+    "medicalSpecialty": "Psychiatric",
+    "worksFor": { "@id": `${SITE}/#organization` },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "PUC-Campinas" },
+    "identifier": [
+      { "@type": "PropertyValue", "propertyID": "CRM/SP", "value": "164028" },
+      { "@type": "PropertyValue", "propertyID": "RQE", "value": "65684" },
+    ],
+  },
+  {
+    "@type": "Physician",
+    "@id": `${SITE}/medicos#dr-lean-pampana-basoli`,
+    "name": "Dr. Lean Pampana Basoli",
+    "image": `${SITE}/assets/founder_lean.jpg`,
+    "description": "Médico assistente no ambulatório de sexualidade do HCRP-USP — diversidade de gênero, saúde sexual e cuidado em saúde mental LGBTQIA+.",
+    "medicalSpecialty": "Psychiatric",
+    "worksFor": { "@id": `${SITE}/#organization` },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Faculdade de Medicina de Ribeirão Preto - USP" },
+    "identifier": [
+      { "@type": "PropertyValue", "propertyID": "CRM/SP", "value": "199566" },
+      { "@type": "PropertyValue", "propertyID": "RQE", "value": "127180" },
+    ],
+  },
+  {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": `${SITE}/` },
+      { "@type": "ListItem", "position": 2, "name": "Médicos", "item": `${SITE}/medicos` },
+    ],
+  },
+];
 ---
 
 <Layout
   title="Psiquiatras em Ribeirão Preto | Átris Psiquiatria"
   description="Conheça os psiquiatras da Átris: esquizofrenia, reabilitação psicossocial, diversidade de gênero e psicodélicos em psiquiatria, em Ribeirão Preto."
+  pageSchema={pageSchema}
 >
   <section class="hero professionals-hero">
     <div class="professionals-hero__overlay" aria-hidden="true"></div>

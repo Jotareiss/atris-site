@@ -8,6 +8,7 @@ interface Props {
   description?: string;
   bodyClass?: string;
   preloadImage?: string;
+  pageSchema?: Record<string, any>[];
 }
 
 const {
@@ -15,19 +16,26 @@ const {
   description = "Cuidado psiquiátrico com presença e escuta.",
   bodyClass,
   preloadImage,
+  pageSchema = [],
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
 const ogImageURL = new URL("/og-image.jpg", Astro.site ?? Astro.url.origin);
 
-const clinicSchema = {
-  "@context": "https://schema.org",
+const SITE = "https://atrispsiquiatria.com.br";
+
+// Identidade da instituição -- presente em todas as paginas via @id,
+// referenciada (nao duplicada) pelos schemas especificos de cada pagina.
+const organizationSchema = {
   "@type": "MedicalClinic",
+  "@id": `${SITE}/#organization`,
   "name": "Átris Psiquiatria",
   "description": "Clínica de psiquiatria em Ribeirão Preto, SP, com atendimento presencial e por telemedicina.",
-  "url": "https://atrispsiquiatria.com.br",
+  "url": SITE,
   "telephone": "+5516996349613",
-  "image": "https://atrispsiquiatria.com.br/og-image.jpg",
+  "image": `${SITE}/og-image.jpg`,
+  "logo": `${SITE}/bird-icon.png`,
+  "sameAs": ["https://www.instagram.com/atrispsiquiatria/"],
   "medicalSpecialty": "Psychiatric",
   "hasMap": "https://www.google.com/maps/place/?q=place_id:ChIJwT0wvJ-5uZQRfaLS5RqZM3c",
   "address": {
@@ -44,6 +52,24 @@ const clinicSchema = {
     "opens": "08:00",
     "closes": "18:00",
   },
+  "employee": [
+    { "@id": `${SITE}/medicos#dr-jose-augusto-silva-reis` },
+    { "@id": `${SITE}/medicos#dra-lara-zancaner-ueta` },
+    { "@id": `${SITE}/medicos#dr-lean-pampana-basoli` },
+  ],
+};
+
+const websiteSchema = {
+  "@type": "WebSite",
+  "@id": `${SITE}/#website`,
+  "url": SITE,
+  "name": "Átris Psiquiatria",
+  "publisher": { "@id": `${SITE}/#organization` },
+};
+
+const schemaGraph = {
+  "@context": "https://schema.org",
+  "@graph": [organizationSchema, websiteSchema, ...pageSchema],
 };
 ---
 
@@ -81,8 +107,8 @@ const clinicSchema = {
 
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Structured data (Google / Google Maps) -->
-    <script type="application/ld+json" set:html={JSON.stringify(clinicSchema)} />
+    <!-- Structured data (Google / Google Maps / IA) -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
   </head>
 
   <body class:list={[bodyClass]}>
@@ -93,4 +119,3 @@ const clinicSchema = {
     <Footer />
   </body>
 </html>
-

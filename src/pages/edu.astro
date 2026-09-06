@@ -1,11 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const SITE = "https://atrispsiquiatria.com.br";
+const pageSchema = [
+  {
+    "@type": "Service",
+    "@id": `${SITE}/edu/#service`,
+    "name": "Átris Forma",
+    "url": `${SITE}/edu`,
+    "description": "Formação continuada em saúde mental para médicos, psicólogos e enfermeiros, em Ribeirão Preto.",
+    "provider": { "@id": `${SITE}/#organization` },
+    "areaServed": "Ribeirão Preto, SP",
+  },
+  {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": `${SITE}/` },
+      { "@type": "ListItem", "position": 2, "name": "Átris Forma", "item": `${SITE}/edu` },
+    ],
+  },
+];
 ---
 
 <Layout
   title="Formação em Saúde Mental | Átris Forma — Ribeirão Preto"
   description="Átris Forma: formação continuada em saúde mental para médicos, psicólogos e enfermeiros — cursos e grupos de estudo que, em breve, abrem para inscrição."
   bodyClass="page-forma"
+  pageSchema={pageSchema}
 >
   <!-- HERO — class 'hero' é necessária para o IntersectionObserver da Nav -->
   <section class="hero forma-hero" aria-labelledby="forma-title">

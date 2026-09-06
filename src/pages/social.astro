@@ -1,11 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const SITE = "https://atrispsiquiatria.com.br";
+const pageSchema = [
+  {
+    "@type": "Service",
+    "@id": `${SITE}/social/#service`,
+    "name": "Átris Terra",
+    "url": `${SITE}/social`,
+    "description": "Projetos de acesso e cuidado em saúde mental, com consultas a valor acessível em Ribeirão Preto.",
+    "provider": { "@id": `${SITE}/#organization` },
+    "areaServed": "Ribeirão Preto, SP",
+  },
+  {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": `${SITE}/` },
+      { "@type": "ListItem", "position": 2, "name": "Átris Terra", "item": `${SITE}/social` },
+    ],
+  },
+];
 ---
 
 <Layout
   title="Psiquiatria Acessível em Ribeirão Preto | Átris Terra"
   description="Átris Terra: projetos de acesso à psiquiatria em Ribeirão Preto, com consultas a valor acessível e, no futuro, cuidado em saúde mental levado ao território."
   bodyClass="page-terra"
+  pageSchema={pageSchema}
 >
   <!-- HERO — class 'hero' é necessária para o IntersectionObserver da Nav -->
   <section class="hero terra-hero" aria-labelledby="terra-title">

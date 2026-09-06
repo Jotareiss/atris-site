@@ -2,12 +2,25 @@
 import Layout from "../layouts/Layout.astro";
 
 const WA = "https://wa.me/5516996349613?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20%C3%81tris.";
+
+const SITE = "https://atrispsiquiatria.com.br";
+const pageSchema = [
+  {
+    "@type": "WebPage",
+    "@id": `${SITE}/#webpage`,
+    "url": `${SITE}/`,
+    "name": "Psiquiatra em Ribeirão Preto | Átris Psiquiatria",
+    "isPartOf": { "@id": `${SITE}/#website` },
+    "about": { "@id": `${SITE}/#organization` },
+  },
+];
 ---
 
 <Layout
   title="Psiquiatra em Ribeirão Preto | Átris Psiquiatria"
   description="Consultas psiquiátricas com tempo, vínculo e rigor clínico. Atendimento presencial em Ribeirão Preto, SP, e por telemedicina em todo o Brasil."
   preloadImage="/assets/hero.jpg?v=20260526"
+  pageSchema={pageSchema}
 >
 
   <!-- ══════════════════════════════════════
