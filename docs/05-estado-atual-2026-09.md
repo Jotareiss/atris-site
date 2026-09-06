@@ -6,13 +6,10 @@ Compara o código hoje com o handoff de redesign em
 `docs/redesign-minimalismo-bold.md`, que registra decisões de
 estratégia/copy fechadas em conversa anterior.
 
-## Contexto importante
-
-`docs/redesign-minimalismo-bold.md` afirma no topo que "nenhum código foi
-escrito ainda — tudo pendente de execução". Isso está desatualizado: parte
-do redesign já foi implementada no código atual. A tarefa não é mais
-executar um redesign do zero, é fechar um trabalho que já está pela
-metade.
+Atualizado ao fechar o branch `fix/pendencias-2026-09` (auditoria SEO com
+`/seo:seo`, ver `ACTION-PLAN.md`/`FULL-AUDIT-REPORT.md` gerados na época):
+todos os itens abaixo foram revisados e resolvidos ou mantidos como
+decisão deliberada.
 
 ## O que do redesign "Minimalismo Bold" já está aplicado
 
@@ -26,60 +23,59 @@ metade.
   cortado; as bandas `.space-break` entre os cards de médicos também já
   não existem mais.
 
-## Pendências identificadas, por prioridade
+## Itens revisados nesta rodada (fix/pendencias-2026-09)
 
-1. **Lorem ipsum ao vivo na home.** `src/pages/index.astro` linha 49,
-   dentro do preview do manifesto: "Lorem ipsum dolor sit amet, consectetur
-   adipiscing elit. Sed do". O handoff pede a frase de abertura do
-   manifesto no lugar — nunca foi trocado.
-2. **`/manifesto` está com texto antigo.** `docs/manifesto.md` (aprovado
-   por José em 2026-07-14, com os 4 pilares incluindo "O João-de-Barro") é
-   declarado no próprio arquivo como fonte canônica "até a página ser
-   atualizada" — mas `src/pages/manifesto.astro` não tem nenhuma menção ao
-   pássaro/pilar 4. Provavelmente a peça mais importante pendente: a home
-   já cita "Psiquiatria feita à mão" esperando o payoff em `/medicos` e no
-   manifesto.
-3. **Kicker "Equipe clínica" ainda no hero de `/medicos`**, mas o handoff
-   decidiu removê-lo (era um terceiro sinônimo redundante de
-   "médicos"/"profissionais").
-4. **CTA final de `/medicos` com copy divergente da decidida.** Hoje:
-   "Quando você estiver pronto, podemos começar" + "Agende sua consulta".
-   Decidido no handoff: "Quando você estiver pronto, nós temos tempo." +
-   "Entrar em contato". Confirmar se a decisão mudou depois ou se ficou
-   pra trás.
-5. **`/social` e `/edu` ainda na navegação principal** (`Nav.astro`), mas
-   `docs/04-pendencias-tecnicas.md` registra como decisão mantida que
-   devem ficar fora do menu até terem conteúdo real (hoje são só
-   waitlist).
+1. **Lorem ipsum na home — resolvido.** Não existe mais no código atual.
+2. **Pilar "João-de-Barro" no manifesto — resolvido.** Já implementado por
+   completo em `src/pages/manifesto.astro`.
+3. **Kicker "Equipe clínica" no hero de `/medicos` — mantido como está.**
+   Revisado e decidido manter, não é mais tratado como pendência.
+4. **CTA final de `/medicos` ("Quando você estiver pronto, podemos
+   começar" / "Agende sua consulta") — mantido como está.** Revisado e
+   decidido manter a copy atual em vez da alternativa do handoff antigo.
+5. **`/social` e `/edu` na navegação principal — mantido como está.**
+   Revisado e decidido manter no menu.
+
+## Redesign de SEO técnico + GEO (schema, robots.txt, sitemap.xml)
+
+Reestruturado por completo no commit `4c6ed29`:
+
+- Schema JSON-LD deixou de ser um `MedicalClinic` idêntico duplicado nas 7
+  páginas. Agora usa um padrão `@graph` em `Layout.astro`: um bloco de
+  identidade fixo (`MedicalClinic` + `WebSite`, com `@id` estáveis) mais
+  um `pageSchema` específico por página (`WebPage`, `AboutPage`,
+  `ContactPage`, `Physician` × 3 em `/medicos`, `Service` em `/social` e
+  `/edu`), todos referenciando a identidade por `@id` em vez de duplicar
+  dados.
+- `/social` e `/edu` corrigidos de `MedicalClinic` para `Service`.
+- `robots.txt` reescrito com política explícita por bot de IA (permite
+  GPTBot, ChatGPT-User, PerplexityBot, ClaudeBot, anthropic-ai,
+  Google-Extended, Applebot-Extended, Bingbot; bloqueia CCBot e
+  Bytespider).
+- `sitemap.xml` reescrito: `priority`/`changefreq` removidos (Google os
+  ignora), `lastmod` corrigido para refletir a data real de última
+  alteração de cada página.
+- Performance: fotos dos médicos convertidas para WebP, as 14 variações
+  de Pétala Pro convertidas para WOFF2, preload do hero da home.
 
 ## Achado à parte — tela de acesso restrito
 
-`Layout.astro` tem uma tela de "site em construção" com senha, e a senha
-(`"draarlete"`) está em texto puro num `<script>` client-side — visível a
-qualquer um que abra o código-fonte da página. Não impede acesso de
-verdade, só evita indexação/visualização casual antes do lançamento. Não é
-bug de funcionamento; vale confirmar se essa é mesmo a intenção (cortina
-cosmética) ou se a expectativa era de proteção real.
+Resolvido: a tela de "site em construção" com senha em texto puro que
+existia em versões antigas de `Layout.astro` não existe mais no código
+atual.
 
 ## Sem achados novos de código morto
 
 A limpeza de julho segurou bem — não apareceu nenhum código morto ou asset
-órfão novo nesta passada. O que falta é essencialmente fechar o redesign
-já em andamento (itens 1-5 acima).
+órfão novo nesta passada.
 
 ## Fluxo de branch para as edições pontuais
 
-As pendências acima (itens 1-5) vão ser resolvidas no branch
-`fix/pendencias-2026-09`, criado a partir do commit `265be23`, em vez de
-direto na `main` — porque o Cloudflare Pages faz deploy automático a cada
-push na `main`, e essa rodada de edições ainda está em revisão.
+As pendências acima foram resolvidas no branch `fix/pendencias-2026-09`,
+criado a partir do commit `265be23`, em vez de direto na `main` — porque o
+Cloudflare Pages faz deploy automático a cada push na `main`, e essa
+rodada de edições ficou em revisão até aqui.
 
-Ainda falta dar push desse branch pro GitHub (backup fora da máquina).
-Rodar no terminal, dentro da pasta do projeto:
-
-```
-git push -u origin fix/pendencias-2026-09
-```
-
-Só depois de revisar e aprovar as edições é que o branch deve ser mesclado
-na `main` (e daí sim vai pro ar via Cloudflare Pages).
+Próximo passo: dar push do branch, mesclar na `main` e deixar o Cloudflare
+Pages publicar automaticamente (ver comandos no final da conversa com o
+Claude).

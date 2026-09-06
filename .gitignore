@@ -26,3 +26,9 @@ pnpm-debug.log*
 # claude local settings
 .claude/
 .desloppify/
+
+# ferramenta de SEO antiga, substituida pela skill /seo:seo
+Agentic-SEO-Skill/
+
+# copias locais dos entregaveis da auditoria (relatorio/plano ja enviados)
+Claude outputs/
