@@ -1,0 +1,18 @@
+# Átris Psiquiatria
+
+> Clínica psiquiátrica em Ribeirão Preto, SP (Brasil), fundada por médicos da FMRP-USP. Atendimento psiquiátrico para adultos, presencial em Ribeirão Preto ou por telemedicina em todo o Brasil, agendado diretamente por WhatsApp, sem formulários.
+
+## Páginas principais
+- [Início](https://atrispsiquiatria.com.br/): Apresentação da clínica, especialidades e canal de agendamento.
+- [Manifesto](https://atrispsiquiatria.com.br/manifesto): Princípios e forma de trabalho da Átris.
+- [Médicos](https://atrispsiquiatria.com.br/medicos): Perfis, CRM/RQE e especialidades dos três médicos fundadores.
+- [Contato](https://atrispsiquiatria.com.br/contato): Endereço em Ribeirão Preto e agendamento via WhatsApp.
+- [Privacidade](https://atrispsiquiatria.com.br/privacidade): Política de privacidade e tratamento de dados (LGPD).
+
+## Projetos em fase de waitlist
+- [Átris Terra](https://atrispsiquiatria.com.br/social): Acesso a psiquiatria a valor acessível e projetos de território.
+- [Átris Forma](https://atrispsiquiatria.com.br/edu): Formação continuada em saúde mental.
+
+## Optional
+- [robots.txt](https://atrispsiquiatria.com.br/robots.txt): Política de acesso para crawlers e bots de IA.
+- [sitemap.xml](https://atrispsiquiatria.com.br/sitemap.xml): Mapa de páginas do site.
