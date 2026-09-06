@@ -3,11 +3,18 @@
 Status: implementado em `src/pages/manifesto.astro` em setembro/2026. Esta
 versão substitui a de 2026-07-14 (que passou por stress test linha a
 linha, registro mantido abaixo) — José revisou e simplificou o texto
-depois disso; o texto atual é o anexado por ele em 2026-09-06.
+depois disso; o texto atual é o anexado por ele em 2026-09-06, com o
+pilar 3 revisado por ele em seguida (09/2026): "para nós, para nós,"
+confirmado como repetição intencional, e a frase final do pilar reescrita.
 
-Uma correção pontual foi feita ao implementar: o pilar 3 tinha "para nós,
-para nós," duplicado (provável repetição de digitação) — implementado
-como uma ocorrência só. Sinalizado a José para confirmação.
+Checagem gramatical (09/2026): único ponto de regência real encontrado —
+"recusamos trazer" corrigido para "recusamos **a** trazer" (recusar-se +
+"a" + infinitivo é a regência padrão). Resto do texto sem erros
+gramaticais. Ponto de estilo, não erro, deixado para José decidir: pilar
+4 tem duas orações independentes separadas só por vírgula ("Não usamos
+fórmulas prontas, erguemos cada plano...") — mesmo padrão que o stress
+test de julho já corrigiu em outro trecho trocando vírgula por travessão;
+não alterado aqui sem confirmação.
 
 ---
 
@@ -29,9 +36,7 @@ Os capítulos infelizes da história da psiquiatria e o contato com pacientes qu
 Acreditamos que a prática se faz no encontro genuíno entre duas pessoas que compartilham o mesmo espaço, o mesmo silêncio e o mesmo ritmo. Cuidar exige presença, olhar atento e uma escuta sem pressa. Do resultado dessa vivência, surge a capacidade de transformação. Praticamos a hospitalidade como um valor filosófico: o gesto, o ambiente e a relação também cuidam, preparando o terreno para que a pessoa possa aparecer antes do seu sintoma.
 
 **3. O tempo como matéria-prima**
-Nós reconhecemos o ritmo da sociedade contemporânea: uma aceleração constante, na qual o tempo é cada vez mais curto e disputado, o que esgota, fragmenta e adoece. No entanto, nos recusamos a trazer essa dinâmica para dentro da Átris. Construir uma vivência de tempo interno, para nós, não é luxo, é uma ferramenta importante: diagnósticos psiquiátricos complexos e histórias de vida ricas se constroem entre duas pessoas vivenciando o momento juntas. Acreditamos que uma investigação profunda resulta em uma medicina precisa e segura.
-
-*(texto original enviado por José tinha "para nós, para nós," repetido aqui — implementado com uma ocorrência só; confirmar se foi intencional.)*
+Nós reconhecemos o ritmo da sociedade contemporânea: uma aceleração constante, na qual o tempo é cada vez mais curto e disputado, o que esgota, fragmenta e adoece. No entanto, nos recusamos a trazer essa dinâmica para dentro da Átris. Construir uma vivência de tempo interno, para nós, para nós, não é luxo, é uma ferramenta importante: diagnósticos psiquiátricos complexos e histórias de vida ricas se constroem dos diversos momentos do encontro entre duas pessoas, capazes de atravessar dúvidas, recaídas, ajustes e descobertas. Acreditamos que uma investigação profunda resulta em uma medicina precisa e segura.
 
 **4. O João-de-Barro**
 Cada detalhe da Átris existe porque foi considerado necessário enquanto um gesto de cuidado. O gesto é o que nomeia e transforma toda essa filosofia em experiência. Por isso, nosso símbolo é o João-de-Barro. Assim como ele, que molda sua casa à mão, curva por curva, para construir um abrigo seguro e sob medida, nós entendemos o cuidado como uma construção. Não usamos fórmulas prontas, erguemos cada plano terapêutico com paciência, intencionalidade e respeito à matéria-prima que nos foi oferecida: a história de vida de cada paciente.
