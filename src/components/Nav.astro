@@ -1,8 +1,8 @@
 ---
 const currentPath = Astro.url.pathname;
 const isProfessionalsPage = currentPath.startsWith("/medicos");
-const logoFullDarkDesktop = "/images/brand/atris_completo_claro.svg";
-const logoFullLightDesktop = "/images/brand/atris_completo.svg";
+const logoFullDarkDesktop = "/images/brand/atris_limpo_claro.svg";
+const logoFullLightDesktop = "/images/brand/atris_limpo.svg";
 const logoFullDarkMobile = "/images/brand/atris_limpo_claro.svg";
 const logoFullLightMobile = isProfessionalsPage
   ? "/images/brand/Atris_limpo_medio.svg"
@@ -480,12 +480,12 @@ const links = [
         ? (
             isMobile
               ? fullLogo.dataset.logoDarkMobile || "/images/brand/atris_limpo_claro.svg"
-              : fullLogo.dataset.logoDarkDesktop || "/images/brand/atris_completo_claro.svg"
+              : fullLogo.dataset.logoDarkDesktop || "/images/brand/atris_limpo_claro.svg"
           )
         : (
             isMobile
               ? fullLogo.dataset.logoLightMobile || "/images/brand/atris_limpo.svg"
-              : fullLogo.dataset.logoLightDesktop || "/images/brand/atris_completo.svg"
+              : fullLogo.dataset.logoLightDesktop || "/images/brand/atris_limpo.svg"
           );
     }
 
