@@ -12,15 +12,12 @@ import Layout from "../layouts/Layout.astro";
       <p class="manifesto-hero__kicker">Quem somos</p>
       <h1>Manifesto</h1>
       <p class="manifesto-hero__text">
-        Uma clínica construída ao redor do tempo,<br />
-        da escuta e da continuidade.
+        A prática da psiquiatria enquanto ofício.
       </p>
     </div>
   </section>
 
   <article class="manifesto-essay">
-    <p class="manifesto-eyebrow">A prática da psiquiatria enquanto ofício</p>
-
     <section class="manifesto-aside">
       <p>
         "O que preciso saber sobre você, enquanto pessoa, para lhe oferecer
@@ -129,7 +126,7 @@ import Layout from "../layouts/Layout.astro";
     <section class="manifesto-signature">
       <img src="/images/brand/bird_swirl_colorido.svg" alt="" aria-hidden="true" />
       <p>
-        Átris Instituto de Psiquiatria<br />
+        Átris Psiquiatria<br />
         Ribeirão Preto, SP
       </p>
     </section>
@@ -204,21 +201,10 @@ import Layout from "../layouts/Layout.astro";
     background: var(--creme);
   }
 
-  .manifesto-eyebrow {
-    width: min(720px, calc(100% - 48px));
-    margin: 0 auto;
-    padding: 96px 0 0;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--cobre);
-  }
-
   .manifesto-aside {
     width: min(720px, calc(100% - 48px));
     margin: 0 auto;
-    padding: 40px 0 50px;
+    padding: 96px 0 50px;
     border-bottom: 1px solid rgba(66, 30, 41, 0.08);
   }
 
@@ -356,7 +342,6 @@ import Layout from "../layouts/Layout.astro";
   }
 
   @media (max-width: 900px) {
-    .manifesto-eyebrow,
     .manifesto-aside,
     .manifesto-intro,
     .manifesto-transition,
@@ -397,7 +382,7 @@ import Layout from "../layouts/Layout.astro";
       font-size: 17px;
     }
 
-    .manifesto-eyebrow {
+    .manifesto-aside {
       padding-top: 72px;
     }
 
