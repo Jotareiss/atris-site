@@ -2,7 +2,7 @@
 
 ## Projeto
 
-Site institucional da Atris Instituto de Psiquiatria.
+Site institucional da Atris Psiquiatria.
 
 Clinica psiquiatrica com atendimento presencial em Ribeirao Preto, SP, e telemedicina para todo o Brasil.
 
