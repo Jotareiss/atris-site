@@ -5,6 +5,9 @@ const professionals = [
   {
     name: "Dr. José Augusto Silva Reis",
     photo: "/assets/founder_jose.jpg",
+    photoWebp: "/assets/founder_jose.webp",
+    photoWidth: 2804,
+    photoHeight: 1870,
     alt: "Retrato editorial do Dr. José Augusto Silva Reis",
     role: "Médico assistente no HCRP-USP, responsável pelo serviço de esquizofrenia e reabilitação psicossocial — acompanhamento longitudinal e recuperação no adoecimento mental crônico.",
     formation: "Formado pela FMRP-USP. Psiquiatra pelo HCRP-USP. Doutorando em saúde mental, com foco no uso de psicodélicos para o tratamento de transtornos mentais.",
@@ -15,6 +18,9 @@ const professionals = [
   {
     name: "Dra. Lara Zancaner Ueta",
     photo: "/assets/founder_lara.jpg",
+    photoWebp: "/assets/founder_lara.webp",
+    photoWidth: 2804,
+    photoHeight: 1870,
     alt: "Retrato editorial da Dra. Lara Zancaner Ueta",
     role: "Médica assistente no HCRP-USP, responsável pela interconsulta psiquiátrica — cuidado psiquiátrico associado ao adoecimento físico — e pelo serviço de esquizofrenia e reabilitação psicossocial.",
     formation: "Formada em medicina pela PUC-Campinas. Psiquiatra pelo HCRP-USP. Mestre em saúde mental pela FMRP-USP, com foco em neuroimagem na esquizofrenia.",
@@ -25,6 +31,9 @@ const professionals = [
   {
     name: "Dr. Lean Pampana Basoli",
     photo: "/assets/founder_lean.jpg",
+    photoWebp: "/assets/founder_lean.webp",
+    photoWidth: 2771,
+    photoHeight: 1892,
     alt: "Retrato editorial do Dr. Lean Pampana Basoli",
     role: "Médico assistente no ambulatório de sexualidade do HCRP-USP — diversidade de gênero, saúde sexual e cuidado em saúde mental LGBTQIA+.",
     formation: "Formado pela FMRP-USP. Psiquiatra pelo HCRP-USP. Mestrando em saúde mental, com foco em stress pós-traumático e violência sexual.",
@@ -55,7 +64,17 @@ const professionals = [
       <div class="professional-entry">
         <section class:list={["professional-section", { "professional-section--reverse": index % 2 === 1 }]}>
           <figure class="professional-section__figure">
-            <img src={professional.photo} alt={professional.alt} />
+            <picture>
+              <source srcset={professional.photoWebp} type="image/webp" />
+              <img
+                src={professional.photo}
+                alt={professional.alt}
+                width={professional.photoWidth}
+                height={professional.photoHeight}
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </figure>
 
           <div class="professional-section__content">
