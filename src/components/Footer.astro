@@ -16,8 +16,10 @@ const year = new Date().getFullYear();
     <!-- Endereço + telemedicina -->
     <div class="footer__contact">
       <address class="footer__address">
-        Cavalheiro Torquato Rizzi, 1805, sala 24 — Jardim São Luiz
-        Ribeirão Preto, SP — CEP 14021-676
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Cavalheiro%20Torquato%20Rizzi%2C%201805%2C%20sala%2024%2C%20Jardim%20S%C3%A3o%20Luiz%2C%20Ribeir%C3%A3o%20Preto%2C%20SP%2C%2014021-676" target="_blank" rel="noopener noreferrer" class="footer__map-link">
+          Cavalheiro Torquato Rizzi, 1805, sala 24 — Jardim São Luiz
+          Ribeirão Preto, SP — CEP 14021-676
+        </a>
       </address>
       <p class="footer__telemedicine">
         Telemedicina para todo o Brasil · CFM nº 2.314/2022
@@ -80,8 +82,19 @@ const year = new Date().getFullYear();
     font-size: var(--text-sm);
     font-style: normal;
     line-height: 1.6;
-    color: rgba(246, 239, 227, 0.72);
     margin: 0 0 6px;
+  }
+
+  .footer__map-link {
+    color: rgba(246, 239, 227, 0.72);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(246, 239, 227, 0.2);
+    transition: color var(--transition), border-color var(--transition);
+  }
+
+  .footer__map-link:hover {
+    color: rgba(246, 239, 227, 0.95);
+    border-color: rgba(246, 239, 227, 0.6);
   }
 
   .footer__telemedicine {
