@@ -21,6 +21,20 @@ const year = new Date().getFullYear();
           Ribeirão Preto, SP — CEP 14021-676
         </a>
       </address>
+
+      <div class="footer__map-embed">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.5258260299092!2d-47.80310908841558!3d-21.210987582489583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9b99fbc303dc1%3A0x7733991ae5d2a27d!2s%C3%81tris%20Psiquiatria!5e0!3m2!1sen!2sbr!4v1788706490250!5m2!1sen!2sbr"
+          width="200"
+          height="140"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="Localização da Átris Psiquiatria no Google Maps"
+        ></iframe>
+      </div>
+
       <p class="footer__telemedicine">
         Telemedicina para todo o Brasil · CFM nº 2.314/2022
       </p>
@@ -95,6 +109,21 @@ const year = new Date().getFullYear();
   .footer__map-link:hover {
     color: rgba(246, 239, 227, 0.95);
     border-color: rgba(246, 239, 227, 0.6);
+  }
+
+  .footer__map-embed {
+    display: inline-block;
+    line-height: 0;
+    margin: 10px 0 8px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .footer__map-embed iframe {
+    display: block;
+    width: 200px;
+    height: 140px;
+    max-width: 100%;
   }
 
   .footer__telemedicine {
