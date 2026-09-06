@@ -16,6 +16,32 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
+const ogImageURL = new URL("/og-image.jpg", Astro.site ?? Astro.url.origin);
+
+const clinicSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Átris Psiquiatria",
+  "description": "Clínica de psiquiatria em Ribeirão Preto, SP, com atendimento presencial e por telemedicina.",
+  "url": "https://atrispsiquiatria.com.br",
+  "telephone": "+5516996349613",
+  "image": "https://atrispsiquiatria.com.br/og-image.jpg",
+  "medicalSpecialty": "Psychiatric",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Cavalheiro Torquato Rizzi, 1805, sala 24",
+    "addressLocality": "Ribeirão Preto",
+    "addressRegion": "SP",
+    "postalCode": "14021-676",
+    "addressCountry": "BR",
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "18:00",
+  },
+};
 ---
 
 <!doctype html>
@@ -34,19 +60,22 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin)
     <meta property="og:url"         content={canonicalURL} />
     <meta property="og:title"       content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image"       content="/og-image.jpg" />
+    <meta property="og:image"       content={ogImageURL} />
     <meta property="og:locale"      content="pt_BR" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card"        content="summary_large_image" />
     <meta name="twitter:title"       content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image"       content="/og-image.jpg" />
+    <meta name="twitter:image"       content={ogImageURL} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/bird-icon.png" />
 
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Structured data (Google / Google Maps) -->
+    <script type="application/ld+json" set:html={JSON.stringify(clinicSchema)} />
   </head>
 
   <body class:list={[bodyClass]}>
