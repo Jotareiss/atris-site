@@ -84,19 +84,19 @@ Removidos por serem órfãos (sem referência em `src`): `logo.svg`, `logo-favic
 
 **Dr. José Augusto Silva Reis**
 - CRM/SP 199536 · RQE 128556
-- WhatsApp: `https://wa.me/5516993732111` (também usado como contato institucional geral do site: home, contato, Terra, Forma)
+- WhatsApp: `https://wa.me/5516996349613` (também usado como contato institucional geral do site: home, contato, Terra, Forma)
 - Especialidades: Esquizofrenia · Reabilitação Psicossocial · Psicodélicos em Psiquiatria
 - Formação: FMRP-USP; doutorando em saúde mental; atua no HCRP-USP
 
 **Dra. Lara Zancaner Ueta**
 - CRM/SP 164028 · RQE 65684
-- WhatsApp: `https://wa.me/5516997081319`
+- WhatsApp: `https://wa.me/5516996349613`
 - Especialidades: Interconsulta psiquiátrica · Esquizofrenia · Reabilitação Psicossocial
 - Formação: PUC-Campinas; psiquiatra pelo HCRP-USP; mestre em saúde mental pela FMRP-USP (neuroimagem na esquizofrenia)
 
 **Dr. Lean Pampana Basoli**
 - CRM/SP 199566 · RQE 127180
-- WhatsApp: `https://wa.me/5516999930259`
+- WhatsApp: `https://wa.me/5516996349613`
 - Especialidades: Sexualidade · Diversidade de Gênero · Saúde Mental LGBTQIA+
 - Formação: FMRP-USP; atua no HCRP-USP, SEAVIDAS-USP e Hospital Estadual de Américo Brasiliense
 

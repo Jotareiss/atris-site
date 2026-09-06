@@ -19,7 +19,7 @@ Dr. José Augusto Silva Reis
 Médico assistente no HCRP-USP, responsável pelo serviço de esquizofrenia e reabilitação psicossocial — recuperar autonomia e vida social depois do adoecimento grave.
 Formado pela FMRP-USP. Doutorando em saúde mental, com foco em psicodélicos.
 CRM/SP 199536 · RQE 128556
-[Entrar em contato](https://wa.me/5516993732111)
+[Entrar em contato](https://wa.me/5516996349613)
 
 ---
 
@@ -28,4 +28,4 @@ Dr. Lean Pampana Basoli
 Médico assistente no ambulatório de sexualidade do HCRP-USP — diversidade de gênero e cuidado em saúde mental LGBTQIA+.
 Formado pela FMRP-USP. Mestrando em saúde mental, com foco na população trans.
 CRM/SP 199566 · RQE 127180
-[Entrar em contato](https://wa.me/5516999930259)
+[Entrar em contato](https://wa.me/5516996349613)
