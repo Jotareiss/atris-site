@@ -98,7 +98,7 @@ Removidos por serem órfãos (sem referência em `src`): `logo.svg`, `logo-favic
 - CRM/SP 199566 · RQE 127180
 - WhatsApp: `https://wa.me/5516996349613`
 - Especialidades: Sexualidade · Diversidade de Gênero · Saúde Mental LGBTQIA+
-- Formação: FMRP-USP; atua no HCRP-USP, SEAVIDAS-USP e Hospital Estadual de Américo Brasiliense
+- Formação: FMRP-USP; atua no HCRP-USP
 
 **Endereço:** Cavalheiro Torquato Rizzi, 1805, sala 24 — Ribeirão Preto, SP *(novo; substituiu Av. Independência, 3115, sala 20 — confirmar logradouro/bairro/CEP)*
 
