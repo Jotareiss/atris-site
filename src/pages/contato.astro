@@ -6,205 +6,132 @@ import Layout from "../layouts/Layout.astro";
   title="Contato — Átris Psiquiatria"
   description="Entre em contato pelo WhatsApp e agende sua consulta com a Átris Psiquiatria."
 >
-  <div class="contato-page">
-    <div class="contato-col">
-      <div class="contact-heading">
-        <span class="eyebrow">Contato</span>
-        <h1 class="page-title">Fale com<br />a gente.</h1>
-        <span class="divider" aria-hidden="true"></span>
-      </div>
+  <section class="hero contato-hero">
+    <div class="contato-hero__overlay" aria-hidden="true"></div>
+    <div class="contato-hero__content">
+      <p class="contato-hero__kicker">Contato</p>
+      <h1 class="contato-hero__title">O encontro começa com uma mensagem.</h1>
+      <p class="contato-hero__text">O agendamento é feito por WhatsApp.</p>
 
-      <div class="contact-core">
-        <p class="body">O agendamento é feito por WhatsApp.</p>
+      <a
+        href="https://wa.me/5516996349613?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20%C3%81tris."
+        class="contato-hero__button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Agendar consulta <span aria-hidden="true">→</span>
+      </a>
 
-        <a
-          href="https://wa.me/5516996349613?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20%C3%81tris."
-          class="btn btn--primary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Agendar consulta <span aria-hidden="true">→</span>
-        </a>
-
-        <p class="support">
-          A equipe pode orientar na escolha do médico e na organização do atendimento, de acordo com cada caso e disponibilidade.
-        </p>
-      </div>
-
-      <figure class="contact-image" aria-hidden="true">
-        <img src="/assets/ambient_4.jpg" alt="" />
-      </figure>
+      <p class="contato-hero__support">
+        A equipe pode orientar na escolha do médico e na organização do
+        atendimento, de acordo com cada caso e disponibilidade.
+      </p>
     </div>
-  </div>
+  </section>
 </Layout>
 
-<style>
-  .contato-page {
-    background: var(--color-bg);
+<style is:global>
+  .contato-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: url("/assets/ambient_7.jpg") center 32% / cover;
+    color: var(--creme);
     font-family: var(--font-body);
   }
 
-  .contato-col {
-    width: min(1180px, calc(100% - 10.6vw));
-    margin: 0 auto;
-    padding: 142px 0 108px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(380px, 0.72fr);
-    column-gap: 10vw;
-    row-gap: 58px;
-    align-items: center;
-    text-align: left;
+  .contato-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right, rgba(23, 10, 15, 0.82) 0%, rgba(66, 30, 41, 0.5) 42%, rgba(66, 30, 41, 0.14) 72%, transparent 100%),
+      linear-gradient(to top, rgba(18, 9, 12, 0.5) 0%, transparent 40%);
   }
 
-  .contact-heading {
-    grid-column: 1;
-    grid-row: 1;
+  .contato-hero__content {
+    position: relative;
+    width: min(620px, 100%);
+    padding: 140px 5.3vw 96px;
   }
 
-  .eyebrow {
-    display: block;
-    font-size: 11px;
-    letter-spacing: 0.22em;
+  .contato-hero__kicker {
+    margin: 0 0 26px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.34em;
+    color: rgba(216, 119, 68, 0.9);
     text-transform: uppercase;
-    color: var(--color-orange);
-    margin-bottom: 20px;
   }
 
-  .page-title {
-    font-size: clamp(60px, 6vw, 96px) !important;
-    font-style: italic;
+  .contato-hero__title {
+    margin: 0 0 32px;
+    font-size: clamp(38px, 4.4vw, 64px);
     font-weight: 300;
-    color: var(--color-primary);
-    line-height: 0.98;
-    margin: 0;
-    max-width: 560px;
-  }
-
-  .divider {
-    display: block;
-    width: 42px;
-    height: 1px;
-    background: var(--color-orange);
-    margin: 34px 0 0;
-  }
-
-  .contact-core {
-    grid-column: 2;
-    grid-row: 1;
-    max-width: 430px;
-    padding: 38px 0 0;
-    border-top: 1px solid rgba(66, 30, 41, 0.08);
-  }
-
-  .body {
-    font-size: 18px;
     font-style: italic;
-    line-height: 1.85;
-    color: #666;
-    margin: 0 0 30px;
+    line-height: 1.12;
+    color: var(--creme);
   }
 
-  .btn {
+  .contato-hero__text {
+    margin: 0 0 40px;
+    font-size: clamp(17px, 1.35vw, 21px);
+    line-height: 1.6;
+    color: rgba(246, 239, 227, 0.86);
+  }
+
+  .contato-hero__button {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 18px 48px;
-    font-size: 13px;
+    gap: 10px;
+    padding: 18px 40px;
+    border: 1px solid rgba(216, 119, 68, 0.82);
+    font-size: 12px;
     font-weight: 600;
-    font-family: var(--font-body);
-    letter-spacing: 0.18em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     text-decoration: none;
-    border-radius: 0;
-    transition: color var(--transition), border-color var(--transition), opacity var(--transition), background var(--transition);
+    color: rgba(246, 239, 227, 0.94);
+    transition: border-color var(--transition), color var(--transition), background var(--transition);
   }
 
-  .btn--primary {
-    background: transparent;
-    color: var(--color-primary);
-    border: 1px solid var(--color-orange);
+  .contato-hero__button:hover {
+    border-color: var(--dourado);
+    background: rgba(216, 119, 68, 0.12);
   }
 
-  .btn--primary:hover {
-    color: var(--color-orange);
-    opacity: 0.86;
-  }
-
-  .support {
+  .contato-hero__support {
+    margin: 40px 0 0;
+    max-width: 420px;
     font-size: 14px;
     font-style: italic;
-    color: var(--color-text-secondary);
     line-height: 1.75;
-    max-width: 360px;
-    margin: 42px 0 0;
-  }
-
-  .contact-image {
-    grid-column: 1 / -1;
-    width: min(1320px, 100%);
-    height: 340px;
-    margin: 0 auto;
-    overflow: hidden;
-    background: var(--vinho);
-  }
-
-  .contact-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50% 24%;
-    opacity: 0.78;
-    filter: saturate(0.82) contrast(1.02);
+    color: rgba(246, 239, 227, 0.64);
   }
 
   @media (max-width: 768px) {
-    .contato-col {
-      width: auto;
-      max-width: 640px;
-      padding: 112px 24px 118px;
-      display: block;
-      text-align: center;
+    .contato-hero {
+      min-height: 100svh;
+      background-position: 62% center;
     }
 
-    .page-title {
-      font-size: 30px !important;
-      font-weight: 400;
-      line-height: 1.2;
+    .contato-hero__overlay {
+      background:
+        linear-gradient(to top, rgba(18, 9, 12, 0.86) 0%, rgba(66, 30, 41, 0.5) 46%, rgba(66, 30, 41, 0.2) 72%, transparent 100%);
     }
 
-    .divider {
-      margin: 22px auto 28px;
-    }
-
-    .contact-core {
-      max-width: 460px;
-      margin: 0 auto;
-    }
-
-    .support {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .contact-image {
+    .contato-hero__content {
       width: 100%;
-      height: 150px;
-      margin-top: 42px;
+      padding: 0 24px 64px;
     }
-  }
 
-  @media (max-width: 400px) {
-    .btn {
-      width: 100%;
-      padding-left: 20px;
-      padding-right: 20px;
+    .contato-hero__title {
+      font-size: clamp(30px, 8vw, 40px);
     }
-  }
 
-  @media (min-width: 769px) {
-    .body {
-      font-size: clamp(16px, 1.15vw, 20px);
+    .contato-hero__support {
+      max-width: none;
     }
   }
 </style>
