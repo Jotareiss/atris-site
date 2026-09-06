@@ -8,6 +8,7 @@ interface Props {
   description?: string;
   bodyClass?: string;
   preloadImage?: string;
+  preloadFonts?: string[];
   pageSchema?: Record<string, any>[];
 }
 
@@ -16,6 +17,7 @@ const {
   description = "Cuidado psiquiátrico com presença e escuta.",
   bodyClass,
   preloadImage,
+  preloadFonts = [],
   pageSchema = [],
 } = Astro.props;
 
@@ -104,6 +106,10 @@ const schemaGraph = {
     {preloadImage && (
       <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />
     )}
+
+    {preloadFonts.map((href) => (
+      <link rel="preload" as="font" type="font/woff2" href={href} crossorigin="anonymous" />
+    ))}
 
     <meta name="generator" content={Astro.generator} />
 
