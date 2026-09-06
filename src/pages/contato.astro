@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout
   title="Contato — Átris Instituto de Psiquiatria"
-  description="Entre em contato pelo WhatsApp. Atendimento presencial em Ribeirão Preto e telemedicina para todo o Brasil."
+  description="Entre em contato pelo WhatsApp e agende sua consulta com a Átris Instituto de Psiquiatria."
 >
   <div class="contato-page">
     <div class="contato-col">
@@ -34,11 +34,6 @@ import Layout from "../layouts/Layout.astro";
       <figure class="contact-image" aria-hidden="true">
         <img src="/assets/ambient_4.jpg" alt="" />
       </figure>
-
-      <div class="info">
-        <p class="info__line">Ribeirão Preto, SP · presencial</p>
-        <p class="info__line">Telemedicina para todo o Brasil</p>
-      </div>
     </div>
   </div>
 </Layout>
@@ -163,24 +158,6 @@ import Layout from "../layouts/Layout.astro";
     filter: saturate(0.82) contrast(1.02);
   }
 
-  .info {
-    grid-column: 1 / -1;
-    border-top: 1px solid rgba(231, 184, 100, 0.27);
-    padding-top: 32px;
-    display: flex;
-    justify-content: space-between;
-    gap: 36px;
-  }
-
-  .info__line {
-    font-size: 15px;
-    font-style: italic;
-    color: rgba(66, 30, 41, 0.62);
-    margin: 0;
-    line-height: 1.62;
-    letter-spacing: 0.02em;
-  }
-
   @media (max-width: 768px) {
     .contato-col {
       width: auto;
@@ -215,14 +192,6 @@ import Layout from "../layouts/Layout.astro";
       height: 150px;
       margin-top: 42px;
     }
-
-    .info {
-      margin-top: 42px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      padding-top: 24px;
-    }
   }
 
   @media (max-width: 400px) {
@@ -230,6 +199,12 @@ import Layout from "../layouts/Layout.astro";
       width: 100%;
       padding-left: 20px;
       padding-right: 20px;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .body {
+      font-size: clamp(16px, 1.15vw, 20px);
     }
   }
 </style>

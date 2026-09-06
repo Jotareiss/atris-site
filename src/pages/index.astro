@@ -1,32 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const WA = "https://wa.me/5516XXXXXXXXX?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20%C3%81tris.";
-
-const products = [
-  {
-    tag: "Consultas",
-    title: "Átris",
-    body: "Consultas psiquiátricas com tempo, vínculo e rigor clínico. Para quem busca um cuidado que vai além do sintoma.",
-    linkLabel: "Conheça o atendimento",
-    href: "/consultas",
-  },
-  {
-    tag: "Acesso",
-    title: "Átris.social",
-    body: "A mesma qualidade de cuidado, num modelo acessível. Porque saúde mental não deveria ser privilégio.",
-    linkLabel: "Saiba como funciona",
-    href: "/social",
-  },
-  {
-    tag: "Formação",
-    title: "Átris.edu",
-    body: "Formação continuada para profissionais de saúde mental. Minicursos, masterclasses e grupos de estudo com quem está na prática.",
-    linkLabel: "Ver próximas turmas",
-    href: "/edu",
-  },
-];
-
+const WA = "https://wa.me/5516993732111?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20%C3%81tris.";
 ---
 
 <Layout
@@ -290,66 +265,9 @@ const products = [
     margin: 0;
   }
 
-  .pitch__dash {
-    display: block;
-    width: 24px;
-    height: 1px;
-    background: var(--cobre);
-    margin: 28px 0 24px;
-  }
-
-  .pitch__close {
-    font-size: 15px;
-    font-style: italic;
-    color: var(--vinho);
-    opacity: 0.75;
-  }
-
   /* ════════════════════════════════
-     NA PRÁTICA
+     NA PRÁTICA (CTA)
   ════════════════════════════════ */
-  .pratica {
-    margin: 0 56px 72px;
-    padding: 72px 40px 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background: var(--areia);
-    border-radius: 32px;
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 600ms ease, transform 600ms ease;
-  }
-
-  .pratica.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .pratica__title {
-    font-size: clamp(22px, 2.6vw, 30px);
-    font-style: italic;
-    font-weight: 400;
-    color: var(--vinho);
-    line-height: 1.3;
-    max-width: 460px;
-    text-wrap: balance;
-    margin: 0 auto 36px;
-  }
-
-  .pratica__p {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.88;
-    max-width: 500px;
-    margin: 0 auto 20px;
-  }
-
-  .pratica__p:last-of-type {
-    margin-bottom: 0;
-  }
-
   .pratica__cta {
     display: inline-block;
     margin-top: 52px;
@@ -366,95 +284,6 @@ const products = [
   .pratica__cta:hover {
     opacity: 0.75;
     text-decoration-color: var(--dourado);
-  }
-
-  /* ════════════════════════════════
-     DIVISOR
-  ════════════════════════════════ */
-  .divider {
-    border: none;
-    height: 1px;
-    background: rgba(66, 30, 41, 0.07);
-    margin: 0 56px;
-  }
-
-
-  /* ════════════════════════════════
-     PRODUTOS
-  ════════════════════════════════ */
-  .products {
-    padding: 96px 56px;
-  }
-
-  .products > .kicker {
-    margin-bottom: 40px;
-  }
-
-  .products__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-
-  .card {
-    background: var(--areia);
-    padding: 48px 40px 44px;
-    border-radius: 48px 48px 6px 6px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .card__tag {
-    font-size: 13px;
-    font-style: italic !important;
-    text-transform: none;
-    color: var(--dourado);
-    margin: 0 0 16px;
-  }
-
-  .card__title {
-    font-size: 28px;
-    font-style: italic !important;
-    font-weight: 400;
-    color: var(--vinho);
-    line-height: 1.15;
-    margin: 0 0 20px;
-  }
-
-  .card__body {
-    font-size: 14px;
-    color: #777;
-    line-height: 1.85;
-    margin: 0 0 32px;
-    flex: 1;
-  }
-
-  .card__link {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 14px;
-    font-style: italic;
-    text-transform: none;
-    color: var(--vinho);
-    transition: opacity var(--transition);
-  }
-
-  .card__link:hover {
-    opacity: 0.65;
-  }
-
-  .card__dash {
-    display: block;
-    width: 18px;
-    height: 1px;
-    background: var(--cobre);
-    flex-shrink: 0;
-    transition: width var(--transition);
-  }
-
-  .card__link:hover .card__dash {
-    width: 26px;
   }
 
   /* ════════════════════════════════
@@ -516,10 +345,6 @@ const products = [
 
   .manifesto__link:hover {
     opacity: 0.75;
-  }
-
-  .manifesto__link--wa {
-    color: rgba(246, 239, 227, 0.55);
   }
 
   /* ════════════════════════════════
@@ -584,13 +409,7 @@ const products = [
       letter-spacing: 0.28em;
     }
 
-    .pratica {
-      margin: 0 24px;
-      border-radius: 20px;
-    }
-
     .pitch,
-    .products,
     .manifesto {
       padding-left: 24px;
       padding-right: 24px;
@@ -605,34 +424,24 @@ const products = [
       padding-top: 0;
     }
 
-    .divider {
-      margin: 0 24px;
-    }
-
-    .products__grid {
-      grid-template-columns: 1fr;
-    }
-
     .manifesto__grid {
       grid-template-columns: 1fr;
       gap: 28px;
     }
   }
 
-</style>
+  @media (min-width: 769px) {
+    .hero__headline {
+      font-size: clamp(32px, 2.7vw, 48px);
+    }
 
-<script>
-  const pratica = document.getElementById('pratica');
-  if (pratica) {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          pratica.classList.add('visible');
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.15 }
-    );
-    observer.observe(pratica);
+    .hero__sub {
+      font-size: clamp(16px, 1.15vw, 20px);
+    }
+
+    .pitch__heading {
+      font-size: clamp(21px, 2.25vw, 29px);
+    }
   }
-</script>
+
+</style>

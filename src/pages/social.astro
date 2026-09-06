@@ -267,4 +267,14 @@ import Layout from "../layouts/Layout.astro";
       width: 150px;
     }
   }
+
+  @media (min-width: 769px) {
+    .terra-hero__headline {
+      font-size: clamp(40px, 4.65vw, 81px);
+    }
+
+    .terra-hero__sub {
+      font-size: clamp(16px, 1.15vw, 20px);
+    }
+  }
 </style>

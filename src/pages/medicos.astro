@@ -37,7 +37,7 @@ const professionals = [
 
 <Layout
   title="Médicos — Átris Instituto de Psiquiatria"
-  description="Conheça os profissionais da Átris Instituto de Psiquiatria. Atendimento presencial em Ribeirão Preto e por telemedicina."
+  description="Conheça os profissionais da Átris Instituto de Psiquiatria e suas áreas de atuação clínica."
 >
   <section class="hero professionals-hero">
     <div class="professionals-hero__overlay" aria-hidden="true"></div>
@@ -187,12 +187,6 @@ const professionals = [
 </style>
 
 <style>
-  .professionals-intro {
-    padding: 110px 5.3vw 96px;
-    font-family: var(--font-body);
-  }
-
-  .professionals-intro__kicker,
   .professional-section__eyebrow {
     margin: 0 0 26px;
     font-size: 12px;
@@ -200,30 +194,6 @@ const professionals = [
     letter-spacing: 0.28em;
     color: var(--cobre);
     text-transform: uppercase;
-  }
-
-  .professionals-intro__grid {
-    display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.7fr);
-    gap: 12vw;
-    align-items: start;
-  }
-
-  .professionals-intro h2 {
-    max-width: 620px;
-    margin: 0;
-    font-size: clamp(34px, 4.2vw, 64px);
-    font-weight: 300;
-    line-height: 1.05;
-    color: var(--vinho);
-  }
-
-  .professionals-intro p:not(.professionals-intro__kicker) {
-    margin: 12px 0 0;
-    font-size: clamp(18px, 1.55vw, 24px);
-    font-style: italic;
-    line-height: 1.65;
-    color: var(--muted);
   }
 
   .professionals-list {
@@ -392,14 +362,12 @@ const professionals = [
   }
 
   @media (max-width: 900px) {
-    .professionals-intro,
     .professional-section,
     .professionals-cta {
       padding-left: 24px;
       padding-right: 24px;
     }
 
-    .professionals-intro__grid,
     .professional-section,
     .professional-section--reverse {
       grid-template-columns: 1fr;
@@ -422,15 +390,6 @@ const professionals = [
   }
 
   @media (max-width: 560px) {
-    .professionals-intro {
-      padding-top: 78px;
-      padding-bottom: 64px;
-    }
-
-    .professionals-intro h2 {
-      font-size: 36px;
-    }
-
     .professional-section__formation {
       font-size: 16px;
     }
@@ -455,6 +414,24 @@ const professionals = [
 
     .professionals-cta {
       min-height: 60vh;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .professionals-hero__title {
+      font-size: clamp(40px, 4.65vw, 81px);
+    }
+
+    .professionals-hero__text {
+      font-size: clamp(16px, 1.15vw, 20px);
+    }
+
+    .professional-section__content h2 {
+      font-size: clamp(32px, 3.6vw, 59px);
+    }
+
+    .professionals-cta p {
+      font-size: clamp(24px, 3.45vw, 54px);
     }
   }
 </style>

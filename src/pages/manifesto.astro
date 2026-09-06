@@ -201,17 +201,6 @@ import Layout from "../layouts/Layout.astro";
     filter: saturate(0.9) contrast(1.03);
   }
 
-  .manifesto-image--wide {
-    width: min(720px, calc(100% - 48px));
-    height: 36vh;
-    min-height: 280px;
-    margin: 12px auto;
-  }
-
-  .manifesto-image--wide img {
-    object-position: 50% 28%;
-  }
-
   .manifesto-image--portrait {
     width: min(720px, calc(100% - 48px));
     height: 42vh;
@@ -324,11 +313,6 @@ import Layout from "../layouts/Layout.astro";
       font-size: 22px;
     }
 
-    .manifesto-image--wide {
-      height: 30vh;
-      min-height: 230px;
-    }
-
     .manifesto-image--portrait {
       min-height: 280px;
       height: 36vh;
@@ -349,6 +333,24 @@ import Layout from "../layouts/Layout.astro";
     .manifesto-founders {
       height: 72vh;
       min-height: 520px;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .manifesto-hero h1 {
+      font-size: clamp(40px, 4.65vw, 81px);
+    }
+
+    .manifesto-hero__text {
+      font-size: clamp(16px, 1.15vw, 20px);
+    }
+
+    .manifesto-block__text p {
+      font-size: clamp(15px, 1.35vw, 22px);
+    }
+
+    .manifesto-aside p {
+      font-size: clamp(21px, 2.25vw, 33px);
     }
   }
 </style>

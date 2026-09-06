@@ -277,4 +277,10 @@ import Layout from "../layouts/Layout.astro";
     color: var(--color-orange);
     font-style: normal;
   }
+
+  @media (min-width: 769px) {
+    .page-title {
+      font-size: clamp(21px, 2.25vw, 29px);
+    }
+  }
 </style>

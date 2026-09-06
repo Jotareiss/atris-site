@@ -43,7 +43,7 @@ Cor: campo **creme/linho dominante** na página inteira; escuro só nas pontas (
    - **Kicker removido** ("Equipe clínica" era terceiro sinônimo do mesmo grupo).
    - "Os médicos" venceu "Profissionais" (este só repetia o rótulo da nav).
    - "As mãos que fazem a Átris" rima com o hero da home ("Psiquiatria feita à mão") — setup/payoff. "que fazem" venceu "por trás" (ativo, não conspiratório; rima mais apertada: fazem↔feita).
-   - **GUARDRAIL:** "feita à mão" tem que continuar sendo o **único** outro lugar onde a mão aparece. Não espalhar (legenda, CTA, etc.) ou o payoff vira tique.
+   - **GUARDRAIL (atualizado 2026-07-14):** a origem do motivo é o manifesto — pilar 4, "O João-de-Barro" (`docs/manifesto.md`), onde a mão aparece explicando o símbolo ("molda sua casa à mão, curva por curva"). "Psiquiatria feita à mão" (home) e "As mãos que fazem a Átris" (médicos) são os únicos ecos dessa origem — setup no manifesto, payoff nessas duas páginas. Não espalhar pra mais nenhum lugar (legenda, CTA, etc.) ou o payoff vira tique.
 
 8. **Bloco "Presença clínica"** (intro antes dos médicos): hero antigo e esse bloco diziam a mesma coisa duas vezes. Reescrever ou cortar. Se mantido:
    - Título: **"O cuidado não começa pelo sintoma isolado. Começa pela história inteira."**

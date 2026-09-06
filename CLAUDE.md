@@ -2,7 +2,7 @@
 
 ## O que é
 
-Clínica psiquiátrica fundada por dois médicos da FMRP-USP. Site institucional estático com arquitetura guarda-chuva: três sub-marcas (consultas, social, edu) + páginas de apoio.
+Clínica psiquiátrica fundada por médicos da FMRP-USP. Site institucional estático com arquitetura guarda-chuva: o núcleo de consultas (home, médicos, contato) + duas sub-marcas em fase de waitlist (Átris Terra, Átris Forma) + páginas de apoio.
 
 ## Voz da marca
 
@@ -21,11 +21,13 @@ Clínica psiquiátrica fundada por dois médicos da FMRP-USP. Site institucional
 |---|---|---|
 | `/` | `src/pages/index.astro` | Completo |
 | `/manifesto` | `src/pages/manifesto.astro` | Completo |
-| `/consultas` | `src/pages/consultas.astro` | Completo |
 | `/medicos` | `src/pages/medicos.astro` | Completo |
 | `/contato` | `src/pages/contato.astro` | Completo |
-| `/social` | `src/pages/social.astro` | MVP (em breve) |
-| `/edu` | `src/pages/edu.astro` | MVP (em breve) |
+| `/privacidade` | `src/pages/privacidade.astro` | Completo |
+| `/social` (Átris Terra) | `src/pages/social.astro` | MVP — waitlist ("Quero ser avisado") |
+| `/edu` (Átris Forma) | `src/pages/edu.astro` | MVP — waitlist ("Quero ser avisado") |
+
+Não existe rota `/consultas` — a oferta de consultas vive na home, em `/medicos` e em `/contato`.
 
 ## Componentes e layout
 
@@ -53,26 +55,44 @@ Variável CSS: `--font-body: "Petala Pro", Georgia, serif`
 --color-text-secondary: #666666
 ```
 
+## Sub-marcas (Terra / Forma)
+
+- **Átris Terra** (`/social`) — acesso e cuidado em saúde mental (consultas a valor acessível, projetos de território). `bodyClass="page-terra"`, cor oliva `#344023`. Recolore Nav/Footer via `<style is:global>` local (`body.page-terra footer`, etc.). CSS da página em `<style>` escopado, prefixo `.terra-*`.
+- **Átris Forma** (`/edu`) — formação continuada em saúde mental. `bodyClass="page-forma"`, cor teal `#153c40`. Mesmo padrão de recoloração de Nav/Footer. CSS da página em `<style>` escopado, prefixo `.forma-*`.
+- Ambas as páginas ainda estão em modo waitlist (CTA "Quero ser avisado" via WhatsApp), sem conteúdo/matrícula ao vivo.
+
 ## Assets em `public/`
 
 ```
-/logo.svg                    — logo principal (azul)
 /logo-negativa.svg           — logo branca (usada no footer)
 /bird-icon.png               — ícone do joão-de-barro (nav + favicon)
+/favicon.ico                 — favicon
+/og-image.jpg                — imagem de preview para redes sociais (og:image/twitter:image); definitiva, 1200×630
 /assets/hero.jpg             — foto hero da home
-/assets/founders.jpg         — foto dos dois fundadores juntos (manifesto)
-/assets/founders-individual.jpg — foto individual dos médicos (medicos.astro)
-/assets/bird-swirl.png       — ilustração do pássaro (assinatura do manifesto)
+/assets/Founders.jpg         — foto dos fundadores juntos (manifesto)
+/assets/founder_jose.jpg     — foto individual do Dr. José (medicos.astro)
+/assets/founder_lara.jpg     — foto individual da Dra. Lara (medicos.astro)
+/assets/founder_lean.jpg     — foto individual do Dr. Lean (medicos.astro)
+/assets/ambient_1.jpg a ambient_6.JPG — fotos ambiente usadas em heros (médicos, manifesto, contato, cta)
+/images/brand/*.svg          — variações do logo/pássaro (completo, limpo, claro, colorido, TERRA/FORMA)
 /fonts/PetalaPro-*.otf       — 14 arquivos de tipografia
 ```
+
+Removidos por serem órfãos (sem referência em `src`): `logo.svg`, `logo-favicon.svg`, `favicon.svg` (raiz), `images/brand/bird_swirl.svg`, `images/brand/bird_swirl_médio.svg`.
 
 ## Médicos
 
 **Dr. José Augusto Silva Reis**
 - CRM/SP 199536 · RQE 128556
-- WhatsApp: `https://wa.me/5516993732111`
+- WhatsApp: `https://wa.me/5516993732111` (também usado como contato institucional geral do site: home, contato, Terra, Forma)
 - Especialidades: Esquizofrenia · Reabilitação Psicossocial · Psicodélicos em Psiquiatria
 - Formação: FMRP-USP; doutorando em saúde mental; atua no HCRP-USP
+
+**Dra. Lara Zancaner Ueta**
+- CRM/SP 164028 · RQE 65684
+- WhatsApp: `https://wa.me/5516997081319`
+- Especialidades: Interconsulta psiquiátrica · Esquizofrenia · Reabilitação Psicossocial
+- Formação: PUC-Campinas; psiquiatra pelo HCRP-USP; mestre em saúde mental pela FMRP-USP (neuroimagem na esquizofrenia)
 
 **Dr. Lean Pampana Basoli**
 - CRM/SP 199566 · RQE 127180
@@ -84,20 +104,19 @@ Variável CSS: `--font-body: "Petala Pro", Georgia, serif`
 
 ## Decisões de design importantes
 
-- **Home hero:** sem botão de CTA — o copy respira sozinho
 - **Manifesto:** coluna única, margens generosas, tipografia como protagonista
-- **Átris.edu:** fundo azul `#173f73` em toda a página (bodyClass `page-edu` + `is:global`)
-- **Cards:** sempre `border-radius: 48px 48px 6px 6px`
+- **Átris Terra / Forma:** tema por sub-marca via `bodyClass` (`page-terra` oliva `#344023`, `page-forma` teal `#153c40`) que recolore Nav/Footer com `<style is:global>` local
+- **Cards de médicos:** figura com `border-radius: 48px 48px 6px 6px`
 - **Fotos:** humanas, luz natural, tons quentes — PROIBIDO imagens de neuroimagem, IA, renders digitais
 - **Contato:** só WhatsApp direto — sem formulário no MVP
+- **Tipografia responsiva:** cada página define seus próprios breakpoints; valores de desktop (`@media (min-width: 769px)`) ficam no `<style>` local da própria página — evitar overrides globais com `!important` em `global.css` (fonte de bugs difíceis de rastrear; já removido um bloco assim em jul/2026)
 
 ## Bugs conhecidos e soluções
 
 - **Astro CSS em `.map()`:** elementos dentro de `.map()` às vezes não recebem atributo de escopo → usar `!important` nas propriedades de cor/estilo afetadas
-- **`bodyClass` em Layout:** para temas por página (ex: edu azul), passar `bodyClass="page-edu"` e usar `<style is:global>` na página
+- **`bodyClass` em Layout:** para temas por página (ex: Terra oliva, Forma teal), passar `bodyClass="page-terra"`/`"page-forma"` e usar `<style is:global>` na própria página para recolorir Nav/Footer
 - **Nav bird:** `src="/bird-icon.png"` — arquivo está em `public/bird-icon.png` (raiz, não em assets/)
 
 ## Pendências
 
-- Substituir `5516XXXXXXXXX` em `Nav.astro`, `social.astro` e `edu.astro` pelo número real de WhatsApp quando definido
-- `founders-individual.jpg` ainda é a foto conjunta dos dois — substituir por foto individual quando disponível
+- **Jul/2026:** feita uma limpeza de código morto e consolidação de CSS (auditoria manual) — WhatsApp da home corrigido para o número do Dr. José, seção "Produtos" e sistema `.pratica` (nunca usados) removidos, `Welcome.astro`/assets de exemplo do template Astro removidos, assets órfãos em `public/` removidos, e o bloco `!important` de `global.css` foi relocado para o `<style>` local de cada página. `/og-image.jpg` criado como placeholder (cópia de `/assets/hero.jpg`) e depois substituído pela imagem definitiva (1200×630). CLAUDE.md e este arquivo de pendências foram atualizados na mesma leva.
