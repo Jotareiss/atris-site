@@ -16,12 +16,18 @@ const year = new Date().getFullYear();
     <!-- Endereço + telemedicina -->
     <div class="footer__contact">
       <div class="footer__contact-row">
-        <address class="footer__address">
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=Atris%20Psiquiatria&amp;query_place_id=ChIJwT0wvJ-5uZQRfaLS5RqZM3c" target="_blank" rel="noopener noreferrer" class="footer__map-link">
-            Cavalheiro Torquato Rizzi, 1805, sala 24 — Jardim São Luiz
-            Ribeirão Preto, SP — CEP 14021-676
-          </a>
-        </address>
+        <div class="footer__contact-text">
+          <address class="footer__address">
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Atris%20Psiquiatria&amp;query_place_id=ChIJwT0wvJ-5uZQRfaLS5RqZM3c" target="_blank" rel="noopener noreferrer" class="footer__map-link">
+              Cavalheiro Torquato Rizzi, 1805, sala 24 — Jardim São Luiz
+              Ribeirão Preto, SP — CEP 14021-676
+            </a>
+          </address>
+
+          <p class="footer__telemedicine">
+            Telemedicina para todo o Brasil · CFM nº 2.314/2022
+          </p>
+        </div>
 
         <div class="footer__map-embed">
           <iframe
@@ -36,10 +42,6 @@ const year = new Date().getFullYear();
           ></iframe>
         </div>
       </div>
-
-      <p class="footer__telemedicine">
-        Telemedicina para todo o Brasil · CFM nº 2.314/2022
-      </p>
     </div>
 
   </div>
@@ -96,17 +98,22 @@ const year = new Date().getFullYear();
 
   .footer__contact-row {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-end;
     gap: 20px;
-    margin-bottom: 8px;
+  }
+
+  .footer__contact-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 
   .footer__address {
     font-size: var(--text-sm);
     font-style: normal;
     line-height: 1.6;
-    margin: 0;
+    margin: 0 0 6px;
   }
 
   .footer__map-link {
@@ -202,7 +209,11 @@ const year = new Date().getFullYear();
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
-      gap: 10px;
+      gap: 12px;
+    }
+
+    .footer__contact-text {
+      align-items: flex-start;
     }
 
     .footer__bottom {
