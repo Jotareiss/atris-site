@@ -1,8 +1,13 @@
 # Manifesto — texto final aprovado
 
-Status: aprovado por José em 2026-07-14, após stress test linha a linha. **Pendente de implementação em `src/pages/manifesto.astro`** — o arquivo da rota `/manifesto` hoje contém um texto antigo, diferente deste (placeholder curto, sem os 4 pilares nem a epígrafe). Este documento é a fonte canônica até a página ser atualizada.
+Status: implementado em `src/pages/manifesto.astro` em setembro/2026. Esta
+versão substitui a de 2026-07-14 (que passou por stress test linha a
+linha, registro mantido abaixo) — José revisou e simplificou o texto
+depois disso; o texto atual é o anexado por ele em 2026-09-06.
 
-Escrito à mão pelo José para honrar o rótulo artesanal da marca. Registro do processo de revisão abaixo, para contexto de decisões futuras.
+Uma correção pontual foi feita ao implementar: o pilar 3 tinha "para nós,
+para nós," duplicado (provável repetição de digitação) — implementado
+como uma ocorrência só. Sinalizado a José para confirmação.
 
 ---
 
@@ -11,25 +16,25 @@ Escrito à mão pelo José para honrar o rótulo artesanal da marca. Registro do
 **Manifesto**
 **A prática da psiquiatria enquanto ofício**
 
-"O que eu preciso saber sobre você enquanto pessoa para poder lhe oferecer o melhor cuidado possível?"¹
+"O que preciso saber sobre você, enquanto pessoa, para lhe oferecer o melhor cuidado possível?"¹
 
-Antes de existir como lugar, a Átris existiu como uma maneira de compreender o mundo. Em uma época que transformou o sofrimento mental em mais um ativo a administrar sozinho e sem contexto, em nome da produtividade, nós escolhemos dar um passo atrás. Recusamos a ideia de que saúde deva se basear em performance, métricas e categorias, acreditando que saúde só existe a partir de uma história, de um corpo que experiencia o mundo.
+Antes de existir como lugar, a Átris existe como uma maneira de compreender o mundo. Acreditamos que a saúde é resultado de uma história e de um corpo que experimenta, sente e atribui sentidos ao mundo. A partir dessa perspectiva, construímos um espaço dedicado à construção de um cuidado científico, ético e profundamente humano. A clínica é nosso núcleo, mas não nosso limite. Atuamos também na produção de conhecimento e na ampliação do acesso a um cuidado psiquiátrico de qualidade.
 
-A partir dessa ideia, a Átris nasce. Somos um instituto de saúde mental dedicado à construção de um cuidado deliberado: científico, ético e profundamente humano. A prática clínica é nosso núcleo, mas não nosso limite. Atuamos também na produção do conhecimento e na ampliação do acesso ao cuidado psiquiátrico de qualidade — porque, para nós, cuidado não é uma prestação de serviços padronizada. É a tentativa de provar, na prática, que a psiquiatria pode ser feita de outro jeito.
-
-Essa é nossa filosofia em movimento:
+Essa é a nossa filosofia em movimento:
 
 **1. Rigor científico é inegociável.**
-Nossos profissionais trazem consigo uma trajetória científica sólida, formados e atuantes na pesquisa, ensino e prática psiquiátrica. Essa experiência é uma parte importante de quem somos e direciona a forma como oferecemos nosso trabalho. Acreditamos que a evidência científica e a seriedade médica são instrumentos poderosos para permitir que o cuidado administrado seja o melhor possível. Mesmo quando essa ciência possa ser frustrante ou insuficiente, ela ainda nos fornece um norte para ter a maior precisão possível, enquanto nosso julgamento clínico nos fornece a ética para aplicar a ciência em cada história com a qual entramos em contato.
+Os capítulos infelizes da história da psiquiatria e o contato com pacientes que sofreram com isso nos ensinaram o alto preço da falta de rigor científico e apontaram a direção: ciência é fundamental. Entendemos que a base do cuidado é o conhecimento técnico e nos orgulhamos de todos os nossos profissionais possuírem uma trajetória científica sólida. Acreditamos que a singularidade da nossa profissão nasce da capacidade de utilizar esse conhecimento para compreender as mais diferentes histórias e balizar nossas ações. Portanto, nossa psiquiatria é científica e compassiva.
 
-**2. A presença que se faz no corpo**
-"Sofrimento", "dor" e "melhora" não são conceitos abstratos — eles fazem parte de pessoas. Acreditamos que a prática se faz no encontro real entre duas pessoas que compartilham o mesmo espaço, o mesmo silêncio e o mesmo ritmo. Cuidar exige presença, e compreendemos que um olhar atento e uma escuta sem pressa carregam uma força terapêutica que nenhum protocolo padrão consegue substituir.
+**2. A presença que se faz no corpo.**
+Acreditamos que a prática se faz no encontro genuíno entre duas pessoas que compartilham o mesmo espaço, o mesmo silêncio e o mesmo ritmo. Cuidar exige presença, olhar atento e uma escuta sem pressa. Do resultado dessa vivência, surge a capacidade de transformação. Praticamos a hospitalidade como um valor filosófico: o gesto, o ambiente e a relação também cuidam, preparando o terreno para que a pessoa possa aparecer antes do seu sintoma.
 
 **3. O tempo como matéria-prima**
-Nós reconhecemos o ritmo da sociedade contemporânea: uma aceleração constante, na qual o tempo é cada vez mais curto e disputado, o que esgota, fragmenta e adoece. No entanto, recusamos trazer essa pressa para dentro da Átris. Para nós, o tempo não é luxo, é uma ferramenta terapêutica importante: diagnósticos psiquiátricos complexos e histórias de vida ricas não podem ser feitos em consultas expressas. A forma e a duração de cada consulta nascem da necessidade daquele encontro singular entre duas pessoas. Acreditamos que uma investigação profunda resulta em uma medicina precisa e segura.
+Nós reconhecemos o ritmo da sociedade contemporânea: uma aceleração constante, na qual o tempo é cada vez mais curto e disputado, o que esgota, fragmenta e adoece. No entanto, nos recusamos a trazer essa dinâmica para dentro da Átris. Construir uma vivência de tempo interno, para nós, não é luxo, é uma ferramenta importante: diagnósticos psiquiátricos complexos e histórias de vida ricas se constroem entre duas pessoas vivenciando o momento juntas. Acreditamos que uma investigação profunda resulta em uma medicina precisa e segura.
+
+*(texto original enviado por José tinha "para nós, para nós," repetido aqui — implementado com uma ocorrência só; confirmar se foi intencional.)*
 
 **4. O João-de-Barro**
-Cada detalhe da Átris existe porque foi considerado necessário enquanto um gesto de cuidado. Praticamos a hospitalidade como um valor filosófico: o gesto, o ambiente e a relação também cuidam, preparando o terreno para que a pessoa possa aparecer antes do seu sintoma. Por isso, nosso símbolo é o João-de-Barro. Assim como ele, que molda sua casa à mão, curva por curva, para construir um abrigo seguro e sob medida, nós entendemos o cuidado como uma construção. Não usamos fórmulas prontas, erguemos cada plano terapêutico com paciência, intencionalidade e respeito à matéria-prima que nos foi oferecida: a história de vida de cada paciente.
+Cada detalhe da Átris existe porque foi considerado necessário enquanto um gesto de cuidado. O gesto é o que nomeia e transforma toda essa filosofia em experiência. Por isso, nosso símbolo é o João-de-Barro. Assim como ele, que molda sua casa à mão, curva por curva, para construir um abrigo seguro e sob medida, nós entendemos o cuidado como uma construção. Não usamos fórmulas prontas, erguemos cada plano terapêutico com paciência, intencionalidade e respeito à matéria-prima que nos foi oferecida: a história de vida de cada paciente.
 
 ---
 
@@ -37,7 +42,10 @@ Cada detalhe da Átris existe porque foi considerado necessário enquanto um ges
 
 ---
 
-## Registro do stress test (2026-07-14)
+## Registro do stress test (2026-07-14) — versão anterior
+
+Mantido para contexto histórico. O texto abaixo se refere à versão de
+2026-07-14, já substituída pela versão de setembro/2026 acima.
 
 **Corrigido nesta versão:**
 - Erros de regência/crase/grafia: "poder lhe oferece" → "oferecer"; "época onde" → "época em que"; "basear performance" → "basear em performance"; "dedicado a construção" → "dedicado à"; "paciencia" → "paciência"; maiúscula indevida depois de dois-pontos ("Diagnósticos" → "diagnósticos"); "uma uma investigação" (palavra duplicada) + frase com sujeito solto, reescrita em duas frases.
